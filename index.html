@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Actu Foot 13 - Pronostics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="eyebrow">TOP ACTU FOOT 13</div>
+          <h1>Pronostics foot à value du jour</h1>
+          <p class="subtitle">
+            Une sélection filtrée selon la forme, le classement, les absences,
+            la fatigue, les derniers matchs et l’écart détecté avec la cote.
+          </p>
+        </div>
 
+        <div class="hero-badge">
+          <span id="generatedAtLabel">Mise à jour : --</span>
+        </div>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="high">Confiance haute</button>
+        <button class="filter-btn" data-filter="medium">Confiance moyenne</button>
+        <button class="filter-btn" data-filter="edge">Value 8+ pts</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="cards-grid" id="predictionsContainer">
+        <div class="loading">Chargement des pronostics...</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
