@@ -80,31 +80,15 @@
       overflow: hidden;
       border-radius: 28px;
       padding: 24px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
+      background: linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
       border: 1px solid rgba(255,255,255,0.11);
       box-shadow: 0 28px 80px rgba(0,0,0,0.28);
-      min-height: 520px;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(93, 132, 255, 0.28), transparent 34%);
-      pointer-events: none;
-    }
-
-    .card-content {
-      position: relative;
-      z-index: 1;
     }
 
     .card-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 14px;
       margin-bottom: 18px;
     }
 
@@ -113,15 +97,12 @@
       font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
       margin-bottom: 8px;
     }
 
     .match {
       font-size: 25px;
-      line-height: 1.15;
       font-weight: 850;
-      letter-spacing: -0.8px;
     }
 
     .confidence {
@@ -129,34 +110,26 @@
       border-radius: 999px;
       background: rgba(45, 212, 191, 0.14);
       color: #6ff2dd;
-      border: 1px solid rgba(45, 212, 191, 0.22);
       font-size: 12px;
       font-weight: 800;
-      white-space: nowrap;
     }
 
     .pick-box {
       margin: 18px 0;
       padding: 18px;
       border-radius: 22px;
-      background: linear-gradient(135deg, rgba(94, 121, 255, 0.32), rgba(45, 212, 191, 0.12));
-      border: 1px solid rgba(125, 151, 255, 0.26);
+      background: linear-gradient(135deg, rgba(94,121,255,0.32), rgba(45,212,191,0.12));
     }
 
     .pick-label {
-      color: #b9c5ee;
       font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
+      color: #b9c5ee;
       margin-bottom: 7px;
     }
 
     .pick-value {
       font-size: 25px;
       font-weight: 900;
-      letter-spacing: -0.5px;
-      text-transform: capitalize;
     }
 
     .metrics {
@@ -167,207 +140,127 @@
     }
 
     .metric {
-      padding: 13px 12px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(255,255,255,0.07);
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
     }
 
     .metric-label {
       font-size: 11px;
       color: #8fa0ca;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
     }
 
     .metric-value {
-      font-size: 20px;
-      font-weight: 900;
+      font-size: 18px;
+      font-weight: 800;
     }
 
     .analysis {
+      font-size: 14px;
       color: #d9e2f8;
-      line-height: 1.55;
-      font-size: 15px;
-      margin: 18px 0;
-    }
-
-    .factors-title {
-      color: #91a3d8;
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .factors {
-      display: grid;
-      gap: 8px;
+      margin: 15px 0;
     }
 
     .factor {
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: #e9efff;
-      font-size: 14px;
-      line-height: 1.35;
+      display: inline-block;
+      margin: 4px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      font-size: 13px;
     }
 
-    .loading,
-    .empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 44px 20px;
-      color: #b8c2dc;
+    .legal {
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 13px;
+      color: #9aa6c9;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      line-height: 1.6;
     }
 
-    @media (max-width: 760px) {
-      .page { padding: 34px 16px 50px; }
-      .hero { flex-direction: column; align-items: flex-start; }
-      .update-card { text-align: left; width: 100%; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: 1fr; }
-      .card { min-height: auto; }
-    }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <header class="hero">
-      <div>
-        <div class="eyebrow">Top Actu Foot 13</div>
-        <h1>Pronostics à value du jour</h1>
-        <p class="subtitle">
-          Sélection automatique basée sur la forme, les statistiques, les cotes et l’écart de value détecté.
-        </p>
-      </div>
 
-      <div class="update-card" id="generatedAtLabel">
-        Mise à jour : --
-      </div>
-    </header>
+<div class="page">
 
-    <main>
-      <section class="cards-grid" id="predictionsContainer">
-        <div class="loading">Chargement des pronostics...</div>
-      </section>
-    </main>
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Top Actu Foot 13</div>
+      <h1>Pronostics football du jour</h1>
+      <p class="subtitle">
+        Analyses basées sur les statistiques, la forme des équipes, les cotes du marché et des modèles d’évaluation avancés.
+      </p>
+    </div>
+
+    <div class="update-card" id="generatedAtLabel">
+      Mise à jour : --
+    </div>
+  </header>
+
+  <div class="cards-grid" id="predictionsContainer">
+    Chargement...
   </div>
 
-  <script>
-    async function loadPredictions() {
-      const container = document.getElementById("predictionsContainer");
-      const generatedAtLabel = document.getElementById("generatedAtLabel");
+  <div class="legal">
+    ⚠️ <strong>Avertissement :</strong><br><br>
 
-      try {
-        const response = await fetch("./data/predictions.json?v=" + Date.now(), {
-          cache: "no-store"
-        });
+    Les paris sportifs sont des jeux d’argent pouvant entraîner des risques de dépendance, de pertes financières et d’isolement.
+    Jouez de manière responsable et uniquement avec des sommes que vous pouvez vous permettre de perdre.<br><br>
 
-        if (!response.ok) throw new Error("Erreur HTTP " + response.status);
+    Les informations et analyses présentes sur ce site sont fournies à titre strictement informatif.
+    Elles ne constituent en aucun cas une incitation à parier ni un conseil financier.<br><br>
 
-        const data = await response.json();
-        const predictions = Array.isArray(data.predictions) ? data.predictions : [];
+    L’éditeur décline toute responsabilité en cas de pertes liées à l’utilisation de ces informations.<br><br>
 
-        if (data.generated_at) {
-          generatedAtLabel.textContent =
-            "Mise à jour : " +
-            new Date(data.generated_at).toLocaleString("fr-FR", {
-              dateStyle: "medium",
-              timeStyle: "short"
-            });
-        }
+    Interdit aux mineurs. Besoin d’aide :
+    www.joueurs-info-service.fr — 09 74 75 13 13
+  </div>
 
-        renderPredictions(predictions);
-      } catch (error) {
-        container.innerHTML = '<div class="empty">Impossible de charger les pronostics.</div>';
-        generatedAtLabel.textContent = "Mise à jour : erreur";
-      }
-    }
+</div>
 
-    function renderPredictions(predictions) {
-      const container = document.getElementById("predictionsContainer");
+<script>
+async function loadPredictions() {
+  const container = document.getElementById("predictionsContainer");
+  const label = document.getElementById("generatedAtLabel");
 
-      if (!predictions.length) {
-        container.innerHTML = '<div class="empty">Aucun pronostic disponible.</div>';
-        return;
-      }
+  const res = await fetch("./data/predictions.json?v=" + Date.now());
+  const data = await res.json();
 
-      container.innerHTML = predictions.map(item => {
-        const factorsHtml = (item.factors || [])
-          .map(factor => `<div class="factor">${escapeHtml(factor)}</div>`)
-          .join("");
+  label.textContent = "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
 
-        return `
-          <article class="card">
-            <div class="card-content">
-              <div class="card-top">
-                <div>
-                  <div class="competition">${escapeHtml(item.competition || "Pronostic")}</div>
-                  <div class="match">${escapeHtml(item.home_team || "")} vs ${escapeHtml(item.away_team || "")}</div>
-                </div>
-                <div class="confidence">${escapeHtml(getConfidenceLabel(item.confidence_level))}</div>
-              </div>
+  container.innerHTML = data.predictions.map(p => `
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <div class="competition">${p.competition || ""}</div>
+          <div class="match">${p.home_team} vs ${p.away_team}</div>
+        </div>
+        <div class="confidence">${p.confidence_level}</div>
+      </div>
 
-              <div class="pick-box">
-                <div class="pick-label">Pari retenu</div>
-                <div class="pick-value">${escapeHtml(item.pick || "--")}</div>
-              </div>
+      <div class="pick-box">
+        <div class="pick-label">Pari</div>
+        <div class="pick-value">${p.pick}</div>
+      </div>
 
-              <div class="metrics">
-                <div class="metric">
-                  <div class="metric-label">Cote</div>
-                  <div class="metric-value">${formatNumber(item.bookmaker_odds)}</div>
-                </div>
-                <div class="metric">
-                  <div class="metric-label">Value</div>
-                  <div class="metric-value">${formatNumber(item.edge_points)}</div>
-                </div>
-                <div class="metric">
-                  <div class="metric-label">Score</div>
-                  <div class="metric-value">${escapeHtml(item.predicted_score || "--")}</div>
-                </div>
-              </div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-label">Cote</div><div class="metric-value">${p.bookmaker_odds}</div></div>
+        <div class="metric"><div class="metric-label">Value</div><div class="metric-value">${p.edge_points}</div></div>
+        <div class="metric"><div class="metric-label">Score</div><div class="metric-value">${p.predicted_score}</div></div>
+      </div>
 
-              <div class="analysis">${escapeHtml(item.analysis || "")}</div>
+      <div class="analysis">${p.analysis}</div>
 
-              <div class="factors-title">Facteurs clés</div>
-              <div class="factors">${factorsHtml}</div>
-            </div>
-          </article>
-        `;
-      }).join("");
-    }
+      <div>${(p.factors || []).map(f => `<span class="factor">${f}</span>`).join("")}</div>
+    </div>
+  `).join("");
+}
 
-    function getConfidenceLabel(level) {
-      if (level === "high") return "Haute";
-      if (level === "medium") return "Moyenne";
-      if (level === "low") return "Faible";
-      return "--";
-    }
+loadPredictions();
+</script>
 
-    function formatNumber(value) {
-      const number = Number(value);
-      if (Number.isNaN(number)) return "--";
-      return Number.isInteger(number) ? number : number.toFixed(2);
-    }
-
-    function escapeHtml(text) {
-      return String(text)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    loadPredictions();
-  </script>
 </body>
 </html>
