@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T08:44:58Z",
+  "generated_at": "2026-04-24T08:48:37Z",
   "predictions": [{
   "pick": "over 2.5",
   "market_type": "O/U",
@@ -10,29 +10,29 @@
   "confidence_level": "high",
   "predicted_score": "2-1",
   "probable_scorer": "Lorient",
-  "analysis": "Le match entre Lorient et Strasbourg présente une forte probabilité de plus de 2.5 buts, soutenue par des statistiques récentes et des performances offensives des deux équipes. Les deux formations ont montré une tendance à encaisser et marquer des buts, ce qui renforce l'argument pour un score élevé.",
+  "analysis": "Le match entre Lorient et Strasbourg présente un potentiel élevé pour des buts, avec une cote de 1.80 pour plus de 2.5 buts. Les deux équipes affichent une tendance à encaisser et marquer des buts, ce qui renforce l'argument pour un score élevé.",
   "factors": [
-    "Lorient a marqué 5 buts lors de ses 5 derniers matchs à domicile, tandis que Strasbourg a également marqué 6 buts lors de ses 5 derniers matchs à l'extérieur.",
-    "Les deux équipes ont des défenses qui ont montré des faiblesses, avec Lorient encaissant 5 buts à domicile et Strasbourg 6 à l'extérieur sur la même période.",
-    "Les confrontations directes précédentes montrent une tendance à des matchs avec plusieurs buts, avec des scores de 3-1 et 2-1.",
-    "Les cotes des bookmakers et les probabilités corrigées indiquent une forte valeur sur le marché pour le pari sur plus de 2.5 buts."
+    "Lorient a marqué 5 buts lors de ses 5 derniers matchs à domicile, tandis que Strasbourg a encaissé 6 buts lors de ses 5 derniers matchs à l'extérieur.",
+    "Les deux équipes ont une attaque relativement efficace, avec Lorient marquant en moyenne 1.3 buts et Strasbourg 1.6 buts par match.",
+    "Les statistiques récentes montrent que les deux équipes ont des défenses vulnérables, ce qui augmente la probabilité de plusieurs buts.",
+    "L'historique des confrontations directes indique également des matchs avec plusieurs buts, ce qui soutient l'idée d'un match à haute intensité offensive."
   ]
-}{
+},{
   "pick": "over 2.5",
-  "market_type": "O/U",
+  "market_type": "Over/Under",
   "bookmaker_odds": 1.85,
   "model_probability": 51,
   "market_probability": 51,
   "edge_points": 14,
   "confidence_level": "high",
-  "predicted_score": "1-2",
+  "predicted_score": "2-1",
   "probable_scorer": "Lille",
-  "analysis": "Le match entre Paris FC et Lille présente un fort potentiel pour un score élevé, avec une probabilité corrigée de 51% pour plus de 2.5 buts. Lille, en forme offensive, a marqué 11 buts lors de ses 5 derniers matchs, tandis que Paris FC a également montré une capacité à marquer à domicile.",
+  "analysis": "Le match entre Paris FC et Lille présente un fort potentiel pour dépasser les 2.5 buts, surtout avec la forme offensive récente des deux équipes. Lille, en particulier, a montré une capacité à marquer régulièrement à l'extérieur.",
   "factors": [
-    "Lille a une attaque efficace avec une moyenne de 1.6 buts par match à l'extérieur.",
-    "Paris FC a encaissé 5 buts lors de ses 5 derniers matchs, ce qui indique une vulnérabilité défensive.",
-    "Les deux équipes ont des antécédents de matchs avec plusieurs buts lors de leurs confrontations directes.",
-    "La forme récente de Lille, avec 4 victoires consécutives, suggère qu'ils sont capables de marquer plusieurs fois."
+    "Lille a marqué 11 buts lors de ses 5 derniers matchs, montrant une attaque efficace.",
+    "Paris FC a encaissé 5 buts lors de ses 5 derniers matchs, ce qui indique une défense vulnérable.",
+    "Les deux équipes ont un historique de matchs avec de nombreux buts, ce qui renforce la probabilité d'un score élevé.",
+    "Les cotes des bookmakers et les probabilités corrigées montrent un bon potentiel pour le pari sur plus de 2.5 buts."
   ]
 }]
 }
