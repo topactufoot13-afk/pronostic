@@ -6,140 +6,368 @@
   <title>Top Actu Foot 13 - Pronostics</title>
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #0b1020;
-      color: #f5f7fb;
+      background:
+        radial-gradient(circle at top left, rgba(84, 111, 255, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 220, 255, 0.12), transparent 26%),
+        linear-gradient(180deg, #080d1c 0%, #0b1020 100%);
+      color: #f8fbff;
+      min-height: 100vh;
     }
 
     .page {
-      max-width: 1200px;
-      margin: auto;
-      padding: 30px;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 52px 22px 70px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8da2ff;
+      font-weight: 800;
+      margin-bottom: 10px;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      letter-spacing: -1.8px;
+      line-height: 1;
+    }
+
+    .subtitle {
+      max-width: 690px;
+      margin: 16px 0 0;
+      color: #aeb9d5;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .update-card {
+      min-width: 210px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+      color: #dce5ff;
+      font-size: 13px;
+      text-align: right;
     }
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+      gap: 22px;
     }
 
     .card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 20px;
-      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.095), rgba(255,255,255,0.045));
+      border: 1px solid rgba(255,255,255,0.11);
+      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+      min-height: 520px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(93, 132, 255, 0.28), transparent 34%);
+      pointer-events: none;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .competition {
+      color: #91a3d8;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
     }
 
     .match {
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 25px;
+      line-height: 1.15;
+      font-weight: 850;
+      letter-spacing: -0.8px;
+    }
+
+    .confidence {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(45, 212, 191, 0.14);
+      color: #6ff2dd;
+      border: 1px solid rgba(45, 212, 191, 0.22);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
     .pick-box {
-      margin-top: 10px;
-      padding: 12px;
-      background: rgba(91,124,255,0.2);
-      border-radius: 12px;
+      margin: 18px 0;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(94, 121, 255, 0.32), rgba(45, 212, 191, 0.12));
+      border: 1px solid rgba(125, 151, 255, 0.26);
+    }
+
+    .pick-label {
+      color: #b9c5ee;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .pick-value {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-transform: capitalize;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
     }
 
     .metric {
-      margin-top: 10px;
+      padding: 13px 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: #8fa0ca;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .metric-value {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .analysis {
+      color: #d9e2f8;
+      line-height: 1.55;
+      font-size: 15px;
+      margin: 18px 0;
+    }
+
+    .factors-title {
+      color: #91a3d8;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .factors {
+      display: grid;
+      gap: 8px;
     }
 
     .factor {
-      display: inline-block;
-      margin: 4px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #e9efff;
+      font-size: 14px;
+      line-height: 1.35;
     }
 
-    .loading {
+    .loading,
+    .empty {
+      grid-column: 1 / -1;
       text-align: center;
-      padding: 40px;
+      padding: 44px 20px;
+      color: #b8c2dc;
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 34px 16px 50px; }
+      .hero { flex-direction: column; align-items: flex-start; }
+      .update-card { text-align: left; width: 100%; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr; }
+      .card { min-height: auto; }
     }
   </style>
 </head>
 
 <body>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Top Actu Foot 13</div>
+        <h1>Pronostics à value du jour</h1>
+        <p class="subtitle">
+          Sélection automatique basée sur la forme, les statistiques, les cotes et l’écart de value détecté.
+        </p>
+      </div>
 
-<div class="page">
+      <div class="update-card" id="generatedAtLabel">
+        Mise à jour : --
+      </div>
+    </header>
 
-  <h1>Pronostics du jour</h1>
-  <p id="generatedAtLabel">Chargement...</p>
-
-  <div class="cards-grid" id="predictionsContainer">
-    <div class="loading">Chargement...</div>
+    <main>
+      <section class="cards-grid" id="predictionsContainer">
+        <div class="loading">Chargement des pronostics...</div>
+      </section>
+    </main>
   </div>
 
-</div>
+  <script>
+    async function loadPredictions() {
+      const container = document.getElementById("predictionsContainer");
+      const generatedAtLabel = document.getElementById("generatedAtLabel");
 
-<script>
+      try {
+        const response = await fetch("./data/predictions.json?v=" + Date.now(), {
+          cache: "no-store"
+        });
 
-let allPredictions = [];
+        if (!response.ok) throw new Error("Erreur HTTP " + response.status);
 
-async function loadPredictions() {
-  const container = document.getElementById("predictionsContainer");
-  const generatedAtLabel = document.getElementById("generatedAtLabel");
+        const data = await response.json();
+        const predictions = Array.isArray(data.predictions) ? data.predictions : [];
 
-  try {
-    const response = await fetch("./data/predictions.json?v=" + Date.now());
+        if (data.generated_at) {
+          generatedAtLabel.textContent =
+            "Mise à jour : " +
+            new Date(data.generated_at).toLocaleString("fr-FR", {
+              dateStyle: "medium",
+              timeStyle: "short"
+            });
+        }
 
-    const data = await response.json();
-    allPredictions = data.predictions || [];
-
-    if (data.generated_at) {
-      generatedAtLabel.textContent =
-        "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
+        renderPredictions(predictions);
+      } catch (error) {
+        container.innerHTML = '<div class="empty">Impossible de charger les pronostics.</div>';
+        generatedAtLabel.textContent = "Mise à jour : erreur";
+      }
     }
 
-    renderPredictions();
+    function renderPredictions(predictions) {
+      const container = document.getElementById("predictionsContainer");
 
-  } catch (error) {
-    container.innerHTML = "Erreur de chargement";
-  }
-}
+      if (!predictions.length) {
+        container.innerHTML = '<div class="empty">Aucun pronostic disponible.</div>';
+        return;
+      }
 
-function renderPredictions() {
-  const container = document.getElementById("predictionsContainer");
+      container.innerHTML = predictions.map(item => {
+        const factorsHtml = (item.factors || [])
+          .map(factor => `<div class="factor">${escapeHtml(factor)}</div>`)
+          .join("");
 
-  container.innerHTML = allPredictions.map(item => {
+        return `
+          <article class="card">
+            <div class="card-content">
+              <div class="card-top">
+                <div>
+                  <div class="competition">${escapeHtml(item.competition || "Pronostic")}</div>
+                  <div class="match">${escapeHtml(item.home_team || "")} vs ${escapeHtml(item.away_team || "")}</div>
+                </div>
+                <div class="confidence">${escapeHtml(getConfidenceLabel(item.confidence_level))}</div>
+              </div>
 
-    const factors = (item.factors || [])
-      .map(f => `<span class="factor">${f}</span>`)
-      .join("");
+              <div class="pick-box">
+                <div class="pick-label">Pari retenu</div>
+                <div class="pick-value">${escapeHtml(item.pick || "--")}</div>
+              </div>
 
-    return `
-      <div class="card">
+              <div class="metrics">
+                <div class="metric">
+                  <div class="metric-label">Cote</div>
+                  <div class="metric-value">${formatNumber(item.bookmaker_odds)}</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Value</div>
+                  <div class="metric-value">${formatNumber(item.edge_points)}</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-label">Score</div>
+                  <div class="metric-value">${escapeHtml(item.predicted_score || "--")}</div>
+                </div>
+              </div>
 
-        <div class="match">${item.home_team} vs ${item.away_team}</div>
+              <div class="analysis">${escapeHtml(item.analysis || "")}</div>
 
-        <div class="pick-box">
-          ${item.pick}
-        </div>
+              <div class="factors-title">Facteurs clés</div>
+              <div class="factors">${factorsHtml}</div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
 
-        <div class="metric">Cote : ${item.bookmaker_odds}</div>
-        <div class="metric">Value : ${item.edge_points} pts</div>
-        <div class="metric">Score : ${item.predicted_score}</div>
+    function getConfidenceLabel(level) {
+      if (level === "high") return "Haute";
+      if (level === "medium") return "Moyenne";
+      if (level === "low") return "Faible";
+      return "--";
+    }
 
-        <div class="metric">${item.analysis}</div>
+    function formatNumber(value) {
+      const number = Number(value);
+      if (Number.isNaN(number)) return "--";
+      return Number.isInteger(number) ? number : number.toFixed(2);
+    }
 
-        <div>${factors}</div>
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
 
-      </div>
-    `;
-
-  }).join("");
-}
-
-loadPredictions();
-
-</script>
-
+    loadPredictions();
+  </script>
 </body>
 </html>
