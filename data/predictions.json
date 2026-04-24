@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T07:43:06Z",
+  "generated_at": "2026-04-24T07:47:32Z",
   "predictions": [
     {
       "home_team": "",
@@ -7,16 +7,16 @@
       "competition": "",
       "kickoff_utc": "",
       "pick": "over 2.5",
-      "market_type": "O/U",
+      "market_type": "Total de buts",
       "bookmaker_odds": 1.67,
       "model_probability": 56,
       "market_probability": 56,
       "edge_points": 9,
       "confidence_level": "high",
-      "predicted_score": "2-1",
+      "predicted_score": "1-3",
       "probable_scorer": "L. Openda",
-      "analysis": "Le match entre le Stade Brestois 29 et Lens présente un fort potentiel pour dépasser les 2.5 buts, notamment en raison de la dynamique offensive de Lens et des faiblesses défensives de Brest. Les statistiques récentes et les performances des deux équipes renforcent cette prédiction.",
-      "factors": ["Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.1", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.2", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.3", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.4"]
+      "analysis": "Le match entre le Stade Brestois 29 et Lens présente un fort potentiel pour un total de plus de 2.5 buts, compte tenu des performances offensives des deux équipes et de leur historique de confrontations.",
+      "factors": ["Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Le Stade Brestois 29 a encaissé 10 buts lors de ses 5 derniers matchs, ce qui indique une défense vulnérable., Les confrontations directes entre les deux équipes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les cotes des bookmakers soutiennent cette tendance, offrant une bonne valeur pour le pari sur plus de 2.5 buts.1", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Le Stade Brestois 29 a encaissé 10 buts lors de ses 5 derniers matchs, ce qui indique une défense vulnérable., Les confrontations directes entre les deux équipes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les cotes des bookmakers soutiennent cette tendance, offrant une bonne valeur pour le pari sur plus de 2.5 buts.2", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Le Stade Brestois 29 a encaissé 10 buts lors de ses 5 derniers matchs, ce qui indique une défense vulnérable., Les confrontations directes entre les deux équipes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les cotes des bookmakers soutiennent cette tendance, offrant une bonne valeur pour le pari sur plus de 2.5 buts.3", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Le Stade Brestois 29 a encaissé 10 buts lors de ses 5 derniers matchs, ce qui indique une défense vulnérable., Les confrontations directes entre les deux équipes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les cotes des bookmakers soutiennent cette tendance, offrant une bonne valeur pour le pari sur plus de 2.5 buts.4"]
     }
   ]
 }
