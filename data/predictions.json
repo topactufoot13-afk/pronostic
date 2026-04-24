@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T08:04:10Z",
+  "generated_at": "2026-04-24T08:10:25Z",
   "predictions": [
     {
       "home_team": "",
@@ -8,15 +8,15 @@
       "kickoff_utc": "",
       "pick": "over 2.5",
       "market_type": "O/U",
-      "bookmaker_odds": 1.65,
-      "model_probability": 57,
-      "market_probability": 57,
-      "edge_points": 8,
+      "bookmaker_odds": 1.8,
+      "model_probability": 53,
+      "market_probability": 53,
+      "edge_points": 12,
       "confidence_level": "high",
       "predicted_score": "2-1",
-      "probable_scorer": "W. Ben Yedder",
-      "analysis": "Le match entre Toulouse et Monaco présente un potentiel élevé pour des buts, avec une probabilité corrigée de 57% pour plus de 2.5 buts. Les deux équipes affichent des statistiques offensives solides, et les absences de joueurs clés dans la défense de Toulouse pourraient favoriser une rencontre riche en buts.",
-      "factors": ["Monaco a une attaque efficace avec une moyenne de 1.7 buts par match en déplacement., Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une vulnérabilité défensive., Les confrontations directes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les deux équipes ont besoin de points, ce qui pourrait les inciter à adopter un style de jeu offensif.1", "Monaco a une attaque efficace avec une moyenne de 1.7 buts par match en déplacement., Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une vulnérabilité défensive., Les confrontations directes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les deux équipes ont besoin de points, ce qui pourrait les inciter à adopter un style de jeu offensif.2", "Monaco a une attaque efficace avec une moyenne de 1.7 buts par match en déplacement., Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une vulnérabilité défensive., Les confrontations directes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les deux équipes ont besoin de points, ce qui pourrait les inciter à adopter un style de jeu offensif.3", "Monaco a une attaque efficace avec une moyenne de 1.7 buts par match en déplacement., Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une vulnérabilité défensive., Les confrontations directes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts., Les deux équipes ont besoin de points, ce qui pourrait les inciter à adopter un style de jeu offensif.4"]
+      "probable_scorer": "M. Talbi",
+      "analysis": "Le match entre Lorient et Strasbourg présente un potentiel élevé pour des buts, avec une cote de 1.80 pour plus de 2.5 buts. Les deux équipes affichent des statistiques offensives solides et des défenses qui ont montré des faiblesses récentes, ce qui favorise un match riche en buts.",
+      "factors": ["Les deux équipes ont marqué et encaissé un nombre similaire de buts lors de leurs derniers matchs, indiquant une tendance à des rencontres ouvertes., Lorient joue à domicile et a une attaque qui peut exploiter les faiblesses défensives de Strasbourg., Strasbourg a également montré une capacité à marquer à l'extérieur, ce qui augmente les chances d'un match avec plusieurs buts., Les absences de joueurs clés pour Lorient pourraient inciter l'équipe à adopter un style de jeu plus offensif pour compenser.1", "Les deux équipes ont marqué et encaissé un nombre similaire de buts lors de leurs derniers matchs, indiquant une tendance à des rencontres ouvertes., Lorient joue à domicile et a une attaque qui peut exploiter les faiblesses défensives de Strasbourg., Strasbourg a également montré une capacité à marquer à l'extérieur, ce qui augmente les chances d'un match avec plusieurs buts., Les absences de joueurs clés pour Lorient pourraient inciter l'équipe à adopter un style de jeu plus offensif pour compenser.2", "Les deux équipes ont marqué et encaissé un nombre similaire de buts lors de leurs derniers matchs, indiquant une tendance à des rencontres ouvertes., Lorient joue à domicile et a une attaque qui peut exploiter les faiblesses défensives de Strasbourg., Strasbourg a également montré une capacité à marquer à l'extérieur, ce qui augmente les chances d'un match avec plusieurs buts., Les absences de joueurs clés pour Lorient pourraient inciter l'équipe à adopter un style de jeu plus offensif pour compenser.3", "Les deux équipes ont marqué et encaissé un nombre similaire de buts lors de leurs derniers matchs, indiquant une tendance à des rencontres ouvertes., Lorient joue à domicile et a une attaque qui peut exploiter les faiblesses défensives de Strasbourg., Strasbourg a également montré une capacité à marquer à l'extérieur, ce qui augmente les chances d'un match avec plusieurs buts., Les absences de joueurs clés pour Lorient pourraient inciter l'équipe à adopter un style de jeu plus offensif pour compenser.4"]
     }
   ]
 }
