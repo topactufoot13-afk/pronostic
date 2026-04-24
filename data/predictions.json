@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-04-24T20:05:37Z",
+  "generated_at": "2026-04-25T01:04:58Z",
   "predictions": [{
-  "home_team": "Stade Brestois 29",
-  "away_team": "Lens",
+  "home_team": "Toulouse",
+  "away_team": "Monaco",
   "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-24T20:04:00Z",
+  "kickoff_utc": "2026-04-25T21:04:00Z",
   "pick": "over 2.5",
-  "market_type": "Over/Under",
-  "bookmaker_odds": 1.62,
-  "model_probability": 58,
-  "market_probability": 58,
-  "edge_points": 7,
-  "confidence_level": "medium",
+  "market_type": "O/U",
+  "bookmaker_odds": 1.67,
+  "model_probability": 56,
+  "market_probability": 56,
+  "edge_points": 9,
+  "confidence_level": "high",
   "predicted_score": "1-3",
-  "probable_scorer": "L'attaquant de Lens",
-  "analysis": "Le match entre le Stade Brestois 29 et Lens présente un potentiel élevé pour un score supérieur à 2.5, compte tenu des performances offensives des deux équipes. Lens, en particulier, a montré une capacité à marquer régulièrement, ce qui renforce la probabilité d'un match à fort score.",
+  "probable_scorer": "Wissam Ben Yedder",
+  "analysis": "Le match entre Toulouse et Monaco présente un fort potentiel de buts, avec une probabilité corrigée de 56% pour plus de 2.5 buts. Les deux équipes affichent des statistiques offensives solides, et les absences dans la défense de Toulouse pourraient favoriser un match à haute intensité.",
   "factors": [
-    "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur.",
-    "Le Stade Brestois a encaissé 10 buts lors de ses 5 derniers matchs à domicile, ce qui indique une vulnérabilité défensive.",
-    "Les confrontations directes montrent une tendance à des scores élevés, avec plusieurs matchs précédents dépassant 2.5 buts.",
-    "Les probabilités corrigées et l'edge calculé suggèrent une bonne valeur pour le pari sur plus de 2.5 buts."
+    "Monaco a une attaque efficace, marquant en moyenne 1.7 buts par match à l'extérieur.",
+    "Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une vulnérabilité défensive.",
+    "Les confrontations directes précédentes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts.",
+    "Les cotes des bookmakers soutiennent cette tendance, offrant une cote de 1.67 pour le pari over 2.5."
   ]
 }]
 }
