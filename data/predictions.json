@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-04-24T07:32:14Z",
+  "generated_at": "2026-04-24T07:43:06Z",
   "predictions": [
     {
-      "home_team": "Lorient",
-      "away_team": "Strasbourg",
-      "competition": "Ligue 1",
-      "kickoff_utc": "2026-04-26T13:00:00+00:00",
+      "home_team": "",
+      "away_team": "",
+      "competition": "",
+      "kickoff_utc": "",
       "pick": "over 2.5",
       "market_type": "O/U",
-      "bookmaker_odds": 1.8,
-      "model_probability": 53,
-      "market_probability": 53,
-      "edge_points": 12,
+      "bookmaker_odds": 1.67,
+      "model_probability": 56,
+      "market_probability": 56,
+      "edge_points": 9,
       "confidence_level": "high",
       "predicted_score": "2-1",
-      "probable_scorer": "M. Talbi",
-      "analysis": "Le match entre Lorient et Strasbourg présente un potentiel élevé pour un score supérieur à 2.5 buts. Les deux équipes affichent une attaque relativement efficace, et leurs défenses montrent des faiblesses qui pourraient être exploitées.",
-      "factors": ["Lorient a marqué 5 buts lors de ses 5 derniers matchs à domicile, tandis que Strasbourg a encaissé 6 buts lors de ses 5 derniers matchs à l'extérieur., Les deux équipes ont une moyenne de buts marqués par match supérieure à 1.5, ce qui favorise un match avec plusieurs buts., Les confrontations directes récentes montrent une tendance à des scores élevés, avec des matchs précédents ayant dépassé 2.5 buts., Les absences de joueurs clés dans les défenses des deux équipes pourraient également contribuer à un match avec de nombreux buts.1", "Lorient a marqué 5 buts lors de ses 5 derniers matchs à domicile, tandis que Strasbourg a encaissé 6 buts lors de ses 5 derniers matchs à l'extérieur., Les deux équipes ont une moyenne de buts marqués par match supérieure à 1.5, ce qui favorise un match avec plusieurs buts., Les confrontations directes récentes montrent une tendance à des scores élevés, avec des matchs précédents ayant dépassé 2.5 buts., Les absences de joueurs clés dans les défenses des deux équipes pourraient également contribuer à un match avec de nombreux buts.2", "Lorient a marqué 5 buts lors de ses 5 derniers matchs à domicile, tandis que Strasbourg a encaissé 6 buts lors de ses 5 derniers matchs à l'extérieur., Les deux équipes ont une moyenne de buts marqués par match supérieure à 1.5, ce qui favorise un match avec plusieurs buts., Les confrontations directes récentes montrent une tendance à des scores élevés, avec des matchs précédents ayant dépassé 2.5 buts., Les absences de joueurs clés dans les défenses des deux équipes pourraient également contribuer à un match avec de nombreux buts.3", "Lorient a marqué 5 buts lors de ses 5 derniers matchs à domicile, tandis que Strasbourg a encaissé 6 buts lors de ses 5 derniers matchs à l'extérieur., Les deux équipes ont une moyenne de buts marqués par match supérieure à 1.5, ce qui favorise un match avec plusieurs buts., Les confrontations directes récentes montrent une tendance à des scores élevés, avec des matchs précédents ayant dépassé 2.5 buts., Les absences de joueurs clés dans les défenses des deux équipes pourraient également contribuer à un match avec de nombreux buts.4"]
+      "probable_scorer": "L. Openda",
+      "analysis": "Le match entre le Stade Brestois 29 et Lens présente un fort potentiel pour dépasser les 2.5 buts, notamment en raison de la dynamique offensive de Lens et des faiblesses défensives de Brest. Les statistiques récentes et les performances des deux équipes renforcent cette prédiction.",
+      "factors": ["Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.1", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.2", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.3", "Lens a une attaque très efficace avec une moyenne de 2.0 buts marqués par match à l'extérieur., Brest a encaissé 10 buts lors de ses 5 derniers matchs, montrant des lacunes défensives., Les confrontations directes entre les deux équipes ont souvent vu plus de 2.5 buts., Les cotes des bookmakers soutiennent également cette tendance avec une cote de 1.67 pour l'over 2.5.4"]
     }
   ]
 }
