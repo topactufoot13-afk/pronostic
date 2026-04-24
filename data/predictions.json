@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-04-25T01:04:58Z",
+  "generated_at": "2026-04-25T01:13:50Z",
   "predictions": [{
   "home_team": "Toulouse",
   "away_team": "Monaco",
   "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-25T21:04:00Z",
+  "kickoff_utc": "2026-04-25T19:05:00+00:00",
   "pick": "over 2.5",
   "market_type": "O/U",
   "bookmaker_odds": 1.67,
@@ -14,12 +14,12 @@
   "confidence_level": "high",
   "predicted_score": "1-3",
   "probable_scorer": "Wissam Ben Yedder",
-  "analysis": "Le match entre Toulouse et Monaco présente un fort potentiel de buts, avec une probabilité corrigée de 56% pour plus de 2.5 buts. Les deux équipes affichent des statistiques offensives solides, et les absences dans la défense de Toulouse pourraient favoriser un match à haute intensité.",
+  "analysis": "Le match entre Toulouse et Monaco présente un fort potentiel pour des buts, avec une probabilité corrigée de 56% pour plus de 2.5 buts. Les deux équipes affichent des statistiques offensives solides, et les absences dans la défense de Toulouse pourraient favoriser un match à haute intensité.",
   "factors": [
-    "Monaco a une attaque efficace, marquant en moyenne 1.7 buts par match à l'extérieur.",
-    "Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une vulnérabilité défensive.",
-    "Les confrontations directes précédentes montrent une tendance à des scores élevés, avec plusieurs matchs dépassant les 2.5 buts.",
-    "Les cotes des bookmakers soutiennent cette tendance, offrant une cote de 1.67 pour le pari over 2.5."
+    "Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une défense vulnérable.",
+    "Monaco a marqué 9 buts lors de ses 5 derniers matchs à l'extérieur, montrant une bonne forme offensive.",
+    "Les confrontations directes entre les deux équipes ont souvent été riches en buts, avec plusieurs matchs dépassant les 2.5 buts.",
+    "Les absences de joueurs clés dans la défense de Toulouse pourraient faciliter les attaques de Monaco."
   ]
 }]
 }
