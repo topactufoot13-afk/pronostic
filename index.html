@@ -1,671 +1,470 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Top Actu Foot 13 — Pronostics</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Actu Foot 13 - Pronostics</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    :root {
-      --bg:          #06090f;
-      --surface:     rgba(255,255,255,0.042);
-      --surface2:    rgba(255,255,255,0.07);
-      --border:      rgba(255,255,255,0.075);
-      --border2:     rgba(255,255,255,0.13);
-      --green:       #00e080;
-      --green-dim:   rgba(0,224,128,0.12);
-      --green-line:  rgba(0,224,128,0.22);
-      --gold:        #f5a623;
-      --gold-dim:    rgba(245,166,35,0.10);
-      --gold-line:   rgba(245,166,35,0.22);
-      --blue:        #4d9eff;
-      --blue-dim:    rgba(77,158,255,0.10);
-      --text:        #e8eeff;
-      --muted:       #5e7294;
-      --sub:         #8fa3c0;
-    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(58, 95, 255, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(0, 210, 255, 0.12), transparent 24%),
+        #0b1020;
+      color: #f5f7fb;
+      min-height: 100vh;
+    }
 
-    html { font-size: 16px; }
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
+    .hero {
+      margin-bottom: 28px;
+    }
 
-    /* ── Background ── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0; pointer-events: none; z-index: 0;
-      background:
-        radial-gradient(ellipse 900px 600px at 10% 0%, rgba(0,224,128,0.055) 0%, transparent 60%),
-        radial-gradient(ellipse 700px 500px at 90% 100%, rgba(77,158,255,0.045) 0%, transparent 60%);
-    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 22px;
+    }
 
-    .wrap {
-      position: relative; z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      color: #8ea3ff;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
 
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 64px;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -1.2px;
+    }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+    .subtitle {
+      max-width: 780px;
+      margin: 14px 0 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #b8c2dc;
+    }
 
-    /* SVG ball */
-    .ball {
-      width: 46px; height: 46px; flex-shrink: 0;
-    }
+    .hero-badge {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+      font-size: 14px;
+      color: #dfe6fb;
+    }
 
-    .logo-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.2px;
-      line-height: 1.1;
-    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-    .logo-tag {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-top: 2px;
-    }
+    .filter-btn {
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
+      color: #edf2ff;
+      padding: 11px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
 
-    .update-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 12.5px;
-      color: var(--sub);
-      white-space: nowrap;
-    }
+    .filter-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.09);
+    }
 
-    .pulse {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 8px var(--green);
-      animation: pulse 2.2s ease-in-out infinite;
-      flex-shrink: 0;
-    }
+    .filter-btn.active {
+      background: linear-gradient(135deg, #5b7cff, #3ecbff);
+      color: #09111f;
+      border-color: transparent;
+      font-weight: 700;
+    }
 
-    @keyframes pulse {
-      0%,100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: 0.4; transform: scale(0.75); }
-    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 18px;
+    }
 
-    /* ── HERO ── */
-    .hero { margin-bottom: 52px; }
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+    }
 
-    .hero h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(36px, 5.5vw, 60px);
-      font-weight: 800;
-      line-height: 1.04;
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
 
-    .hero h1 span { color: var(--green); }
+    .competition {
+      font-size: 13px;
+      color: #9fb1df;
+      margin-bottom: 6px;
+    }
 
-    .hero p {
-      font-size: 16px;
-      color: var(--sub);
-      line-height: 1.7;
-      max-width: 540px;
-      font-weight: 300;
-    }
+    .match {
+      font-size: 25px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+    }
 
-    .algo-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 20px;
-      padding: 8px 15px;
-      background: var(--blue-dim);
-      border: 1px solid rgba(77,158,255,0.2);
-      border-radius: 999px;
-      font-size: 12px;
-      color: var(--blue);
-      font-weight: 500;
-    }
+    .kickoff {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #aab6d5;
+    }
 
-    /* ── STAT ROW ── */
-    .stats {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
+    .confidence-badge {
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
-    .stat {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      padding: 10px 18px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-size: 13.5px;
-      color: var(--sub);
-    }
+    .conf-high {
+      background: rgba(45, 212, 191, 0.16);
+      color: #63f0da;
+      border: 1px solid rgba(45, 212, 191, 0.24);
+    }
 
-    .stat b {
-      font-family: 'Syne', sans-serif;
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--text);
-    }
+    .conf-medium {
+      background: rgba(255, 184, 77, 0.16);
+      color: #ffd38a;
+      border: 1px solid rgba(255, 184, 77, 0.24);
+    }
 
-    .stat-icon { opacity: 0.6; flex-shrink: 0; }
+    .conf-low {
+      background: rgba(255, 99, 132, 0.16);
+      color: #ff9ab0;
+      border: 1px solid rgba(255, 99, 132, 0.24);
+    }
 
-    /* ── SECTION LABEL ── */
-    .section-title {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
+    .pick-box {
+      margin-top: 12px;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      padding: 16px;
+      background: linear-gradient(135deg, rgba(91,124,255,0.17), rgba(62,203,255,0.12));
+      border: 1px solid rgba(98, 141, 255, 0.22);
+    }
 
-    /* ── GRID ── */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 16px;
-    }
+    .pick-label {
+      font-size: 12px;
+      color: #a9b8e5;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-    /* ── CARD ── */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-      transition: transform .22s ease, background .22s, border-color .22s, box-shadow .22s;
-      opacity: 0;
-      animation: fadeUp .5s ease forwards;
-    }
+    .pick-value {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+    }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
 
-    .card:hover {
-      background: var(--surface2);
-      border-color: var(--border2);
-      transform: translateY(-4px);
-      box-shadow: 0 28px 70px rgba(0,0,0,.4);
-    }
+    .metric {
+      background: rgba(255,255,255,0.04);
+      border-radius: 16px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
 
-    /* Top accent line */
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 15%; right: 15%;
-      height: 1px;
-    }
+    .metric-label {
+      font-size: 12px;
+      color: #9fb1df;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-    .card-high   { border-top-color: var(--green-line); }
-    .card-high::before { background: linear-gradient(90deg, transparent, var(--green), transparent); }
-    .card-medium { border-top-color: var(--gold-line); }
-    .card-medium::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .metric-value {
+      font-size: 22px;
+      font-weight: 800;
+    }
 
-    /* Card head */
-    .card-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
+    .analysis {
+      margin-bottom: 16px;
+      color: #d9e2f7;
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-    .card-league {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
+    .factors-title {
+      font-size: 13px;
+      color: #9fb1df;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-    .card-match {
-      font-family: 'Syne', sans-serif;
-      font-size: 19px;
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.4px;
-    }
+    .factors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-    .card-time {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 5px;
-    }
+    .factor {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 13px;
+      color: #dfe6fb;
+    }
 
-    .badge {
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+    .loading,
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 20px;
+      color: #b8c2dc;
+      font-size: 16px;
+    }
 
-    .badge-high   { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-line); }
-    .badge-medium { background: var(--gold-dim);  color: var(--gold);  border: 1px solid var(--gold-line); }
+    @media (max-width: 760px) {
+      .hero-top {
+        flex-direction: column;
+      }
 
-    /* Pick row */
-    .pick-row {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
+      .hero-badge {
+        width: 100%;
+      }
 
-    .pick-main {
-      flex: 1;
-      background: linear-gradient(135deg, rgba(0,224,128,.07), rgba(77,158,255,.05));
-      border: 1px solid rgba(0,224,128,.15);
-      border-radius: 14px;
-      padding: 15px 17px;
-    }
-
-    .pick-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 5px;
-    }
-
-    .pick-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--green);
-      line-height: 1.2;
-    }
-
-    .cote-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 15px 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 78px;
-    }
-
-    .cote-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .cote-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 24px;
-      font-weight: 800;
-    }
-
-    /* Mini metrics */
-    .metrics {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .metric {
-      background: rgba(255,255,255,.025);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 11px 14px;
-    }
-
-    .m-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .m-value {
-      font-family: 'Syne', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    /* Analysis */
-    .analysis {
-      font-size: 13.5px;
-      font-weight: 300;
-      line-height: 1.7;
-      color: var(--sub);
-      margin-bottom: 16px;
-    }
-
-    /* Factors */
-    .factors-title {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 9px;
-    }
-
-    .factors { display: flex; flex-direction: column; gap: 6px; }
-
-    .factor {
-      font-size: 12.5px;
-      font-weight: 300;
-      line-height: 1.6;
-      color: #7b92b4;
-      padding: 8px 12px 8px 14px;
-      border-left: 2px solid rgba(0,224,128,0.22);
-      background: rgba(255,255,255,.018);
-      border-radius: 0 10px 10px 0;
-    }
-
-    /* States */
-    .loading, .empty {
-      grid-column: 1/-1;
-      text-align: center;
-      padding: 100px 24px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .spinner {
-      width: 38px; height: 38px;
-      border: 2px solid rgba(255,255,255,.06);
-      border-top-color: var(--green);
-      border-radius: 50%;
-      animation: spin .8s linear infinite;
-      margin: 0 auto 18px;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* Footer */
-    footer {
-      margin-top: 72px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-copy { font-size: 13px; color: var(--muted); }
-
-    .disclaimer {
-      font-size: 12px;
-      color: rgba(94,114,148,.5);
-      max-width: 400px;
-      line-height: 1.55;
-      text-align: right;
-    }
-
-    @media (max-width: 600px) {
-      nav { flex-direction: column; align-items: flex-start; }
-      footer { flex-direction: column; }
-      .disclaimer { text-align: left; }
-      .hero h1 { letter-spacing: -1px; }
-    }
-  </style>
+      .match {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
+  <div class="page">
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="eyebrow">TOP ACTU FOOT 13</div>
+          <h1>Pronostics foot à value du jour</h1>
+          <p class="subtitle">
+            Une sélection filtrée selon la forme, le classement, les absences,
+            la fatigue, les derniers matchs et l’écart détecté avec la cote.
+          </p>
+        </div>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="logo">
-      <svg class="ball" viewBox="0 0 46 46" fill="none">
-        <circle cx="23" cy="23" r="22" fill="#0c1520" stroke="rgba(0,224,128,0.28)" stroke-width="1.4"/>
-        <circle cx="23" cy="23" r="13" fill="none" stroke="#00e080" stroke-width="1.5" opacity="0.7"/>
-        <polygon points="23,14 28.5,18 26.5,24.5 19.5,24.5 17.5,18" fill="#00e080"/>
-        <line x1="23"   y1="14"   x2="23"   y2="10"   stroke="#00e080" stroke-width="1.2" opacity="0.45"/>
-        <line x1="28.5" y1="18"   x2="32"   y2="16"   stroke="#00e080" stroke-width="1.2" opacity="0.45"/>
-        <line x1="26.5" y1="24.5" x2="29"   y2="28"   stroke="#00e080" stroke-width="1.2" opacity="0.45"/>
-        <line x1="19.5" y1="24.5" x2="17"   y2="28"   stroke="#00e080" stroke-width="1.2" opacity="0.45"/>
-        <line x1="17.5" y1="18"   x2="14"   y2="16"   stroke="#00e080" stroke-width="1.2" opacity="0.45"/>
-        <circle cx="35" cy="11" r="3" fill="#4d9eff" opacity="0.8"/>
-        <circle cx="35" cy="11" r="5.5" fill="rgba(77,158,255,0.15)"/>
-      </svg>
-      <div>
-        <div class="logo-name">Top Actu Foot 13</div>
-        <div class="logo-tag">Pronostics</div>
-      </div>
-    </a>
+        <div class="hero-badge">
+          <span id="generatedAtLabel">Mise à jour : --</span>
+        </div>
+      </div>
 
-    <div class="update-pill">
-      <div class="pulse"></div>
-      <span id="updateLabel">Mise à jour : --</span>
-    </div>
-  </nav>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="high">Confiance haute</button>
+        <button class="filter-btn" data-filter="medium">Confiance moyenne</button>
+        <button class="filter-btn" data-filter="edge">Value 8+ pts</button>
+      </div>
+    </header>
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Les meilleurs<br>pronostics <span>du jour</span></h1>
-    <p>
-      Chaque pari est sélectionné après analyse du classement, de la forme récente,
-      des confrontations directes et des cotes bookmakers.
-      Seuls les matchs à fort potentiel sont publiés.
-    </p>
-    <div class="algo-chip">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
-      </svg>
-      Sélection automatisée par notre modèle de données
-    </div>
-  </div>
+    <main>
+      <section class="cards-grid" id="predictionsContainer">
+        <div class="loading">Chargement des pronostics...</div>
+      </section>
+    </main>
+  </div>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat">
-      <svg class="stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-      <b id="totalCount">--</b> pronostic(s) publié(s)
-    </div>
-    <div class="stat">
-      <svg class="stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#00e080" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-      <b id="highCount">--</b> confiance haute
-    </div>
-    <div class="stat">
-      <svg class="stat-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Mis à jour chaque matin
-    </div>
-  </div>
+  <script>
+    let allPredictions = [];
+    let activeFilter = "all";
 
-  <!-- CARDS -->
-  <div class="section-title">Pronostics du jour</div>
-  <section class="grid" id="container">
-    <div class="loading">
-      <div class="spinner"></div>
-      Chargement en cours...
-    </div>
-  </section>
+    async function loadPredictions() {
+      const container = document.getElementById("predictionsContainer");
+      const generatedAtLabel = document.getElementById("generatedAtLabel");
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-copy">© 2026 Top Actu Foot 13</div>
-    <div class="disclaimer">
-      Pronostics à titre informatif uniquement.<br>
-      Jouez de manière responsable — les paris comportent des risques.
-    </div>
-  </footer>
+      try {
+        const response = await fetch("./data/predictions.json?v=" + Date.now(), {
+          cache: "no-store"
+        });
 
-</div>
+        if (!response.ok) {
+          throw new Error("Erreur HTTP " + response.status);
+        }
 
-<script>
-  const PICKS = {
-    "over 2.5":            "+ de 2,5 buts",
-    "over 1.5":            "+ de 1,5 but",
-    "under 2.5":           "- de 2,5 buts",
-    "under 1.5":           "- de 1,5 but",
-    "victoire domicile":   "Victoire domicile",
-    "victoire extérieur":  "Victoire extérieur",
-    "victoire exterieur":  "Victoire extérieur",
-    "nul":                 "Match nul",
-    "double chance":       "Double chance",
-    "draw no bet":         "Draw No Bet",
-    "both teams to score": "Les deux équipes marquent",
-    "btts":                "Les deux équipes marquent",
-  };
+        const data = await response.json();
+        allPredictions = Array.isArray(data.predictions) ? data.predictions : [];
 
-  const TEAM_NAMES = [
-    "lorient","strasbourg","paris","lille","rennes","nantes","marseille",
-    "nice","metz","havre","le havre","lyon","monaco","lens","reims",
-    "toulouse","brest","montpellier","auxerre","angers","saint-etienne","paris fc"
-  ];
+        if (data.generated_at) {
+          const formattedDate = new Date(data.generated_at).toLocaleString("fr-FR", {
+            dateStyle: "medium",
+            timeStyle: "short"
+          });
+          generatedAtLabel.textContent = "Mise à jour : " + formattedDate;
+        } else {
+          generatedAtLabel.textContent = "Mise à jour : --";
+        }
 
-  function pick(raw) {
-    if (!raw) return "--";
-    return PICKS[raw.toLowerCase().trim()] || raw;
-  }
+        renderPredictions();
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = '<div class="empty">Impossible de charger les pronostics.</div>';
+        generatedAtLabel.textContent = "Mise à jour : erreur";
+      }
+    }
 
-  function isTeam(v) {
-    if (!v || v === "--") return true;
-    return TEAM_NAMES.some(t => v.toLowerCase().trim() === t);
-  }
+    function getConfidenceClass(level) {
+      if (level === "high") return "conf-high";
+      if (level === "medium") return "conf-medium";
+      return "conf-low";
+    }
 
-  function fmt(v) {
-    const n = Number(v);
-    return isNaN(n) ? "--" : n.toFixed(2);
-  }
+    function getConfidenceLabel(level) {
+      if (level === "high") return "Confiance haute";
+      if (level === "medium") return "Confiance moyenne";
+      return "Confiance faible";
+    }
 
-  function esc(t) {
-    return String(t || "")
-      .replace(/&/g,"&amp;").replace(/</g,"&lt;")
-      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-  }
+    function filterPredictions(predictions) {
+      if (activeFilter === "high") {
+        return predictions.filter(p => p.confidence_level === "high");
+      }
 
-  async function load() {
-    const box   = document.getElementById("container");
-    const label = document.getElementById("updateLabel");
+      if (activeFilter === "medium") {
+        return predictions.filter(p => p.confidence_level === "medium");
+      }
 
-    try {
-      const r = await fetch("./data/predictions.json?v=" + Date.now(), { cache: "no-store" });
-      if (!r.ok) throw new Error(r.status);
+      if (activeFilter === "edge") {
+        return predictions.filter(p => Number(p.edge_points) >= 8);
+      }
 
-      const data = await r.json();
-      const list = Array.isArray(data.predictions) ? data.predictions : [];
+      return predictions;
+    }
 
-      if (data.generated_at) {
-        label.textContent = "Mise à jour : " + new Date(data.generated_at)
-          .toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" });
-      }
+    function renderPredictions() {
+      const container = document.getElementById("predictionsContainer");
+      const filtered = filterPredictions(allPredictions);
 
-      document.getElementById("totalCount").textContent = list.length;
-      document.getElementById("highCount").textContent  = list.filter(p => p.confidence_level === "high").length;
+      if (!filtered.length) {
+        container.innerHTML = '<div class="empty">Aucun pronostic disponible pour ce filtre.</div>';
+        return;
+      }
 
-      if (!list.length) {
-        box.innerHTML = '<div class="empty">Aucun pronostic disponible aujourd\'hui.<br><small>Revenez demain matin.</small></div>';
-        return;
-      }
+      container.innerHTML = filtered.map(item => {
+        const kickoffFormatted = item.kickoff_utc
+          ? new Date(item.kickoff_utc).toLocaleString("fr-FR", {
+              dateStyle: "medium",
+              timeStyle: "short"
+            })
+          : "--";
 
-      box.innerHTML = list.map((p, i) => {
-        const high    = p.confidence_level === "high";
-        const cardCl  = high ? "card-high" : "card-medium";
-        const badgeCl = high ? "badge-high" : "badge-medium";
-        const badgeTx = high ? "⚡ Confiance haute" : "Confiance moyenne";
+        const factorsHtml = (item.factors || [])
+          .map(factor => '<span class="factor">' + escapeHtml(factor) + '</span>')
+          .join("");
 
-        const ko = p.kickoff_utc
-          ? new Date(p.kickoff_utc).toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" })
-          : "--";
+        return `
+          <article class="card">
+            <div class="card-top">
+              <div>
+                <div class="competition">${escapeHtml(item.competition || "Compétition")}</div>
+                <div class="match">${escapeHtml(item.home_team || "")} vs ${escapeHtml(item.away_team || "")}</div>
+                <div class="kickoff">Coup d’envoi : ${kickoffFormatted}</div>
+              </div>
+              <div class="confidence-badge ${getConfidenceClass(item.confidence_level)}">
+                ${getConfidenceLabel(item.confidence_level)}
+              </div>
+            </div>
 
-        const factors = (p.factors || []).filter(f => f && f.trim())
-          .map(f => `<div class="factor">${esc(f)}</div>`).join("");
+            <div class="pick-box">
+              <div class="pick-label">Pari retenu</div>
+              <div class="pick-value">${escapeHtml(item.pick || "--")}</div>
+            </div>
 
-        const scorer = !isTeam(p.probable_scorer)
-          ? `<div class="metric"><div class="m-label">Buteur probable</div><div class="m-value">${esc(p.probable_scorer)}</div></div>`
-          : "";
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-label">Cote</div>
+                <div class="metric-value">${formatNumber(item.bookmaker_odds)}</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Value</div>
+                <div class="metric-value">${formatNumber(item.edge_points)} pts</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Score probable</div>
+                <div class="metric-value">${escapeHtml(item.predicted_score || "--")}</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Buteur probable</div>
+                <div class="metric-value">${escapeHtml(item.probable_scorer || "--")}</div>
+              </div>
+            </div>
 
-        return `
-          <article class="card ${cardCl}" style="animation-delay:${i * .08}s">
-            <div class="card-head">
-              <div>
-                <div class="card-league">${esc(p.competition || "Football")}</div>
-                <div class="card-match">${esc(p.home_team || "?")} vs ${esc(p.away_team || "?")}</div>
-                <div class="card-time">🕐 ${ko}</div>
-              </div>
-              <div class="badge ${badgeCl}">${badgeTx}</div>
-            </div>
+            <div class="analysis">${escapeHtml(item.analysis || "")}</div>
 
-            <div class="pick-row">
-              <div class="pick-main">
-                <div class="pick-label">Pari retenu</div>
-                <div class="pick-value">${esc(pick(p.pick))}</div>
-              </div>
-              <div class="cote-box">
-                <div class="cote-label">Cote</div>
-                <div class="cote-value">${fmt(p.bookmaker_odds)}</div>
-              </div>
-            </div>
+            <div class="factors-title">Facteurs clés</div>
+            <div class="factors">${factorsHtml}</div>
+          </article>
+        `;
+      }).join("");
+    }
 
-            <div class="metrics">
-              <div class="metric">
-                <div class="m-label">Score prédit</div>
-                <div class="m-value">${esc(p.predicted_score || "--")}</div>
-              </div>
-              ${scorer}
-            </div>
+    function formatNumber(value) {
+      const number = Number(value);
+      if (Number.isNaN(number)) return "--";
+      return number.toFixed(2);
+    }
 
-            <div class="analysis">${esc(p.analysis || "")}</div>
+    function escapeHtml(text) {
+      return String(text)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
 
-            ${factors ? `<div class="factors-title">Facteurs clés</div><div class="factors">${factors}</div>` : ""}
-          </article>`;
-      }).join("");
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeFilter = btn.dataset.filter;
+        renderPredictions();
+      });
+    });
 
-    } catch(e) {
-      console.error(e);
-      box.innerHTML = '<div class="empty">Impossible de charger les pronostics.<br><small>Réessayez dans quelques instants.</small></div>';
-      label.textContent = "Erreur de chargement";
-    }
-  }
-
-  load();
-</script>
+    loadPredictions();
+  </script>
 </body>
 </html>
