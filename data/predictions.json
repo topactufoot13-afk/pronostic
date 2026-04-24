@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T01:13:50Z",
+  "generated_at": "2026-04-25T01:16:56Z",
   "predictions": [{
   "home_team": "Toulouse",
   "away_team": "Monaco",
@@ -7,19 +7,19 @@
   "kickoff_utc": "2026-04-25T19:05:00+00:00",
   "pick": "over 2.5",
   "market_type": "O/U",
-  "bookmaker_odds": 1.67,
-  "model_probability": 56,
-  "market_probability": 56,
-  "edge_points": 9,
-  "confidence_level": "high",
-  "predicted_score": "1-3",
+  "bookmaker_odds": 1.62,
+  "model_probability": 58,
+  "market_probability": 58,
+  "edge_points": 7,
+  "confidence_level": "medium",
+  "predicted_score": "1-2",
   "probable_scorer": "Wissam Ben Yedder",
-  "analysis": "Le match entre Toulouse et Monaco présente un fort potentiel pour des buts, avec une probabilité corrigée de 56% pour plus de 2.5 buts. Les deux équipes affichent des statistiques offensives solides, et les absences dans la défense de Toulouse pourraient favoriser un match à haute intensité.",
+  "analysis": "Le match entre Toulouse et Monaco présente de bonnes chances de voir plus de 2.5 buts, compte tenu des statistiques récentes des deux équipes et de leurs performances offensives.",
   "factors": [
+    "Monaco a une attaque efficace, marquant en moyenne 1.7 buts par match à l'extérieur.",
     "Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une défense vulnérable.",
-    "Monaco a marqué 9 buts lors de ses 5 derniers matchs à l'extérieur, montrant une bonne forme offensive.",
-    "Les confrontations directes entre les deux équipes ont souvent été riches en buts, avec plusieurs matchs dépassant les 2.5 buts.",
-    "Les absences de joueurs clés dans la défense de Toulouse pourraient faciliter les attaques de Monaco."
+    "Les confrontations directes entre les deux équipes montrent une tendance à des matchs avec plusieurs buts.",
+    "Les cotes des bookmakers soutiennent également cette tendance, offrant une valeur sur le pari over 2.5."
   ]
 }]
 }
