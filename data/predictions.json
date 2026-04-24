@@ -1,27 +1,31 @@
 {
-  "generated_at": "2026-04-24T08:55:36Z",
+  "generated_at": "2026-04-24T08:57:54Z",
   "predictions": [{
+  "home_team": "Lorient",
+  "away_team": "Strasbourg",
+  "competition": "Ligue 1",
+  "kickoff_utc": "2026-04-26T13:00:00+00:00",
   "pick": "over 2.5",
-  "market_type": "Over/Under",
+  "market_type": "O/U",
   "bookmaker_odds": 1.80,
   "model_probability": 53,
   "market_probability": 53,
   "edge_points": 12,
   "confidence_level": "high",
   "predicted_score": "2-1",
-  "probable_scorer": "M. Talbi",
-  "analysis": "Le match entre Lorient et Strasbourg présente une forte probabilité de plus de 2.5 buts, soutenue par les performances offensives des deux équipes. Les deux formations ont montré une capacité à marquer, et les statistiques récentes indiquent une tendance à des matchs avec plusieurs buts.",
-  "home_team": "Lorient",
-  "away_team": "Strasbourg",
-  "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-26T13:00:00+00:00",
+  "probable_scorer": "Lorient",
+  "analysis": "Le match entre Lorient et Strasbourg présente un potentiel élevé pour des buts, avec une probabilité corrigée de 53% pour plus de 2.5 buts. Les deux équipes affichent une attaque relativement efficace, ce qui renforce l'argument en faveur de ce pick.",
   "factors": [
-    "Lorient a marqué 5 buts lors de ses 5 derniers matchs à domicile, montrant une bonne forme offensive.",
-    "Strasbourg a également marqué 6 buts lors de ses 5 derniers matchs à l'extérieur, indiquant une attaque efficace.",
-    "Les deux équipes ont encaissé le même nombre de buts (6) lors de leurs 5 derniers matchs, ce qui suggère une vulnérabilité défensive.",
-    "Les confrontations directes entre les deux équipes ont souvent produit des matchs avec plusieurs buts, renforçant l'idée d'un over 2.5."
+    "Les deux équipes ont montré une capacité à marquer, avec Lorient ayant une moyenne de 1.3 buts par match à domicile et Strasbourg 1.6 à l'extérieur.",
+    "La défense de Lorient est moins solide, encaissant 1.5 buts par match, ce qui pourrait favoriser des occasions de but pour Strasbourg.",
+    "Les confrontations directes passées montrent une tendance à des matchs avec plusieurs buts, avec des scores souvent supérieurs à 2.5.",
+    "Les absences de joueurs clés pour Lorient pourraient inciter à une approche offensive pour compenser, augmentant ainsi les chances de buts."
   ]
 },{
+  "home_team": "Paris FC",
+  "away_team": "Lille",
+  "competition": "Ligue 1",
+  "kickoff_utc": "2026-04-26T15:15:00+00:00",
   "pick": "over 2.5",
   "market_type": "Over/Under",
   "bookmaker_odds": 1.85,
@@ -29,18 +33,14 @@
   "market_probability": 51,
   "edge_points": 14,
   "confidence_level": "high",
-  "predicted_score": "2-1",
+  "predicted_score": "1-3",
   "probable_scorer": "Lille",
-  "analysis": "Le match entre Paris FC et Lille présente de fortes chances de dépasser 2.5 buts, compte tenu des performances offensives récentes des deux équipes. Lille, en particulier, a montré une capacité à marquer régulièrement, tandis que Paris FC a également été efficace à domicile.",
-  "home_team": "Paris FC",
-  "away_team": "Lille",
-  "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-26T15:15:00+00:00",
+  "analysis": "Le match entre Paris FC et Lille présente un fort potentiel pour dépasser les 2.5 buts, soutenu par des statistiques récentes et les performances offensives des deux équipes.",
   "factors": [
-    "Lille a marqué 11 buts lors de ses 5 derniers matchs, montrant une attaque solide.",
-    "Paris FC a également marqué 11 buts à domicile sur la même période, indiquant une bonne forme offensive.",
-    "Les deux équipes ont des défenses qui ont encaissé plusieurs buts, ce qui favorise un match à haute intensité.",
-    "Les cotes des bookmakers et les probabilités corrigées soutiennent fortement l'idée d'un match avec plus de 2.5 buts."
+    "Lille a marqué 11 buts lors de ses 5 derniers matchs, montrant une attaque efficace.",
+    "Paris FC a encaissé 5 buts à domicile sur les 5 derniers matchs, ce qui indique une défense vulnérable.",
+    "Les deux équipes ont des antécédents de matchs avec de nombreux buts lors de leurs confrontations directes.",
+    "Les cotes des bookmakers et les probabilités corrigées soutiennent fortement l'option 'over 2.5'."
   ]
 }]
 }
