@@ -4,102 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Top Actu Foot 13 - Pronostics</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
+  <style>
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(58, 95, 255, 0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(0, 210, 255, 0.12), transparent 24%),
-        #0b1020;
+      background: #0b1020;
       color: #f5f7fb;
-      min-height: 100vh;
     }
 
     .page {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 32px 20px 48px;
-    }
-
-    .hero {
-      margin-bottom: 28px;
-    }
-
-    .hero-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: flex-start;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      letter-spacing: 1.8px;
-      color: #8ea3ff;
-      margin-bottom: 10px;
-      font-weight: 700;
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(30px, 5vw, 54px);
-      line-height: 1.02;
-      letter-spacing: -1.2px;
-    }
-
-    .subtitle {
-      max-width: 780px;
-      margin: 14px 0 0;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #b8c2dc;
-    }
-
-    .hero-badge {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      white-space: nowrap;
-      font-size: 14px;
-      color: #dfe6fb;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .filter-btn {
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.05);
-      color: #edf2ff;
-      padding: 11px 16px;
-      border-radius: 999px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: 0.2s ease;
-    }
-
-    .filter-btn:hover {
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.09);
-    }
-
-    .filter-btn.active {
-      background: linear-gradient(135deg, #5b7cff, #3ecbff);
-      color: #09111f;
-      border-color: transparent;
-      font-weight: 700;
+      margin-bottom: 10px;
     }
 
     .cards-grid {
@@ -109,362 +30,116 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 22px;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
-    }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 14px;
-    }
-
-    .competition {
-      font-size: 13px;
-      color: #9fb1df;
-      margin-bottom: 6px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 20px;
     }
 
     .match {
-      font-size: 25px;
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -0.6px;
-    }
-
-    .kickoff {
-      margin-top: 8px;
-      font-size: 13px;
-      color: #aab6d5;
-    }
-
-    .confidence-badge {
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .conf-high {
-      background: rgba(45, 212, 191, 0.16);
-      color: #63f0da;
-      border: 1px solid rgba(45, 212, 191, 0.24);
-    }
-
-    .conf-medium {
-      background: rgba(255, 184, 77, 0.16);
-      color: #ffd38a;
-      border: 1px solid rgba(255, 184, 77, 0.24);
-    }
-
-    .conf-low {
-      background: rgba(255, 99, 132, 0.16);
-      color: #ff9ab0;
-      border: 1px solid rgba(255, 99, 132, 0.24);
+      font-size: 22px;
+      font-weight: bold;
     }
 
     .pick-box {
-      margin-top: 12px;
-      margin-bottom: 18px;
-      border-radius: 18px;
-      padding: 16px;
-      background: linear-gradient(135deg, rgba(91,124,255,0.17), rgba(62,203,255,0.12));
-      border: 1px solid rgba(98, 141, 255, 0.22);
-    }
-
-    .pick-label {
-      font-size: 12px;
-      color: #a9b8e5;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .pick-value {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.4px;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 18px;
+      margin-top: 10px;
+      padding: 12px;
+      background: rgba(91,124,255,0.2);
+      border-radius: 12px;
     }
 
     .metric {
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
-      padding: 14px;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .metric-label {
-      font-size: 12px;
-      color: #9fb1df;
-      margin-bottom: 7px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .metric-value {
-      font-size: 22px;
-      font-weight: 800;
-    }
-
-    .analysis {
-      margin-bottom: 16px;
-      color: #d9e2f7;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .factors-title {
-      font-size: 13px;
-      color: #9fb1df;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .factors {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      margin-top: 10px;
     }
 
     .factor {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.06);
-      font-size: 13px;
-      color: #dfe6fb;
+      display: inline-block;
+      margin: 4px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
     }
 
-    .loading,
-    .empty {
-      grid-column: 1 / -1;
+    .loading {
       text-align: center;
-      padding: 40px 20px;
-      color: #b8c2dc;
-      font-size: 16px;
-    }
-
-    @media (max-width: 760px) {
-      .hero-top {
-        flex-direction: column;
-      }
-
-      .hero-badge {
-        width: 100%;
-      }
-
-      .match {
-        font-size: 22px;
-      }
+      padding: 40px;
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <header class="hero">
-      <div class="hero-top">
-        <div>
-          <div class="eyebrow">TOP ACTU FOOT 13</div>
-          <h1>Pronostics foot à value du jour</h1>
-          <p class="subtitle">
-            Une sélection filtrée selon la forme, le classement, les absences,
-            la fatigue, les derniers matchs et l’écart détecté avec la cote.
-          </p>
-        </div>
 
-        <div class="hero-badge">
-          <span id="generatedAtLabel">Mise à jour : --</span>
-        </div>
-      </div>
+<div class="page">
 
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">Tous</button>
-        <button class="filter-btn" data-filter="high">Confiance haute</button>
-        <button class="filter-btn" data-filter="medium">Confiance moyenne</button>
-        <button class="filter-btn" data-filter="edge">Value 8+ pts</button>
-      </div>
-    </header>
+  <h1>Pronostics du jour</h1>
+  <p id="generatedAtLabel">Chargement...</p>
 
-    <main>
-      <section class="cards-grid" id="predictionsContainer">
-        <div class="loading">Chargement des pronostics...</div>
-      </section>
-    </main>
+  <div class="cards-grid" id="predictionsContainer">
+    <div class="loading">Chargement...</div>
   </div>
 
-  <script>
-    let allPredictions = [];
-    let activeFilter = "all";
+</div>
 
-    async function loadPredictions() {
-      const container = document.getElementById("predictionsContainer");
-      const generatedAtLabel = document.getElementById("generatedAtLabel");
+<script>
 
-      try {
-        const response = await fetch("./data/predictions.json?v=" + Date.now(), {
-          cache: "no-store"
-        });
+let allPredictions = [];
 
-        if (!response.ok) {
-          throw new Error("Erreur HTTP " + response.status);
-        }
+async function loadPredictions() {
+  const container = document.getElementById("predictionsContainer");
+  const generatedAtLabel = document.getElementById("generatedAtLabel");
 
-        const data = await response.json();
-        allPredictions = Array.isArray(data.predictions) ? data.predictions : [];
+  try {
+    const response = await fetch("./data/predictions.json?v=" + Date.now());
 
-        if (data.generated_at) {
-          const formattedDate = new Date(data.generated_at).toLocaleString("fr-FR", {
-            dateStyle: "medium",
-            timeStyle: "short"
-          });
-          generatedAtLabel.textContent = "Mise à jour : " + formattedDate;
-        } else {
-          generatedAtLabel.textContent = "Mise à jour : --";
-        }
+    const data = await response.json();
+    allPredictions = data.predictions || [];
 
-        renderPredictions();
-      } catch (error) {
-        console.error(error);
-        container.innerHTML = '<div class="empty">Impossible de charger les pronostics.</div>';
-        generatedAtLabel.textContent = "Mise à jour : erreur";
-      }
+    if (data.generated_at) {
+      generatedAtLabel.textContent =
+        "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
     }
 
-    function getConfidenceClass(level) {
-      if (level === "high") return "conf-high";
-      if (level === "medium") return "conf-medium";
-      return "conf-low";
-    }
+    renderPredictions();
 
-    function getConfidenceLabel(level) {
-      if (level === "high") return "Confiance haute";
-      if (level === "medium") return "Confiance moyenne";
-      return "Confiance faible";
-    }
+  } catch (error) {
+    container.innerHTML = "Erreur de chargement";
+  }
+}
 
-    function filterPredictions(predictions) {
-      if (activeFilter === "high") {
-        return predictions.filter(p => p.confidence_level === "high");
-      }
+function renderPredictions() {
+  const container = document.getElementById("predictionsContainer");
 
-      if (activeFilter === "medium") {
-        return predictions.filter(p => p.confidence_level === "medium");
-      }
+  container.innerHTML = allPredictions.map(item => {
 
-      if (activeFilter === "edge") {
-        return predictions.filter(p => Number(p.edge_points) >= 8);
-      }
+    const factors = (item.factors || [])
+      .map(f => `<span class="factor">${f}</span>`)
+      .join("");
 
-      return predictions;
-    }
+    return `
+      <div class="card">
 
-    function renderPredictions() {
-      const container = document.getElementById("predictionsContainer");
-      const filtered = filterPredictions(allPredictions);
+        <div class="match">${item.home_team} vs ${item.away_team}</div>
 
-      if (!filtered.length) {
-        container.innerHTML = '<div class="empty">Aucun pronostic disponible pour ce filtre.</div>';
-        return;
-      }
+        <div class="pick-box">
+          ${item.pick}
+        </div>
 
-      container.innerHTML = filtered.map(item => {
-        const kickoffFormatted = item.kickoff_utc
-          ? new Date(item.kickoff_utc).toLocaleString("fr-FR", {
-              dateStyle: "medium",
-              timeStyle: "short"
-            })
-          : "--";
+        <div class="metric">Cote : ${item.bookmaker_odds}</div>
+        <div class="metric">Value : ${item.edge_points} pts</div>
+        <div class="metric">Score : ${item.predicted_score}</div>
 
-        const factorsHtml = (item.factors || [])
-          .map(factor => '<span class="factor">' + escapeHtml(factor) + '</span>')
-          .join("");
+        <div class="metric">${item.analysis}</div>
 
-        return `
-          <article class="card">
-            <div class="card-top">
-              <div>
-                <div class="competition">${escapeHtml(item.competition || "Compétition")}</div>
-                <div class="match">${escapeHtml(item.home_team || "")} vs ${escapeHtml(item.away_team || "")}</div>
-                <div class="kickoff">Coup d’envoi : ${kickoffFormatted}</div>
-              </div>
-              <div class="confidence-badge ${getConfidenceClass(item.confidence_level)}">
-                ${getConfidenceLabel(item.confidence_level)}
-              </div>
-            </div>
+        <div>${factors}</div>
 
-            <div class="pick-box">
-              <div class="pick-label">Pari retenu</div>
-              <div class="pick-value">${escapeHtml(item.pick || "--")}</div>
-            </div>
+      </div>
+    `;
 
-            <div class="metrics">
-              <div class="metric">
-                <div class="metric-label">Cote</div>
-                <div class="metric-value">${formatNumber(item.bookmaker_odds)}</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Value</div>
-                <div class="metric-value">${formatNumber(item.edge_points)} pts</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Score probable</div>
-                <div class="metric-value">${escapeHtml(item.predicted_score || "--")}</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Buteur probable</div>
-                <div class="metric-value">${escapeHtml(item.probable_scorer || "--")}</div>
-              </div>
-            </div>
+  }).join("");
+}
 
-            <div class="analysis">${escapeHtml(item.analysis || "")}</div>
+loadPredictions();
 
-            <div class="factors-title">Facteurs clés</div>
-            <div class="factors">${factorsHtml}</div>
-          </article>
-        `;
-      }).join("");
-    }
+</script>
 
-    function formatNumber(value) {
-      const number = Number(value);
-      if (Number.isNaN(number)) return "--";
-      return number.toFixed(2);
-    }
-
-    function escapeHtml(text) {
-      return String(text)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    document.querySelectorAll(".filter-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        activeFilter = btn.dataset.filter;
-        renderPredictions();
-      });
-    });
-
-    loadPredictions();
-  </script>
 </body>
 </html>
