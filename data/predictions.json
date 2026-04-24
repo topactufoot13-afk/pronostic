@@ -1,22 +1,21 @@
 {
-  "generated_at": "2026-04-24T08:27:51Z",
-  "predictions": [
-    {
-      "home_team": "Lorient",
-      "away_team": "Strasbourg",
-      "competition": "Ligue 1",
-      "kickoff_utc": "26/04/2026 à 15:04",
-      "pick": "over 2.5",
-      "market_type": "O/U",
-      "bookmaker_odds": 1.8,
-      "model_probability": 53,
-      "market_probability": 53,
-      "edge_points": 12,
-      "confidence_level": "high",
-      "predicted_score": "2-1",
-      "probable_scorer": "M. Talbi",
-      "analysis": "Le match entre Lorient et Strasbourg présente un fort potentiel pour dépasser les 2.5 buts, soutenu par les statistiques récentes des deux équipes. Les deux formations montrent une tendance à encaisser et marquer des buts, ce qui renforce l'argument pour un score élevé.",
-      "factors": ["Lorient et Strasbourg ont chacun marqué et encaissé 6 buts lors de leurs 5 derniers matchs, indiquant une défense vulnérable."]
-    }
+  "generated_at": "2026-04-24T08:36:51Z",
+  "predictions": [{
+  "pick": "over 2.5",
+  "market_type": "O/U",
+  "bookmaker_odds": 1.80,
+  "model_probability": 53,
+  "market_probability": 53,
+  "edge_points": 12,
+  "confidence_level": "high",
+  "predicted_score": "2-1",
+  "probable_scorer": "Lorient",
+  "analysis": "Le match entre Lorient et Strasbourg présente un potentiel élevé pour dépasser les 2.5 buts, soutenu par des statistiques offensives solides des deux équipes. Les deux formations ont montré une capacité à marquer régulièrement, ce qui renforce l'argument pour un score élevé.",
+  "factors": [
+    "Lorient et Strasbourg ont des attaques efficaces, avec une moyenne de buts marqués respectivement de 1.3 et 1.6 par match.",
+    "Les deux équipes ont encaissé un nombre similaire de buts lors de leurs derniers matchs, ce qui indique une vulnérabilité défensive.",
+    "Les confrontations directes précédentes montrent une tendance à des matchs avec plusieurs buts, avec des scores souvent élevés.",
+    "La cote de 1.80 pour plus de 2.5 buts est favorable par rapport à la probabilité corrigée de 53%, offrant une marge de manœuvre pour un bon retour sur investissement."
   ]
+}]
 }
