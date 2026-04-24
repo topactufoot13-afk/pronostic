@@ -1,67 +1,25 @@
 {
-  "generated_at": "2026-04-24T09:33:20Z",
+  "generated_at": "2026-04-24T20:04:22Z",
   "predictions": [{
-  "home_team": "Lorient",
-  "away_team": "Strasbourg",
+  "home_team": "Stade Brestois 29",
+  "away_team": "Lens",
   "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-26T13:00:00+00:00",
-  "pick": "Over 2.5",
+  "kickoff_utc": "2026-04-24T20:04:00Z",
+  "pick": "over 2.5",
   "market_type": "Over/Under",
-  "bookmaker_odds": 1.80,
-  "model_probability": 53,
-  "market_probability": 53,
-  "edge_points": 12,
-  "confidence_level": "high",
-  "predicted_score": "2-1",
-  "probable_scorer": "M. Talbi",
-  "analysis": "Le match entre Lorient et Strasbourg présente un potentiel élevé pour des buts, avec une probabilité corrigée de 53% pour plus de 2.5 buts. Les deux équipes montrent une tendance à encaisser des buts, ce qui renforce l'argument pour un score élevé.",
-  "factors": [
-    "Les deux équipes ont une attaque relativement efficace, avec Lorient marquant 1.3 buts par match à domicile et Strasbourg 1.6 buts à l'extérieur.",
-    "Les défenses des deux équipes sont vulnérables, avec Lorient encaissant 1.5 buts par match et Strasbourg 1.3 buts.",
-    "Les statistiques récentes montrent que les deux équipes ont encaissé un total de 6 buts lors de leurs derniers matchs, ce qui indique une tendance à des matchs ouverts.",
-    "Les confrontations directes entre les deux équipes ont souvent produit des scores élevés, ce qui suggère que ce match pourrait suivre la même tendance."
-  ]
-},{
-  "home_team": "Le Havre",
-  "away_team": "Metz",
-  "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-26T15:15:00+00:00",
-  "pick": "victoire domicile",
-  "market_type": "1X2",
-  "bookmaker_odds": 1.65,
-  "model_probability": 56.71,
-  "market_probability": 56.71333824613117,
+  "bookmaker_odds": 1.62,
+  "model_probability": 58,
+  "market_probability": 58,
   "edge_points": 7,
   "confidence_level": "medium",
-  "predicted_score": "1-0",
-  "probable_scorer": "Joueur clé de Le Havre",
-  "analysis": "Le Havre, malgré une forme récente mitigée, se trouve dans une meilleure position que Metz, qui lutte pour éviter la relégation. Les statistiques montrent que Le Havre a une attaque plus efficace à domicile et une défense relativement solide comparée à celle de Metz.",
-  "factors": [
-    "Le Havre a un meilleur classement et plus de points que Metz.",
-    "Metz a une défense très perméable, encaissant en moyenne 2.2 buts par match à l'extérieur.",
-    "Le Havre a un avantage à domicile avec une meilleure forme offensive et défensive.",
-    "Les absences de joueurs clés pour Metz affaiblissent encore plus leur équipe."
-  ]
-},{
-  "home_team": "Paris FC",
-  "away_team": "Lille",
-  "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-26T15:15:00+00:00",
-  "pick": "over 2.5",
-  "market_type": "O/U 2.5",
-  "bookmaker_odds": 1.85,
-  "model_probability": 51,
-  "market_probability": 51,
-  "edge_points": 14,
-  "confidence_level": "high",
   "predicted_score": "1-3",
-  "probable_scorer": "Lille",
-  "analysis": "Le match entre Paris FC et Lille présente de fortes chances de voir plus de 2.5 buts, compte tenu des performances récentes des deux équipes. Lille, en particulier, a montré une attaque efficace, tandis que Paris FC a également été capable de marquer à domicile.",
+  "probable_scorer": "L. Openda",
+  "analysis": "Le match entre le Stade Brestois 29 et Lens présente un potentiel élevé pour un score supérieur à 2.5, compte tenu des performances offensives des deux équipes et de la faiblesse défensive de Brest. Lens, avec une attaque efficace, est susceptible de marquer plusieurs buts.",
   "factors": [
-    "Lille a marqué 11 buts lors de ses 5 derniers matchs, montrant une forte capacité offensive.",
-    "Paris FC a encaissé 5 buts lors de ses 5 derniers matchs, ce qui indique une vulnérabilité défensive.",
-    "Les deux équipes ont des statistiques de buts marqués et encaissés qui favorisent un match avec plusieurs buts.",
-    "La cote de 1.85 pour plus de 2.5 buts est attractive par rapport à la probabilité corrigée de 51%, offrant un bon potentiel de valeur."
+    "Lens a marqué 12 buts lors de ses 5 derniers matchs, montrant une forte capacité offensive.",
+    "Brest a encaissé 10 buts lors de ses 5 derniers matchs, indiquant une défense vulnérable.",
+    "Les confrontations directes entre les deux équipes montrent souvent des scores élevés, avec Lens ayant marqué 3 buts lors de leurs dernières rencontres.",
+    "Les probabilités corrigées et l'edge calculé soutiennent l'idée d'un match avec plus de 2.5 buts."
   ]
 }]
 }
