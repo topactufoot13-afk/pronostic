@@ -1,25 +1,88 @@
 {
-  "generated_at": "2026-04-25T01:16:56Z",
+  "generated_at": "2026-04-25T01:17:46Z",
   "predictions": [{
-  "home_team": "Toulouse",
-  "away_team": "Monaco",
-  "competition": "Ligue 1",
-  "kickoff_utc": "2026-04-25T19:05:00+00:00",
+  "home_team": "Fulham",
+  "away_team": "Aston Villa",
+  "competition": "Premier League",
+  "kickoff_utc": "2026-04-25T11:30:00+00:00",
   "pick": "over 2.5",
   "market_type": "O/U",
-  "bookmaker_odds": 1.62,
-  "model_probability": 58,
-  "market_probability": 58,
-  "edge_points": 7,
-  "confidence_level": "medium",
-  "predicted_score": "1-2",
-  "probable_scorer": "Wissam Ben Yedder",
-  "analysis": "Le match entre Toulouse et Monaco présente de bonnes chances de voir plus de 2.5 buts, compte tenu des statistiques récentes des deux équipes et de leurs performances offensives.",
+  "bookmaker_odds": 1.80,
+  "model_probability": 53,
+  "market_probability": 53,
+  "edge_points": 12,
+  "confidence_level": "high",
+  "predicted_score": "2-2",
+  "probable_scorer": "Ollie Watkins",
+  "analysis": "Le match entre Fulham et Aston Villa présente un fort potentiel pour plus de 2.5 buts, soutenu par des statistiques récentes et des performances offensives des deux équipes.",
   "factors": [
-    "Monaco a une attaque efficace, marquant en moyenne 1.7 buts par match à l'extérieur.",
-    "Toulouse a encaissé 13 buts lors de ses 5 derniers matchs à domicile, ce qui indique une défense vulnérable.",
-    "Les confrontations directes entre les deux équipes montrent une tendance à des matchs avec plusieurs buts.",
-    "Les cotes des bookmakers soutiennent également cette tendance, offrant une valeur sur le pari over 2.5."
+    "Fulham a encaissé 4 buts lors de ses 5 derniers matchs à domicile, indiquant une défense vulnérable.",
+    "Aston Villa a marqué 9 buts lors de ses 5 derniers matchs à l'extérieur, montrant une forte capacité offensive.",
+    "Les confrontations directes récentes entre les deux équipes ont souvent produit des matchs avec plusieurs buts.",
+    "Les probabilités corrigées et l'edge calculé soutiennent fortement l'option de plus de 2.5 buts."
+  ]
+},{
+  "home_team": "Wolves",
+  "away_team": "Tottenham",
+  "competition": "Premier League",
+  "kickoff_utc": "2026-04-25T16:04:00Z",
+  "pick": "victoire domicile",
+  "market_type": "1X2",
+  "bookmaker_odds": 4.20,
+  "model_probability": 22.19681129116571,
+  "market_probability": 22.19681129116571,
+  "edge_points": 16,
+  "confidence_level": "high",
+  "predicted_score": "2-1",
+  "probable_scorer": "Raúl Jiménez",
+  "analysis": "Les Wolves, malgré leur position au classement, montrent des signes de résistance à domicile. Leur forme récente, bien que mitigée, leur donne un léger avantage face à une équipe de Tottenham en difficulté. Les cotes des bookmakers offrent une valeur intéressante pour une victoire des Wolves.",
+  "factors": [
+    "Les Wolves jouent à domicile, ce qui leur donne un léger avantage psychologique.",
+    "Tottenham a une forme récente très faible, avec plusieurs matchs sans victoire.",
+    "Les absences de joueurs clés chez Tottenham pourraient affaiblir leur performance.",
+    "Les statistiques montrent que les Wolves ont une meilleure défense à domicile par rapport à l'attaque de Tottenham."
+  ]
+},{
+  "home_team": "Liverpool",
+  "away_team": "Crystal Palace",
+  "competition": "Premier League",
+  "kickoff_utc": "2026-04-25T16:04:00Z",
+  "pick": "victoire extérieur",
+  "market_type": "1X2",
+  "bookmaker_odds": 5.40,
+  "model_probability": 17.2854102624734,
+  "market_probability": 17.2854102624734,
+  "edge_points": 8,
+  "confidence_level": "high",
+  "predicted_score": "1-2",
+  "probable_scorer": "E. Nketiah",
+  "analysis": "La victoire de Crystal Palace à l'extérieur est soutenue par une série de facteurs favorables, malgré leur position inférieure au classement. Les cotes élevées des bookmakers indiquent une sous-estimation de leur potentiel.",
+  "factors": [
+    "Liverpool a des absences notables, notamment Alisson, ce qui pourrait affaiblir leur défense.",
+    "Crystal Palace a montré une forme récente solide avec des résultats encourageants à l'extérieur.",
+    "Les confrontations directes récentes favorisent Crystal Palace, ayant obtenu des résultats positifs contre Liverpool.",
+    "Les probabilités corrigées montrent une valeur significative pour le pari sur la victoire de Crystal Palace, avec un edge élevé."
+  ]
+},{
+  "home_team": "West Ham",
+  "away_team": "Everton",
+  "competition": "Premier League",
+  "kickoff_utc": "2026-04-25T14:00:00+00:00",
+  "pick": "victoire extérieur",
+  "market_type": "1X2",
+  "bookmaker_odds": 3.05,
+  "model_probability": 30.65639897323066,
+  "market_probability": 30.65639897323066,
+  "edge_points": 13,
+  "confidence_level": "high",
+  "predicted_score": "",
+  "probable_scorer": "",
+  "analysis": "La victoire d'Everton à l'extérieur est soutenue par une probabilité corrigée élevée et une cote attractive, ce qui en fait un choix judicieux pour les paris.",
+  "factors": [
+    "Everton a une meilleure forme récente avec 2 victoires sur les 5 derniers matchs.",
+    "West Ham lutte en bas de tableau, ce qui pourrait affecter leur moral et leur performance.",
+    "Les absences de joueurs clés pour West Ham, notamment leur gardien, pourraient affaiblir leur défense.",
+    "Les confrontations directes récentes montrent une certaine parité, mais Everton a montré une meilleure capacité à marquer à l'extérieur."
   ]
 }]
 }
