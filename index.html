@@ -37,47 +37,34 @@
       gap: 12px;
     }
 
-    .logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      background:
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.85), transparent 18%),
-        linear-gradient(135deg, #5b7cff 0%, #22d3ee 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 18px 45px rgba(59, 130, 246, 0.28);
-      position: relative;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
+    .logo-pro {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.22), transparent 35%),
+    linear-gradient(135deg, #1d4ed8 0%, #06b6d4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 14px 34px rgba(37, 99, 235, 0.32),
+    inset 0 1px 0 rgba(255,255,255,0.32);
+  border: 1px solid rgba(255,255,255,0.18);
+  flex-shrink: 0;
+}
 
-    .logo::before {
-      content: "";
-      position: absolute;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      border: 2px solid rgba(6, 16, 31, 0.85);
-      background:
-        linear-gradient(90deg, transparent 48%, rgba(6,16,31,0.85) 49%, rgba(6,16,31,0.85) 51%, transparent 52%),
-        linear-gradient(0deg, transparent 48%, rgba(6,16,31,0.85) 49%, rgba(6,16,31,0.85) 51%, transparent 52%);
-    }
-
-    .logo::after {
-      content: "13";
-      position: absolute;
-      right: 6px;
-      bottom: 5px;
-      font-size: 9px;
-      font-weight: 950;
-      color: #06101f;
-      background: rgba(255,255,255,0.65);
-      border-radius: 999px;
-      padding: 1px 4px;
-      line-height: 1.2;
-    }
+.logo-ball {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: rgba(6, 16, 31, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.18);
+}
 
     .brand-name {
       font-size: 14px;
