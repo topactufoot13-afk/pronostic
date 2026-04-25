@@ -237,7 +237,43 @@
 
   <div class="topbar">
     <div class="brand">
-      <div class="logo" aria-hidden="true"></div>
+      <div class="logo">
+  <svg viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#5b7cff"/>
+        <stop offset="100%" stop-color="#22d3ee"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Shield -->
+    <path d="M50 5 L90 20 L85 65 Q50 95 15 65 L10 20 Z"
+          fill="url(#grad)"
+          stroke="rgba(255,255,255,0.3)"
+          stroke-width="2"/>
+
+    <!-- Texte -->
+    <text x="50" y="45"
+          text-anchor="middle"
+          font-size="20"
+          font-weight="900"
+          fill="white">
+      TAF
+    </text>
+
+    <!-- 13 -->
+    <text x="50" y="65"
+          text-anchor="middle"
+          font-size="12"
+          font-weight="800"
+          fill="#0b1020">
+      13
+    </text>
+
+    <!-- Ballon -->
+    <circle cx="50" cy="80" r="8" fill="white" opacity="0.9"/>
+  </svg>
+</div>
       <div>
         <div class="brand-name">Top Actu Foot 13</div>
         <div class="brand-sub">Analyse football quotidienne</div>
