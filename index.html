@@ -34,29 +34,61 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #5b7cff, #22d3ee);
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.85), transparent 18%),
+        linear-gradient(135deg, #5b7cff 0%, #22d3ee 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
+      box-shadow: 0 18px 45px rgba(59, 130, 246, 0.28);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo::before {
+      content: "";
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid rgba(6, 16, 31, 0.85);
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(6,16,31,0.85) 49%, rgba(6,16,31,0.85) 51%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(6,16,31,0.85) 49%, rgba(6,16,31,0.85) 51%, transparent 52%);
+    }
+
+    .logo::after {
+      content: "13";
+      position: absolute;
+      right: 6px;
+      bottom: 5px;
+      font-size: 9px;
+      font-weight: 950;
       color: #06101f;
+      background: rgba(255,255,255,0.65);
+      border-radius: 999px;
+      padding: 1px 4px;
+      line-height: 1.2;
     }
 
     .brand-name {
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 850;
+      letter-spacing: -0.2px;
     }
 
     .brand-sub {
       font-size: 11px;
       color: #8d9cc7;
+      margin-top: 2px;
     }
 
     .update {
@@ -66,12 +98,15 @@
 
     h1 {
       margin: 0 0 10px;
-      font-size: 42px;
+      font-size: clamp(34px, 6vw, 48px);
+      letter-spacing: -1.4px;
+      line-height: 1.02;
     }
 
     .subtitle {
       color: #aeb9d5;
       margin-bottom: 20px;
+      line-height: 1.55;
     }
 
     .strategy-note {
@@ -97,51 +132,101 @@
 
     .card {
       background: rgba(255,255,255,0.06);
-      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
       padding: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.16);
     }
 
     .match {
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 850;
+      letter-spacing: -0.3px;
     }
 
     .confidence {
       font-size: 12px;
       color: #6ff2dd;
-      margin-top: 5px;
+      margin-top: 6px;
+      font-weight: 800;
     }
 
     .pick {
       margin: 15px 0;
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 21px;
+      font-weight: 900;
+      padding: 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(91,124,255,0.30), rgba(34,211,238,0.10));
+      border: 1px solid rgba(125,151,255,0.18);
     }
 
     .odds {
       font-size: 14px;
       margin-bottom: 10px;
+      color: #dce5ff;
     }
 
     .analysis {
       font-size: 14px;
       margin: 10px 0;
+      color: #d9e2f8;
+      line-height: 1.55;
     }
 
     .factor {
       display: inline-block;
       background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.06);
       padding: 5px 10px;
-      border-radius: 8px;
+      border-radius: 999px;
       margin: 3px;
       font-size: 12px;
+      color: #eef4ff;
     }
 
     .legal {
-      margin-top: 40px;
+      margin-top: 48px;
+      padding: 22px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
       font-size: 12px;
       color: #8d99bd;
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .legal-title {
+      color: #f8fbff;
+      font-weight: 900;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .legal a {
+      color: #9fb0ff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .legal a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .page { padding: 24px 15px 54px; }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .update {
+        opacity: 0.8;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -152,7 +237,7 @@
 
   <div class="topbar">
     <div class="brand">
-      <div class="logo">TA</div>
+      <div class="logo" aria-hidden="true"></div>
       <div>
         <div class="brand-name">Top Actu Foot 13</div>
         <div class="brand-sub">Analyse football quotidienne</div>
@@ -177,9 +262,15 @@
   <div class="cards" id="app">Chargement...</div>
 
   <div class="legal">
-    ⚠️ Les paris sportifs comportent des risques de dépendance et de pertes financières.
-    Les informations sont fournies à titre informatif uniquement et ne constituent pas un conseil.
-    Interdit aux mineurs.
+    <div class="legal-title">Avertissement — Jeux d’argent</div>
+    Les paris sportifs sont des jeux d’argent réservés aux personnes majeures. Ils comportent des risques de dépendance, de pertes financières et d’isolement.
+    Les informations affichées sur ce site sont fournies à titre strictement informatif et ne constituent ni une incitation à jouer, ni un conseil financier, ni une garantie de résultat.
+    <br><br>
+    Jouez uniquement avec des sommes que vous pouvez vous permettre de perdre. Si vous pensez avoir une pratique de jeu problématique, contactez
+    <a href="https://www.joueurs-info-service.fr/" target="_blank" rel="noopener">Joueurs Info Service</a> :
+    <strong>09 74 75 13 13</strong>, appel anonyme et non surtaxé, disponible 7j/7 de 8h à 2h.
+    Vous pouvez également consulter le site officiel :
+    <a href="https://www.joueurs-info-service.fr/" target="_blank" rel="noopener">www.joueurs-info-service.fr</a>.
   </div>
 
 </div>
@@ -192,9 +283,12 @@ function translatePick(pick) {
   if (pick.includes("over 2.5")) return "+ de 2,5 buts";
   if (pick.includes("under 2.5")) return "- de 2,5 buts";
   if (pick.includes("over 1.5")) return "+ de 1,5 but";
+  if (pick.includes("under 1.5")) return "- de 1,5 but";
+  if (pick.includes("both teams to score") || pick.includes("btts")) return "Les deux équipes marquent";
   if (pick.includes("double chance")) return "Double chance";
+  if (pick.includes("draw no bet")) return "Remboursé si match nul";
   if (pick.includes("victoire domicile")) return "Victoire domicile";
-  if (pick.includes("victoire extérieur")) return "Victoire extérieur";
+  if (pick.includes("victoire extérieur") || pick.includes("victoire exterieur")) return "Victoire extérieur";
 
   return pick;
 }
@@ -205,31 +299,54 @@ function translateConfidence(c) {
   return "Confiance faible";
 }
 
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 async function load() {
-  const res = await fetch("./data/predictions.json?v=" + Date.now());
-  const data = await res.json();
+  try {
+    const res = await fetch("./data/predictions.json?v=" + Date.now(), {
+      cache: "no-store"
+    });
 
-  document.getElementById("date").innerText =
-    "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
+    const data = await res.json();
 
-  const html = data.predictions.map(p => `
-    <div class="card">
-      <div class="match">${p.home_team} vs ${p.away_team}</div>
-      <div class="confidence">${translateConfidence(p.confidence_level)}</div>
+    document.getElementById("date").innerText =
+      "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
 
-      <div class="pick">${translatePick(p.pick)}</div>
+    const predictions = Array.isArray(data.predictions) ? data.predictions : [];
 
-      <div class="odds">Cote : ${p.bookmaker_odds}</div>
+    if (!predictions.length) {
+      document.getElementById("app").innerHTML = "Aucun pronostic disponible pour le moment.";
+      return;
+    }
 
-      <div class="analysis">${p.analysis}</div>
+    const html = predictions.map(p => `
+      <div class="card">
+        <div class="match">${escapeHtml(p.home_team)} vs ${escapeHtml(p.away_team)}</div>
+        <div class="confidence">${escapeHtml(translateConfidence(p.confidence_level))}</div>
 
-      <div>
-        ${(p.factors || []).map(f => `<span class="factor">${f}</span>`).join("")}
+        <div class="pick">${escapeHtml(translatePick(p.pick))}</div>
+
+        <div class="odds">Cote : ${escapeHtml(p.bookmaker_odds || "--")}</div>
+
+        <div class="analysis">${escapeHtml(p.analysis)}</div>
+
+        <div>
+          ${(p.factors || []).map(f => `<span class="factor">${escapeHtml(f)}</span>`).join("")}
+        </div>
       </div>
-    </div>
-  `).join("");
+    `).join("");
 
-  document.getElementById("app").innerHTML = html;
+    document.getElementById("app").innerHTML = html;
+  } catch (error) {
+    document.getElementById("app").innerHTML = "Impossible de charger les pronostics.";
+  }
 }
 
 load();
