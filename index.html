@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -8,221 +7,218 @@
   <style>
     * { box-sizing: border-box; }
 
-```
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(80, 115, 255, 0.22), transparent 30%),
-    radial-gradient(circle at top right, rgba(0, 220, 255, 0.12), transparent 28%),
-    linear-gradient(180deg, #070b18 0%, #0b1020 55%, #070b18 100%);
-  color: #f8fbff;
-}
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(80, 115, 255, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(0, 220, 255, 0.12), transparent 28%),
+        linear-gradient(180deg, #070b18 0%, #0b1020 55%, #070b18 100%);
+      color: #f8fbff;
+    }
 
-.page {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 34px 20px 70px;
-}
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 20px 70px;
+    }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-.logo-wrap {
-  width: 72px;
-  height: 72px;
-  flex-shrink: 0;
-  filter: drop-shadow(0 4px 16px rgba(30, 100, 255, 0.5));
-}
+    .logo-wrap {
+      width: 72px;
+      height: 72px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 4px 16px rgba(30, 100, 255, 0.5));
+    }
 
-.brand-name {
-  font-size: 15px;
-  font-weight: 850;
-  letter-spacing: -0.2px;
-  color: #f8fbff;
-}
+    .brand-name {
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: -0.2px;
+      color: #f8fbff;
+    }
 
-.brand-sub {
-  font-size: 11px;
-  color: #8d9cc7;
-  margin-top: 2px;
-  letter-spacing: 0.3px;
-}
+    .brand-sub {
+      font-size: 11px;
+      color: #8d9cc7;
+      margin-top: 2px;
+      letter-spacing: 0.3px;
+    }
 
-.update {
-  font-size: 11px;
-  color: #7f8db7;
-}
+    .update {
+      font-size: 11px;
+      color: #7f8db7;
+    }
 
-h1 {
-  margin: 0 0 10px;
-  font-size: clamp(34px, 6vw, 48px);
-  letter-spacing: -1.4px;
-  line-height: 1.02;
-}
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(34px, 6vw, 48px);
+      letter-spacing: -1.4px;
+      line-height: 1.02;
+    }
 
-.subtitle {
-  color: #aeb9d5;
-  margin-bottom: 20px;
-  line-height: 1.55;
-}
+    .subtitle {
+      color: #aeb9d5;
+      margin-bottom: 20px;
+      line-height: 1.55;
+    }
 
-.strategy-note {
-  margin-bottom: 25px;
-  padding: 14px 16px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  font-size: 14px;
-  line-height: 1.6;
-  color: #b7c2dd;
-}
+    .strategy-note {
+      margin-bottom: 25px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      line-height: 1.6;
+      color: #b7c2dd;
+    }
 
-.strategy-note strong { color: #ffffff; }
+    .strategy-note strong { color: #ffffff; }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 18px;
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
 
-.card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.16);
-}
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.16);
+    }
 
-.card-league {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #5e7294;
-  margin-bottom: 4px;
-}
+    .card-league {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5e7294;
+      margin-bottom: 4px;
+    }
 
-.match {
-  font-size: 18px;
-  font-weight: 850;
-  letter-spacing: -0.3px;
-}
+    .match {
+      font-size: 18px;
+      font-weight: 850;
+      letter-spacing: -0.3px;
+    }
 
-.card-time {
-  font-size: 12px;
-  color: #5e7294;
-  margin-top: 4px;
-}
+    .card-time {
+      font-size: 12px;
+      color: #5e7294;
+      margin-top: 4px;
+    }
 
-.confidence {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 800;
-  margin-top: 8px;
-  padding: 4px 10px;
-  border-radius: 999px;
-}
+    .confidence {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      margin-top: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
 
-.conf-high   { background: rgba(0,224,128,0.1);  color: #00e080; border: 1px solid rgba(0,224,128,0.22); }
-.conf-medium { background: rgba(245,166,35,0.1); color: #f5a623; border: 1px solid rgba(245,166,35,0.22); }
+    .conf-high   { background: rgba(0,224,128,0.1);  color: #00e080; border: 1px solid rgba(0,224,128,0.22); }
+    .conf-medium { background: rgba(245,166,35,0.1); color: #f5a623; border: 1px solid rgba(245,166,35,0.22); }
 
-.pick {
-  margin: 15px 0;
-  font-size: 21px;
-  font-weight: 900;
-  padding: 14px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(91,124,255,0.30), rgba(34,211,238,0.10));
-  border: 1px solid rgba(125,151,255,0.18);
-}
+    .pick {
+      margin: 15px 0;
+      font-size: 21px;
+      font-weight: 900;
+      padding: 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(91,124,255,0.30), rgba(34,211,238,0.10));
+      border: 1px solid rgba(125,151,255,0.18);
+    }
 
-.odds {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #dce5ff;
-}
+    .odds {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #dce5ff;
+    }
 
-.analysis {
-  font-size: 14px;
-  margin: 10px 0;
-  color: #d9e2f8;
-  line-height: 1.55;
-}
+    .analysis {
+      font-size: 14px;
+      margin: 10px 0;
+      color: #d9e2f8;
+      line-height: 1.55;
+    }
 
-.factors { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; }
+    .factors { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; }
 
-.factor {
-  font-size: 12.5px;
-  color: #7a90b0;
-  padding: 7px 12px 7px 14px;
-  border-left: 2px solid rgba(91,124,255,0.35);
-  background: rgba(255,255,255,0.02);
-  border-radius: 0 8px 8px 0;
-  line-height: 1.5;
-}
+    .factor {
+      font-size: 12.5px;
+      color: #7a90b0;
+      padding: 7px 12px 7px 14px;
+      border-left: 2px solid rgba(91,124,255,0.35);
+      background: rgba(255,255,255,0.02);
+      border-radius: 0 8px 8px 0;
+      line-height: 1.5;
+    }
 
-.empty-state {
-  grid-column: 1/-1;
-  text-align: center;
-  padding: 60px 24px;
-  color: #5e7294;
-}
+    .empty-state {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 60px 24px;
+      color: #5e7294;
+    }
 
-.empty-icon { font-size: 40px; margin-bottom: 16px; }
+    .empty-icon { font-size: 40px; margin-bottom: 16px; }
 
-.empty-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #aeb9d5;
-  margin-bottom: 10px;
-}
+    .empty-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #aeb9d5;
+      margin-bottom: 10px;
+    }
 
-.empty-text {
-  font-size: 14px;
-  line-height: 1.65;
-  max-width: 420px;
-  margin: 0 auto;
-  color: #5e7294;
-}
+    .empty-text {
+      font-size: 14px;
+      line-height: 1.65;
+      max-width: 420px;
+      margin: 0 auto;
+      color: #5e7294;
+    }
 
-.legal {
-  margin-top: 48px;
-  padding: 22px 0 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  font-size: 12px;
-  color: #8d99bd;
-  line-height: 1.7;
-}
+    .legal {
+      margin-top: 48px;
+      padding: 22px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: #8d99bd;
+      line-height: 1.7;
+    }
 
-.legal-title {
-  color: #f8fbff;
-  font-weight: 900;
-  margin-bottom: 8px;
-  font-size: 13px;
-}
+    .legal-title {
+      color: #f8fbff;
+      font-weight: 900;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
 
-.legal a { color: #9fb0ff; text-decoration: none; font-weight: 700; }
-.legal a:hover { text-decoration: underline; }
+    .legal a { color: #9fb0ff; text-decoration: none; font-weight: 700; }
+    .legal a:hover { text-decoration: underline; }
 
-@media (max-width: 700px) {
-  .page { padding: 24px 15px 54px; }
-  .topbar { align-items: flex-start; flex-direction: column; gap: 14px; }
-  .update { opacity: 0.8; }
-  .cards { grid-template-columns: 1fr; }
-}
-```
-
+    @media (max-width: 700px) {
+      .page { padding: 24px 15px 54px; }
+      .topbar { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .update { opacity: 0.8; }
+      .cards { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
@@ -232,191 +228,188 @@ h1 {
   <div class="topbar">
     <div class="brand">
 
-```
-  <!-- ══════════════════════════════
-       LOGO SVG — TAF SHIELD PRO
-       ══════════════════════════════ -->
-  <div class="logo-wrap">
-    <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="79">
-      <defs>
-        <!-- Shield outer gradient -->
-        <linearGradient id="shieldOuter" x1="100" y1="0" x2="100" y2="220" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"   stop-color="#2060ff"/>
-          <stop offset="100%" stop-color="#0a1a5c"/>
-        </linearGradient>
-        <!-- Shield inner gradient -->
-        <linearGradient id="shieldInner" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"   stop-color="#0d1f4a"/>
-          <stop offset="100%" stop-color="#060d24"/>
-        </linearGradient>
-        <!-- TAF text gradient -->
-        <linearGradient id="tafGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%"   stop-color="#ffffff"/>
-          <stop offset="45%"  stop-color="#cce0ff"/>
-          <stop offset="100%" stop-color="#1a7fff"/>
-        </linearGradient>
-        <!-- Blue accent gradient -->
-        <linearGradient id="blueAccent" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#38b6ff"/>
-          <stop offset="100%" stop-color="#1a4fff"/>
-        </linearGradient>
-        <!-- Shield shine -->
-        <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="rgba(255,255,255,0.18)"/>
-          <stop offset="60%"  stop-color="rgba(255,255,255,0)"/>
-        </linearGradient>
-        <!-- Ball gradient -->
-        <radialGradient id="ballGrad" cx="42%" cy="35%" r="60%">
-          <stop offset="0%"   stop-color="#ffffff"/>
-          <stop offset="50%"  stop-color="#d0dff5"/>
-          <stop offset="100%" stop-color="#8aaad0"/>
-        </radialGradient>
-        <!-- Glow filter -->
-        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <!-- Text glow -->
-        <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
-          <feGaussianBlur stdDeviation="2.5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <!-- Star glow -->
-        <filter id="starGlow">
-          <feGaussianBlur stdDeviation="1.5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
+      <!-- ══════════════════════════════
+           LOGO SVG — TAF SHIELD PRO
+           ══════════════════════════════ -->
+      <div class="logo-wrap">
+        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="79">
+          <defs>
+            <!-- Shield outer gradient -->
+            <linearGradient id="shieldOuter" x1="100" y1="0" x2="100" y2="220" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#2060ff"/>
+              <stop offset="100%" stop-color="#0a1a5c"/>
+            </linearGradient>
+            <!-- Shield inner gradient -->
+            <linearGradient id="shieldInner" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#0d1f4a"/>
+              <stop offset="100%" stop-color="#060d24"/>
+            </linearGradient>
+            <!-- TAF text gradient -->
+            <linearGradient id="tafGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="#ffffff"/>
+              <stop offset="45%"  stop-color="#cce0ff"/>
+              <stop offset="100%" stop-color="#1a7fff"/>
+            </linearGradient>
+            <!-- Blue accent gradient -->
+            <linearGradient id="blueAccent" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#38b6ff"/>
+              <stop offset="100%" stop-color="#1a4fff"/>
+            </linearGradient>
+            <!-- Shield shine -->
+            <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.18)"/>
+              <stop offset="60%"  stop-color="rgba(255,255,255,0)"/>
+            </linearGradient>
+            <!-- Ball gradient -->
+            <radialGradient id="ballGrad" cx="42%" cy="35%" r="60%">
+              <stop offset="0%"   stop-color="#ffffff"/>
+              <stop offset="50%"  stop-color="#d0dff5"/>
+              <stop offset="100%" stop-color="#8aaad0"/>
+            </radialGradient>
+            <!-- Glow filter -->
+            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Text glow -->
+            <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Star glow -->
+            <filter id="starGlow">
+              <feGaussianBlur stdDeviation="1.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
 
-      <!-- ── OUTER SHIELD ── -->
-      <path d="M100 4 L192 34 L188 130 Q100 215 12 130 L8 34 Z"
-            fill="url(#shieldOuter)"
-            stroke="#4488ff"
-            stroke-width="2"/>
+          <!-- ── OUTER SHIELD ── -->
+          <path d="M100 4 L192 34 L188 130 Q100 215 12 130 L8 34 Z"
+                fill="url(#shieldOuter)"
+                stroke="#4488ff"
+                stroke-width="2"/>
 
-      <!-- ── INNER SHIELD ── -->
-      <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
-            fill="url(#shieldInner)"
-            stroke="rgba(100,160,255,0.35)"
-            stroke-width="1.2"/>
+          <!-- ── INNER SHIELD ── -->
+          <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
+                fill="url(#shieldInner)"
+                stroke="rgba(100,160,255,0.35)"
+                stroke-width="1.2"/>
 
-      <!-- ── SHINE OVERLAY ── -->
-      <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
-            fill="url(#shine)"/>
+          <!-- ── SHINE OVERLAY ── -->
+          <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
+                fill="url(#shine)"/>
 
-      <!-- ── BLUE ACCENT STRIPE LEFT ── -->
-      <path d="M38 44 L42 44 L38 120 L34 120 Z"
-            fill="url(#blueAccent)" opacity="0.6"/>
+          <!-- ── BLUE ACCENT STRIPE LEFT ── -->
+          <path d="M38 44 L42 44 L38 120 L34 120 Z"
+                fill="url(#blueAccent)" opacity="0.6"/>
 
-      <!-- ── BLUE ACCENT STRIPE RIGHT ── -->
-      <path d="M162 44 L166 44 L162 120 L158 120 Z"
-            fill="url(#blueAccent)" opacity="0.6"/>
+          <!-- ── BLUE ACCENT STRIPE RIGHT ── -->
+          <path d="M162 44 L166 44 L162 120 L158 120 Z"
+                fill="url(#blueAccent)" opacity="0.6"/>
 
-      <!-- ── STARS ── -->
-      <!-- Star left -->
-      <polygon points="70,30 72.5,37.5 80,37.5 74,42 76.5,49.5 70,45 63.5,49.5 66,42 60,37.5 67.5,37.5"
-               fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(27,5)"/>
-      <!-- Star center (bigger) -->
-      <polygon points="100,22 103.5,32.5 115,32.5 106,39 109.5,49.5 100,43 90.5,49.5 94,39 85,32.5 96.5,32.5"
-               fill="#5aafff" filter="url(#starGlow)"/>
-      <!-- Star right -->
-      <polygon points="130,30 132.5,37.5 140,37.5 134,42 136.5,49.5 130,45 123.5,49.5 126,42 120,37.5 127.5,37.5"
-               fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(68,5)"/>
+          <!-- ── STARS ── -->
+          <!-- Star left -->
+          <polygon points="70,30 72.5,37.5 80,37.5 74,42 76.5,49.5 70,45 63.5,49.5 66,42 60,37.5 67.5,37.5"
+                   fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(27,5)"/>
+          <!-- Star center (bigger) -->
+          <polygon points="100,22 103.5,32.5 115,32.5 106,39 109.5,49.5 100,43 90.5,49.5 94,39 85,32.5 96.5,32.5"
+                   fill="#5aafff" filter="url(#starGlow)"/>
+          <!-- Star right -->
+          <polygon points="130,30 132.5,37.5 140,37.5 134,42 136.5,49.5 130,45 123.5,49.5 126,42 120,37.5 127.5,37.5"
+                   fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(68,5)"/>
 
-      <!-- ── TAF TEXT ── -->
-      <!-- T -->
-      <text x="28" y="130"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="82"
-            font-weight="900"
-            font-style="italic"
-            fill="url(#tafGrad)"
-            filter="url(#textGlow)"
-            letter-spacing="-4">T</text>
+          <!-- ── TAF TEXT ── -->
+          <!-- T -->
+          <text x="28" y="130"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="82"
+                font-weight="900"
+                font-style="italic"
+                fill="url(#tafGrad)"
+                filter="url(#textGlow)"
+                letter-spacing="-4">T</text>
 
-      <!-- A -->
-      <text x="82" y="130"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="82"
-            font-weight="900"
-            font-style="italic"
-            fill="url(#tafGrad)"
-            filter="url(#textGlow)"
-            letter-spacing="-4">A</text>
+          <!-- A -->
+          <text x="82" y="130"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="82"
+                font-weight="900"
+                font-style="italic"
+                fill="url(#tafGrad)"
+                filter="url(#textGlow)"
+                letter-spacing="-4">A</text>
 
-      <!-- F — blue accent -->
-      <text x="138" y="130"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="82"
-            font-weight="900"
-            font-style="italic"
-            fill="url(#blueAccent)"
-            filter="url(#textGlow)">F</text>
+          <!-- F — blue accent -->
+          <text x="138" y="130"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="82"
+                font-weight="900"
+                font-style="italic"
+                fill="url(#blueAccent)"
+                filter="url(#textGlow)">F</text>
 
-      <!-- ── SEPARATOR LINE ── -->
-      <line x1="40" y1="138" x2="160" y2="138" stroke="rgba(80,140,255,0.5)" stroke-width="1"/>
+          <!-- ── SEPARATOR LINE ── -->
+          <line x1="40" y1="138" x2="160" y2="138" stroke="rgba(80,140,255,0.5)" stroke-width="1"/>
 
-      <!-- ── TOP ACTU FOOT ── -->
-      <text x="100" y="153"
-            text-anchor="middle"
-            font-family="Arial, sans-serif"
-            font-size="12"
-            font-weight="800"
-            fill="white"
-            letter-spacing="2.5">TOP ACTU FOOT</text>
+          <!-- ── TOP ACTU FOOT ── -->
+          <text x="100" y="153"
+                text-anchor="middle"
+                font-family="Arial, sans-serif"
+                font-size="12"
+                font-weight="800"
+                fill="white"
+                letter-spacing="2.5">TOP ACTU FOOT</text>
 
-      <!-- ── 13 ── -->
-      <text x="100" y="169"
-            text-anchor="middle"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="14"
-            font-weight="900"
-            fill="#3a9fff"
-            letter-spacing="1"
-            filter="url(#starGlow)">13</text>
+          <!-- ── 13 ── -->
+          <text x="100" y="169"
+                text-anchor="middle"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="14"
+                font-weight="900"
+                fill="#3a9fff"
+                letter-spacing="1"
+                filter="url(#starGlow)">13</text>
 
-      <!-- ── SEPARATOR DASHES ── -->
-      <line x1="52" y1="169" x2="72" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
-      <line x1="128" y1="169" x2="148" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
+          <!-- ── SEPARATOR DASHES ── -->
+          <line x1="52" y1="169" x2="72" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
+          <line x1="128" y1="169" x2="148" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
 
-      <!-- ── FOOTBALL ── -->
-      <!-- Ball shadow -->
-      <ellipse cx="100" cy="207" rx="18" ry="5" fill="rgba(0,0,0,0.4)"/>
+          <!-- ── FOOTBALL ── -->
+          <!-- Ball shadow -->
+          <ellipse cx="100" cy="207" rx="18" ry="5" fill="rgba(0,0,0,0.4)"/>
 
-      <!-- Ball body -->
-      <circle cx="100" cy="195" r="18"
-              fill="url(#ballGrad)"
-              stroke="rgba(100,140,200,0.4)"
-              stroke-width="0.8"/>
+          <!-- Ball body -->
+          <circle cx="100" cy="195" r="18"
+                  fill="url(#ballGrad)"
+                  stroke="rgba(100,140,200,0.4)"
+                  stroke-width="0.8"/>
 
-      <!-- Ball pentagon center -->
-      <polygon points="100,185 106,189.5 103.8,196.5 96.2,196.5 94,189.5"
-               fill="#1a2a4a" opacity="0.85"/>
+          <!-- Ball pentagon center -->
+          <polygon points="100,185 106,189.5 103.8,196.5 96.2,196.5 94,189.5"
+                   fill="#1a2a4a" opacity="0.85"/>
 
-      <!-- Ball seams -->
-      <line x1="100" y1="185" x2="100"   y2="177.5" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="106" y1="189.5" x2="113" y2="186"   stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="103.8" y1="196.5" x2="108" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="96.2"  y1="196.5" x2="92"  y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="94"    y1="189.5" x2="87"  y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <!-- Ball seams -->
+          <line x1="100" y1="185" x2="100"   y2="177.5" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="106" y1="189.5" x2="113" y2="186"   stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="103.8" y1="196.5" x2="108" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="96.2"  y1="196.5" x2="92"  y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="94"    y1="189.5" x2="87"  y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
 
-      <!-- Ball shine -->
-      <ellipse cx="95" cy="189" rx="4" ry="2.5"
-               fill="rgba(255,255,255,0.45)"
-               transform="rotate(-30,95,189)"/>
-    </svg>
-  </div>
-  <!-- ══ END LOGO ══ -->
+          <!-- Ball shine -->
+          <ellipse cx="95" cy="189" rx="4" ry="2.5"
+                   fill="rgba(255,255,255,0.45)"
+                   transform="rotate(-30,95,189)"/>
+        </svg>
+      </div>
+      <!-- ══ END LOGO ══ -->
 
-  <div>
-    <div class="brand-name">Top Actu Foot 13</div>
-    <div class="brand-sub">Analyse football quotidienne</div>
-  </div>
-</div>
+      <div>
+        <div class="brand-name">Top Actu Foot 13</div>
+        <div class="brand-sub">Analyse football quotidienne</div>
+      </div>
+    </div>
 
-<div class="update" id="date">--</div>
-```
-
+    <div class="update" id="date">--</div>
   </div>
 
   <h1>Pronostics football du jour</h1>
@@ -544,6 +537,5 @@ async function load() {
 
 load();
 </script>
-
 </body>
 </html>
