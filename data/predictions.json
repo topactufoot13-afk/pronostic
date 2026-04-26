@@ -1,4 +1,13 @@
 {
-  "generated_at": "2026-04-25T20:40:12Z",
-  "predictions": []
+  "generated_at": "2026-04-26T06:12:19Z",
+  "predictions": [{
+  "pick": "+ de 2,5 buts",
+  "market_type": "Total de buts",
+  "bookmaker_odds": 1.83,
+  "model_probability": 52,
+  "edge_points": 13,
+  "confidence_level": "Moyenne",
+  "analysis": "Le pari sur plus de 2,5 buts est pertinent car les données statistiques montrent une probabilité de 52% que le match se termine avec au moins trois buts. Les cotes de 1.83 indiquent une valeur intéressante par rapport à cette probabilité, ce qui suggère un bon potentiel de retour sur investissement.",
+  "factors": ["Historique des matchs des deux équipes", "Forme offensive récente", "Défenses vulnérables", "Conditions de jeu favorables"]
+}]
 }
