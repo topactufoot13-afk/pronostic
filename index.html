@@ -443,95 +443,111 @@
 <script>
 function translatePick(pick) {
   if (!pick) return "--";
-  pick = pick.toLowerCase();
-  if (pick.includes("over 2.5"))  return "+ de 2,5 buts";
+  pick = String(pick).toLowerCase();
+
+  if (pick.includes("over 2.5")) return "+ de 2,5 buts";
   if (pick.includes("under 2.5")) return "- de 2,5 buts";
-  if (pick.includes("over 1.5"))  return "+ de 1,5 but";
+  if (pick.includes("over 1.5")) return "+ de 1,5 but";
   if (pick.includes("under 1.5")) return "- de 1,5 but";
   if (pick.includes("both teams to score") || pick.includes("btts")) return "Les deux équipes marquent";
-  if (pick.includes("double chance"))   return "Double chance";
-  if (pick.includes("draw no bet"))     return "Remboursé si match nul";
-  if (pick.includes("victoire domicile"))  return "Victoire domicile";
+  if (pick.includes("double chance")) return "Double chance";
+  if (pick.includes("draw no bet")) return "Remboursé si match nul";
+  if (pick.includes("victoire domicile")) return "Victoire domicile";
   if (pick.includes("victoire extérieur") || pick.includes("victoire exterieur")) return "Victoire extérieur";
-  if (pick.includes("nul")) return "Match nul";
+
   return pick;
 }
 
-function confClass(c) {
-  return c === "high" ? "conf-high" : "conf-medium";
+function translateConfidence(c) {
+  c = String(c || "").toLowerCase();
+
+  if (c.includes("élev") || c === "high") return "Confiance élevée";
+  if (c.includes("moy") || c === "medium") return "Confiance moyenne";
+  if (c.includes("faible") || c === "low") return "Confiance faible";
+
+  return "Confiance moyenne";
 }
 
-function confLabel(c) {
-  if (c === "high")   return "⚡ Confiance élevée";
-  if (c === "medium") return "Confiance moyenne";
-  return "Confiance faible";
+function escapeHtml(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
-function esc(v) {
-  return String(v || "")
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+function getHomeTeam(match) {
+  if (!match) return "?";
+  return String(match).split("/")[0]?.trim() || "?";
 }
 
-function fmt(v) {
-  const n = Number(v);
-  return isNaN(n) ? "--" : n.toFixed(2);
+function getAwayTeam(match) {
+  if (!match) return "?";
+  return String(match).split("/")[1]?.trim() || "?";
+}
+
+function getFactors(factorsText) {
+  if (!factorsText) return [];
+
+  return String(factorsText)
+    .replaceAll("\n", "")
+    .split(" | ")
+    .map(f => f.trim())
+    .filter(Boolean)
+    .slice(0, 4);
 }
 
 async function load() {
   try {
-    const res  = await fetch("./data/predictions.json?v=" + Date.now(), { cache: "no-store" });
+    const res = await fetch("./data/predictions.json?v=" + Date.now(), {
+      cache: "no-store"
+    });
+
     const data = await res.json();
 
     document.getElementById("date").innerText =
-      "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR", {
-        dateStyle: "medium", timeStyle: "short"
-      });
+      "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
 
-    const list = Array.isArray(data.predictions) ? data.predictions : [];
+    const predictions = Array.isArray(data.predictions) ? data.predictions : [];
 
-    if (!list.length) {
-      document.getElementById("app").innerHTML = `
-        <div class="empty-state">
-          <div class="empty-icon">📅</div>
-          <div class="empty-title">Aucun pronostic aujourd'hui</div>
-          <div class="empty-text">
-            Notre modèle analyse uniquement les matchs avec un réel potentiel de valeur.
-            Certains jours, aucun match ne remplit nos critères — c'est normal et intentionnel.
-            Revenez demain, les pronostics sont publiés chaque matin avant les matchs.
-          </div>
-        </div>`;
+    if (!predictions.length) {
+      document.getElementById("app").innerHTML = "Aucun pronostic disponible pour le moment.";
       return;
     }
 
-    document.getElementById("app").innerHTML = list.map(p => {
-      const ko = p.kickoff_utc
-        ? new Date(p.kickoff_utc).toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" })
-        : "";
-
-      const factors = (p.factors || []).filter(f => f && f.trim())
-        .map(f => `<div class="factor">${esc(f)}</div>`).join("");
+    const html = predictions.map(p => {
+      const match = p.match || p["2"];
+      const competition = p.competition || p["1"] || "Football";
+      const homeTeam = p.home_team || getHomeTeam(match);
+      const awayTeam = p.away_team || getAwayTeam(match);
+      const pick = p.pick || p["3"];
+      const odd = p.bookmaker_odds || p["4"] || "--";
+      const confidence = p.confidence_level || p["6"];
+      const analysis = p.analysis || p["10"] || "";
+      const factors = Array.isArray(p.factors) ? p.factors : getFactors(p["11"]);
 
       return `
         <div class="card">
-          <div class="card-league">${esc(p.competition || "Football")}</div>
-          <div class="match">${esc(p.home_team || "?")} vs ${esc(p.away_team || "?")}</div>
-          ${ko ? `<div class="card-time">🕐 ${ko}</div>` : ""}
-          <div class="confidence ${confClass(p.confidence_level)}">${confLabel(p.confidence_level)}</div>
-          <div class="pick">${esc(translatePick(p.pick))}</div>
-          <div class="odds">Cote : <strong>${fmt(p.bookmaker_odds)}</strong></div>
-          <div class="analysis">${esc(p.analysis || "")}</div>
-          ${factors ? `<div class="factors">${factors}</div>` : ""}
-        </div>`;
+          <div class="match">${escapeHtml(homeTeam)} vs ${escapeHtml(awayTeam)}</div>
+          <div class="confidence">${escapeHtml(translateConfidence(confidence))}</div>
+
+          <div class="pick">${escapeHtml(translatePick(pick))}</div>
+
+          <div class="odds">Cote : ${escapeHtml(odd)}</div>
+
+          <div class="analysis">${escapeHtml(analysis)}</div>
+
+          <div>
+            ${factors.map(f => `<span class="factor">${escapeHtml(f)}</span>`).join("")}
+          </div>
+        </div>
+      `;
     }).join("");
 
-  } catch (err) {
-    document.getElementById("app").innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon">⚠️</div>
-        <div class="empty-title">Impossible de charger les pronostics</div>
-        <div class="empty-text">Réessayez dans quelques instants.</div>
-      </div>`;
+    document.getElementById("app").innerHTML = html;
+  } catch (error) {
+    document.getElementById("app").innerHTML = "Impossible de charger les pronostics.";
   }
 }
 
