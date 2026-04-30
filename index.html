@@ -477,6 +477,34 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function formatMatchDateFR(value) {
+  if (!value) return "";
+
+  const parts = String(value).split(" à ");
+  if (parts.length !== 2) return value;
+
+  const [datePart, timePart] = parts;
+  const [day, month, year] = datePart.split("/");
+
+  const fullYear = "20" + year;
+  const date = new Date(`${fullYear}-${month}-${day}T${timePart}`);
+
+  if (isNaN(date.getTime())) return value;
+
+  const dayName = date.toLocaleDateString("fr-FR", { weekday: "long" });
+  const monthName = date.toLocaleDateString("fr-FR", { month: "long" });
+
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+
+  return `${capitalizeFirst(dayName)} ${day} ${monthName} • ${hours}h${minutes}`;
+}
+
+function capitalizeFirst(text) {
+  if (!text) return "";
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}  
+
 function getHomeTeam(match) {
   if (!match) return "?";
   return String(match).split("/")[0]?.trim() || "?";
@@ -526,11 +554,14 @@ async function load() {
       const confidence = p.confidence_level || p["6"];
       const analysis = p.analysis || p["10"] || "";
       const factors = Array.isArray(p.factors) ? p.factors : getFactors(p["11"]);
+      const matchDate = formatMatchDateFR(p.match_date || p["0"]);
 
       return `
         <div class="card">
-          <div class="match">${escapeHtml(homeTeam)} vs ${escapeHtml(awayTeam)}</div>
-          <div class="confidence">${escapeHtml(translateConfidence(confidence))}</div>
+  <div class="card-league">${escapeHtml(competition)}</div>
+  <div class="match">${escapeHtml(homeTeam)} vs ${escapeHtml(awayTeam)}</div>
+  <div class="card-time">${escapeHtml(matchDate)}</div>
+  <div class="confidence">${escapeHtml(translateConfidence(confidence))}</div>
 
           <div class="pick">${escapeHtml(translatePick(pick))}</div>
 
