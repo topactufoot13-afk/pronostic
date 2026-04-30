@@ -75,18 +75,23 @@
       line-height: 1.55;
     }
 
-    .strategy-note {
-      margin-bottom: 25px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 14px;
-      line-height: 1.6;
-      color: #b7c2dd;
-    }
+   .strategy-note {
+  margin-bottom: 24px;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: transparent;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #8d9cc7;
+}
 
-    .strategy-note strong { color: #ffffff; }
+.strategy-note strong {
+  color: #dce5ff;
+}
 
     .cards {
       display: grid;
@@ -218,6 +223,11 @@
       .topbar { align-items: flex-start; flex-direction: column; gap: 14px; }
       .update { opacity: 0.8; }
       .cards { grid-template-columns: 1fr; }
+      .strategy-note {
+  font-size: 14px;
+  padding-top: 14px;
+  margin-bottom: 28px;
+}
     }
   </style>
 </head>
@@ -412,7 +422,7 @@
     <div class="update" id="date">--</div>
   </div>
 
-  <h1>Pronostics football du jour</h1>
+  <h1>Pronostics football du week-end</h1>
 
   <div class="subtitle">
     Analyse basée sur la forme récente, les statistiques et les cotes du marché.
