@@ -6,34 +6,31 @@
   <title>Top Actu Foot 13 — Pronostics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
-    /* ── TOKENS ── */
+    /* ══ DESIGN TOKENS ══ */
     :root {
-      --bg:          #111113;
-      --bg2:         #161618;
-      --surface:     rgba(255,255,255,0.06);
-      --surface-hov: rgba(255,255,255,0.09);
-      --border:      rgba(255,255,255,0.10);
-      --border-hov:  rgba(255,255,255,0.20);
-      --accent:      #0a84ff;
-      --accent2:     #30d158;
-      --accent3:     #ff9f0a;
-      --text:        #f5f5f7;
-      --text-2:      #aeaeb2;
-      --text-3:      #6e6e73;
-      --green:       #30d158;
-      --orange:      #ff9f0a;
-      --red:         #ff453a;
-      --r-lg:        20px;
-      --r-md:        14px;
-      --r-sm:        8px;
+      --bg:        #111113;
+      --surface:   rgba(255,255,255,0.055);
+      --surface2:  rgba(255,255,255,0.08);
+      --border:    rgba(255,255,255,0.09);
+      --border2:   rgba(255,255,255,0.16);
+      --accent:    #0a84ff;
+      --text:      #f5f5f7;
+      --text-2:    #aeaeb2;
+      --text-3:    #6e6e73;
+      --green:     #30d158;
+      --orange:    #ff9f0a;
+      --red:       #ff453a;
+      --r-lg:      22px;
+      --r-md:      14px;
+      --r-sm:      8px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
@@ -42,497 +39,279 @@
       overflow-x: hidden;
     }
 
-    /* subtle grid texture */
     body::before {
       content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        radial-gradient(ellipse 80% 45% at 10% -10%,  rgba(10,132,255,0.18) 0%, transparent 55%),
-        radial-gradient(ellipse 55% 40% at 90% 8%,    rgba(48,209,88,0.10)  0%, transparent 50%),
-        radial-gradient(ellipse 70% 40% at 50% 110%,  rgba(10,132,255,0.10) 0%, transparent 55%);
-      pointer-events: none;
-      z-index: 0;
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 90% 50% at 5% -15%,  rgba(10,132,255,0.20) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 95% 5%,   rgba(48,209,88,0.08)  0%, transparent 50%),
+        radial-gradient(ellipse 70% 35% at 50% 115%,  rgba(10,132,255,0.09) 0%, transparent 55%);
+      pointer-events: none; z-index: 0;
     }
 
-    /* ── LAYOUT ── */
     .page {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
+      position: relative; z-index: 1;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 20px 18px 100px;
+      padding: 22px 18px 110px;
     }
 
-    /* ── TOPBAR ── */
+    /* ══ TOPBAR ══ */
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
       opacity: 0;
-      animation: rise 0.6s 0.05s cubic-bezier(.22,1,.36,1) forwards;
+      animation: rise .55s .04s cubic-bezier(.22,1,.36,1) forwards;
     }
 
-    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 11px; }
 
     .logo-wrap {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      filter: drop-shadow(0 0 12px rgba(10,132,255,0.5));
+      width: 46px; height: 46px; flex-shrink: 0;
+      filter: drop-shadow(0 2px 16px rgba(10,132,255,0.55))
+              drop-shadow(0 0 6px rgba(10,132,255,0.3));
     }
 
-    .brand-name {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      color: var(--text);
-    }
-
-    .brand-sub {
-      font-size: 10.5px;
-      color: var(--text-3);
-      margin-top: 1px;
-      font-weight: 400;
-    }
+    .brand-name { font-size: 14px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); }
+    .brand-sub  { font-size: 10px; color: var(--text-3); margin-top: 1px; font-weight: 400; }
 
     .pill-date {
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--text-3);
+      font-size: 10px; font-weight: 500; color: var(--text-3);
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 999px;
-      letter-spacing: 0.1px;
-      white-space: nowrap;
-      flex-shrink: 0;
+      padding: 4px 11px; border-radius: 999px;
+      white-space: nowrap; flex-shrink: 0;
     }
 
-    /* ── HERO ── */
+    /* ══ HERO ══ */
     .hero {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       opacity: 0;
-      animation: rise 0.6s 0.12s cubic-bezier(.22,1,.36,1) forwards;
+      animation: rise .55s .12s cubic-bezier(.22,1,.36,1) forwards;
     }
 
     h1 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(38px, 11vw, 68px);
-      font-weight: 400;
-      line-height: 1.0;
-      letter-spacing: -1.5px;
-      color: var(--text);
+      font-size: clamp(40px, 11.5vw, 70px);
+      font-weight: 400; line-height: 1.0;
+      letter-spacing: -1.8px; color: var(--text);
       margin-bottom: 14px;
     }
 
     h1 em {
       font-style: italic;
-      background: linear-gradient(120deg, #0a84ff 0%, #30d158 100%);
+      background: linear-gradient(118deg, #3d9cff 0%, #6fb8ff 60%, #a8d4ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .subtitle {
-      font-size: 15px;
-      color: var(--text-2);
-      line-height: 1.6;
-      font-weight: 300;
-      max-width: 380px;
+      font-size: 15px; color: var(--text-2);
+      line-height: 1.65; font-weight: 300;
+      max-width: 360px; margin-bottom: 32px;
+    }
+
+    /* ══ COUNTER BAR ══ */
+    .counter-bar {
+      align-items: center; gap: 10px;
       margin-bottom: 44px;
-    }
-
-    /* ── GUIDE ── */
-    .guide {
-      margin-bottom: 36px;
-      padding: 24px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      position: relative;
-      overflow: hidden;
       opacity: 0;
-      animation: rise 0.6s 0.22s cubic-bezier(.22,1,.36,1) forwards;
+      animation: rise .55s .18s cubic-bezier(.22,1,.36,1) forwards;
     }
 
-    .guide::before {
+    .counter-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(10,132,255,0.1);
+      border: 1px solid rgba(10,132,255,0.22);
+      border-radius: 999px; padding: 5px 14px;
+      font-size: 12px; font-weight: 600; color: var(--accent);
+    }
+
+    .counter-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 7px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:.5; transform:scale(0.7); }
+    }
+
+    .counter-sep { width: 1px; height: 14px; background: var(--border2); }
+    .counter-label { font-size: 12px; font-weight: 400; color: var(--text-3); }
+
+    /* ══ GUIDE ══ */
+    .guide {
+      margin-bottom: 32px; padding: 22px 18px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      position: relative; overflow: hidden;
+      opacity: 0;
+      animation: rise .55s .24s cubic-bezier(.22,1,.36,1) forwards;
+    }
+
+    .guide::after {
       content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(10,132,255,0.35) 0%, transparent 50%, rgba(48,209,88,0.15) 100%);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(10,132,255,0.55) 50%, transparent 100%);
     }
 
     .guide-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 9.5px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
     }
 
     .guide-label-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 7px var(--accent);
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 7px var(--accent);
     }
 
     .guide-title {
-      font-size: clamp(18px, 2.5vw, 23px);
-      font-weight: 600;
-      letter-spacing: -0.4px;
-      line-height: 1.3;
-      color: var(--text);
-      margin-bottom: 32px;
-      max-width: 500px;
+      font-size: 17px; font-weight: 600; letter-spacing: -0.3px;
+      line-height: 1.35; color: var(--text); margin-bottom: 24px;
     }
 
-    .guide-steps {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
+    .guide-steps { display: grid; grid-template-columns: 1fr; }
 
     .step {
-      padding-right: 0;
-      border-right: none;
-      margin-right: 0;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 18px;
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .step:first-child { padding-top: 0; }
+    .step:last-child  { border-bottom: none; padding-bottom: 0; }
+
+    .step-num-badge {
+      flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px;
+      background: rgba(10,132,255,0.12); border: 1px solid rgba(10,132,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 800; color: var(--accent);
+      letter-spacing: 0.5px; margin-top: 1px;
     }
 
-    .step:last-child { border-bottom: none; padding-bottom: 0; }
-
-    .step-num {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      color: var(--accent);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .step-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 6px;
-      letter-spacing: -0.2px;
-    }
-
-    .step-desc {
-      font-size: 13px;
-      line-height: 1.55;
-      color: var(--text-3);
-      font-weight: 400;
-    }
+    .step-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; letter-spacing: -0.2px; }
+    .step-desc  { font-size: 12.5px; line-height: 1.5; color: var(--text-3); font-weight: 400; }
 
     .guide-note {
-      margin-top: 28px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--text-3);
+      margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);
+      font-size: 12px; line-height: 1.7; color: var(--text-3);
     }
-
     .guide-note strong { color: var(--text-2); font-weight: 600; }
 
-    /* ── CARDS ── */
+    /* ══ CARDS ══ */
     .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+      display: grid; grid-template-columns: 1fr; gap: 14px;
       opacity: 0;
-      animation: rise 0.6s 0.32s cubic-bezier(.22,1,.36,1) forwards;
+      animation: rise .55s .32s cubic-bezier(.22,1,.36,1) forwards;
     }
 
-    /* ── CARD ── */
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      padding: 20px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s cubic-bezier(.22,1,.36,1),
-                  border-color 0.3s ease,
-                  box-shadow 0.3s ease;
-      cursor: default;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 20px 18px;
+      position: relative; overflow: hidden;
+      transition: transform .28s cubic-bezier(.22,1,.36,1), border-color .28s, box-shadow .28s;
     }
 
-    .card-shimmer {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.14) 50%, transparent 100%);
+    .card-top-line {
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.11), transparent);
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(10,132,255,0.3);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(10,132,255,0.15);
+      transform: translateY(-3px);
+      border-color: rgba(10,132,255,0.28);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(10,132,255,0.12);
     }
 
-    .card-league {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 10px;
-    }
+    .card-league { font-size: 9px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
 
-    .card-match {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.4px;
-      color: var(--text);
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
+    .card-match { font-size: 19px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); line-height: 1.2; margin-bottom: 3px; }
+    .card-match .vs { font-size: 14px; font-weight: 400; color: var(--text-3); margin: 0 4px; }
 
-    .card-time {
-      font-size: 12px;
-      color: var(--text-3);
-      font-weight: 400;
-      margin-bottom: 14px;
-    }
+    .card-time { font-size: 11.5px; color: var(--text-3); font-weight: 400; margin-bottom: 14px; }
 
-    /* ── CONFIDENCE BADGE ── */
+    /* badges — outline fin */
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 18px;
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3px;
+      padding: 3px 10px; border-radius: 999px; margin-bottom: 16px;
     }
+    .badge-dot { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
 
-    .badge-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .badge-high {
-      background: rgba(48,209,88,0.1);
-      color: var(--green);
-      border: 1px solid rgba(48,209,88,0.2);
-    }
-    .badge-high .badge-dot {
-      background: var(--green);
-      box-shadow: 0 0 5px var(--green);
-    }
-
-    .badge-medium {
-      background: rgba(255,159,10,0.1);
-      color: var(--orange);
-      border: 1px solid rgba(255,159,10,0.2);
-    }
+    .badge-high   { color: var(--green);  border: 1px solid rgba(48,209,88,0.35);  background: rgba(48,209,88,0.07);  }
+    .badge-medium { color: var(--orange); border: 1px solid rgba(255,159,10,0.35); background: rgba(255,159,10,0.07); }
+    .badge-low    { color: var(--red);    border: 1px solid rgba(255,69,58,0.35);  background: rgba(255,69,58,0.07);  }
+    .badge-high   .badge-dot { background: var(--green);  box-shadow: 0 0 5px var(--green); }
     .badge-medium .badge-dot { background: var(--orange); }
+    .badge-low    .badge-dot { background: var(--red); }
 
-    .badge-low {
-      background: rgba(255,69,58,0.1);
-      color: var(--red);
-      border: 1px solid rgba(255,69,58,0.2);
-    }
-    .badge-low .badge-dot { background: var(--red); }
-
-    /* ── PICK ── */
+    /* pick box — translucide avec contour lumineux */
     .pick-box {
-      background: linear-gradient(135deg, rgba(10,132,255,0.15) 0%, rgba(10,132,255,0.06) 100%);
-      border: 1px solid rgba(10,132,255,0.2);
+      background: rgba(10,132,255,0.07);
+      border: 1px solid rgba(10,132,255,0.22);
       border-radius: var(--r-md);
-      padding: 16px 18px;
-      margin-bottom: 12px;
-      position: relative;
-      overflow: hidden;
+      padding: 13px 16px; margin-bottom: 14px;
+      position: relative; overflow: hidden;
     }
-
     .pick-box::before {
       content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(10,132,255,0.6), transparent);
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(10,132,255,0.7), transparent);
     }
-
     .pick-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 5px;
-      display: block;
+      font-size: 8.5px; font-weight: 800; letter-spacing: 2.2px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 4px; display: block; opacity: 0.85;
     }
+    .pick-value { font-size: 20px; font-weight: 800; letter-spacing: -0.4px; color: var(--text); line-height: 1.2; }
 
-    .pick-value {
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-      color: var(--text);
-      line-height: 1.2;
-    }
+    .odds-row { display: flex; align-items: baseline; gap: 7px; margin-bottom: 12px; }
+    .odds-label { font-size: 9px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--text-3); }
+    .odds-value { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.2px; }
 
-    /* ── ODDS ── */
-    .odds-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
+    .analysis { font-size: 13px; line-height: 1.65; color: var(--text-2); font-weight: 400; margin-bottom: 12px; }
 
-    .odds-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-3);
-    }
-
-    .odds-value {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.2px;
-    }
-
-    /* ── ANALYSIS ── */
-    .analysis {
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--text-2);
-      font-weight: 400;
-      margin-bottom: 14px;
-    }
-
-    /* ── FACTORS ── */
     .factors { display: flex; flex-direction: column; gap: 5px; }
-
     .factor {
-      font-size: 12px;
-      color: var(--text-3);
-      padding: 7px 13px;
-      border-left: 2px solid rgba(10,132,255,0.3);
+      font-size: 12px; color: var(--text-3); padding: 7px 12px;
+      border-left: 2px solid rgba(10,132,255,0.28);
       background: rgba(10,132,255,0.04);
       border-radius: 0 var(--r-sm) var(--r-sm) 0;
-      line-height: 1.4;
-      transition: border-color 0.2s, background 0.2s;
+      line-height: 1.45;
+      transition: border-color .2s, background .2s, color .2s;
     }
+    .factor:hover { border-color: rgba(10,132,255,0.65); background: rgba(10,132,255,0.09); color: var(--text-2); }
 
-    .factor:hover {
-      border-color: rgba(10,132,255,0.7);
-      background: rgba(10,132,255,0.09);
-      color: var(--text-2);
-    }
+    .empty { grid-column:1/-1; text-align:center; padding:70px 20px; }
+    .empty-icon  { font-size:40px; margin-bottom:14px; opacity:.5; }
+    .empty-title { font-size:19px; font-weight:600; color:var(--text-2); margin-bottom:8px; }
+    .empty-text  { font-size:13.5px; color:var(--text-3); line-height:1.6; max-width:340px; margin:0 auto; }
 
-    /* ── EMPTY STATE ── */
-    .empty {
-      grid-column: 1/-1;
-      text-align: center;
-      padding: 80px 24px;
-    }
+    .legal { margin-top:72px; padding-top:24px; border-top:1px solid var(--border); font-size:11.5px; color:var(--text-3); line-height:1.75; }
+    .legal-title { font-size:12px; font-weight:600; color:var(--text-2); margin-bottom:6px; }
+    .legal a { color:var(--accent); text-decoration:none; font-weight:500; }
+    .legal a:hover { text-decoration:underline; }
 
-    .empty-icon { font-size: 42px; margin-bottom: 16px; opacity: 0.5; }
-
-    .empty-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--text-2);
-      margin-bottom: 8px;
-      letter-spacing: -0.3px;
-    }
-
-    .empty-text {
-      font-size: 14px;
-      color: var(--text-3);
-      line-height: 1.6;
-      max-width: 380px;
-      margin: 0 auto;
-    }
-
-    /* ── LEGAL ── */
-    .legal {
-      margin-top: 80px;
-      padding-top: 28px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--text-3);
-      line-height: 1.75;
-    }
-
-    .legal-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-2);
-      margin-bottom: 8px;
-    }
-
-    .legal a { color: var(--accent); text-decoration: none; font-weight: 500; }
-    .legal a:hover { text-decoration: underline; }
-
-    /* ── ANIMATIONS ── */
     @keyframes rise {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity:0; transform:translateY(16px); }
+      to   { opacity:1; transform:translateY(0); }
     }
 
-    /* ── RESPONSIVE desktop ── */
-    @media (min-width: 700px) {
-      .page { padding: 44px 32px 120px; }
-      .topbar { margin-bottom: 64px; }
-      h1 { letter-spacing: -2px; }
-      .subtitle { font-size: 17px; margin-bottom: 60px; }
-      .guide { padding: 32px; margin-bottom: 48px; }
-      .guide-steps {
-        grid-template-columns: repeat(3,1fr);
-        gap: 0;
-      }
-      .step {
-        border-bottom: none;
-        padding-bottom: 0;
-        padding-right: 24px;
-        border-right: 1px solid var(--border);
-        margin-right: 24px;
-      }
-      .step:last-child { border-right: none; margin-right: 0; padding-right: 0; }
-      .cards { grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 16px; }
+    @media (min-width:700px) {
+      .page { padding:44px 32px 120px; }
+      .topbar { margin-bottom:60px; }
+      h1 { letter-spacing:-2px; }
+      .subtitle { font-size:16px; margin-bottom:36px; }
+      .guide { padding:28px 26px; }
+      .cards { grid-template-columns: repeat(auto-fit, minmax(290px,1fr)); gap:16px; }
     }
 
-    /* ── LOADING SKELETON ── */
-    @keyframes shimmer {
-      0%   { background-position: -600px 0; }
-      100% { background-position:  600px 0; }
-    }
-
-    .loading-text {
-      text-align: center;
-      padding: 60px;
-      color: var(--text-3);
-      font-size: 14px;
-      grid-column: 1/-1;
-    }
+    .loading-text { text-align:center; padding:60px; color:var(--text-3); font-size:14px; grid-column:1/-1; }
   </style>
 </head>
 
@@ -542,56 +321,105 @@
   <!-- TOPBAR -->
   <div class="topbar">
     <div class="brand">
+
+      <!-- LOGO V2 -->
       <div class="logo-wrap">
-        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="52" height="58">
+        <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="46" height="46">
           <defs>
-            <linearGradient id="sOuter" x1="100" y1="0" x2="100" y2="220" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#1a6fff"/>
-              <stop offset="100%" stop-color="#091a52"/>
+            <linearGradient id="shBg" x1="80" y1="0" x2="80" y2="160" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#1a5cff"/>
+              <stop offset="100%" stop-color="#061040"/>
             </linearGradient>
-            <linearGradient id="sInner" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#0d1f4a"/>
-              <stop offset="100%" stop-color="#060d24"/>
+            <linearGradient id="shSurf" x1="80" y1="10" x2="80" y2="150" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#0d2880"/>
+              <stop offset="100%" stop-color="#040c2a"/>
             </linearGradient>
-            <linearGradient id="tafG" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="50%" stop-color="#c8dfff"/>
-              <stop offset="100%" stop-color="#1a7fff"/>
+            <linearGradient id="shShine" x1="0" y1="0" x2="0.4" y2="1">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.22)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
             </linearGradient>
-            <linearGradient id="blueA" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#30a8ff"/>
-              <stop offset="100%" stop-color="#0a60ff"/>
+            <linearGradient id="letG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#aacfff"/>
             </linearGradient>
-            <radialGradient id="ballG" cx="42%" cy="35%" r="60%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="55%" stop-color="#ccdff5"/>
-              <stop offset="100%" stop-color="#80aacc"/>
+            <linearGradient id="acG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#50aaff"/>
+              <stop offset="100%" stop-color="#0a6fff"/>
+            </linearGradient>
+            <radialGradient id="ballG" cx="38%" cy="32%" r="62%">
+              <stop offset="0%"   stop-color="#ffffff"/>
+              <stop offset="45%"  stop-color="#cce0ff"/>
+              <stop offset="100%" stop-color="#7aabdc"/>
             </radialGradient>
-            <filter id="gw"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            <filter id="sg"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="starG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#7bc8ff"/>
+              <stop offset="100%" stop-color="#2288ff"/>
+            </linearGradient>
+            <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+              <feGaussianBlur stdDeviation="2" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="lglow" x="-8%" y="-8%" width="116%" height="116%">
+              <feGaussianBlur stdDeviation="1.5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="ringGlow" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="3" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
           </defs>
-          <path d="M100 4 L192 34 L188 130 Q100 215 12 130 L8 34 Z" fill="url(#sOuter)" stroke="#3a80ff" stroke-width="2"/>
-          <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z" fill="url(#sInner)" stroke="rgba(80,140,255,0.3)" stroke-width="1.2"/>
-          <polygon points="100,22 103.5,32.5 115,32.5 106,39 109.5,49.5 100,43 90.5,49.5 94,39 85,32.5 96.5,32.5" fill="#4aacff" filter="url(#sg)"/>
-          <text x="28" y="130" font-family="Arial Black,sans-serif" font-size="82" font-weight="900" font-style="italic" fill="url(#tafG)" filter="url(#gw)" letter-spacing="-4">T</text>
-          <text x="82" y="130" font-family="Arial Black,sans-serif" font-size="82" font-weight="900" font-style="italic" fill="url(#tafG)" filter="url(#gw)" letter-spacing="-4">A</text>
-          <text x="138" y="130" font-family="Arial Black,sans-serif" font-size="82" font-weight="900" font-style="italic" fill="url(#blueA)" filter="url(#gw)">F</text>
-          <line x1="42" y1="138" x2="158" y2="138" stroke="rgba(60,130,255,0.4)" stroke-width="1"/>
-          <text x="100" y="153" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="800" fill="white" letter-spacing="2.5">TOP ACTU FOOT</text>
-          <text x="100" y="169" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="#3a9fff" letter-spacing="1" filter="url(#sg)">13</text>
-          <line x1="52" y1="169" x2="72" y2="169" stroke="rgba(60,130,255,0.4)" stroke-width="1"/>
-          <line x1="128" y1="169" x2="148" y2="169" stroke="rgba(60,130,255,0.4)" stroke-width="1"/>
-          <ellipse cx="100" cy="207" rx="18" ry="4.5" fill="rgba(0,0,0,0.45)"/>
-          <circle cx="100" cy="195" r="18" fill="url(#ballG)" stroke="rgba(80,130,190,0.4)" stroke-width="0.8"/>
-          <polygon points="100,185 106,189.5 103.8,196.5 96.2,196.5 94,189.5" fill="#1a2a4a" opacity="0.85"/>
-          <line x1="100" y1="185" x2="100" y2="177.5" stroke="#1a2a4a" stroke-width="1" opacity="0.55"/>
-          <line x1="106" y1="189.5" x2="113" y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.55"/>
-          <line x1="103.8" y1="196.5" x2="108" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.55"/>
-          <line x1="96.2" y1="196.5" x2="92" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.55"/>
-          <line x1="94" y1="189.5" x2="87" y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.55"/>
-          <ellipse cx="95" cy="189" rx="4" ry="2.5" fill="rgba(255,255,255,0.45)" transform="rotate(-30,95,189)"/>
+
+          <!-- outer glow ring -->
+          <path d="M80 4 L148 26 L144 108 Q80 152 16 108 L12 26 Z"
+                fill="none" stroke="rgba(30,120,255,0.5)" stroke-width="4"
+                filter="url(#ringGlow)"/>
+
+          <!-- shield body -->
+          <path d="M80 4 L148 26 L144 108 Q80 152 16 108 L12 26 Z"
+                fill="url(#shBg)" stroke="rgba(80,160,255,0.45)" stroke-width="1.2"/>
+
+          <!-- inner surface -->
+          <path d="M80 12 L140 31 L136 106 Q80 145 24 106 L20 31 Z"
+                fill="url(#shSurf)"/>
+
+          <!-- shine -->
+          <path d="M80 12 L140 31 L136 106 Q80 145 24 106 L20 31 Z"
+                fill="url(#shShine)" opacity="0.6"/>
+
+          <!-- accent lines -->
+          <rect x="22" y="34" width="3" height="64" rx="1.5" fill="url(#acG)" opacity="0.55"/>
+          <rect x="135" y="34" width="3" height="64" rx="1.5" fill="url(#acG)" opacity="0.55"/>
+
+          <!-- star -->
+          <polygon points="80,14 83,22.5 92,22.5 85,27.5 87.5,36 80,31 72.5,36 75,27.5 68,22.5 77,22.5"
+                   fill="url(#starG)" filter="url(#glow)"/>
+
+          <!-- TAF letters -->
+          <text x="23" y="92" font-family="'Arial Black','Arial',sans-serif" font-size="56" font-weight="900" font-style="italic" fill="url(#letG)" filter="url(#lglow)" letter-spacing="-2">T</text>
+          <text x="61" y="92" font-family="'Arial Black','Arial',sans-serif" font-size="56" font-weight="900" font-style="italic" fill="url(#letG)" filter="url(#lglow)" letter-spacing="-2">A</text>
+          <text x="101" y="92" font-family="'Arial Black','Arial',sans-serif" font-size="56" font-weight="900" font-style="italic" fill="url(#acG)" filter="url(#lglow)">F</text>
+
+          <!-- separator -->
+          <line x1="28" y1="98" x2="132" y2="98" stroke="rgba(80,150,255,0.35)" stroke-width="0.8"/>
+
+          <!-- 13 -->
+          <text x="80" y="111" text-anchor="middle" font-family="'Arial Black','Arial',sans-serif" font-size="11" font-weight="900" fill="#50aaff" letter-spacing="0.5" filter="url(#glow)">13</text>
+          <line x1="38" y1="110" x2="56" y2="110" stroke="rgba(60,130,255,0.4)" stroke-width="0.8"/>
+          <line x1="104" y1="110" x2="122" y2="110" stroke="rgba(60,130,255,0.4)" stroke-width="0.8"/>
+
+          <!-- football -->
+          <ellipse cx="80" cy="143" rx="14" ry="3.5" fill="rgba(0,0,0,0.5)"/>
+          <circle cx="80" cy="132" r="14" fill="url(#ballG)" stroke="rgba(90,140,200,0.35)" stroke-width="0.7"/>
+          <polygon points="80,124 85,127.5 83.2,133.5 76.8,133.5 75,127.5" fill="#152244" opacity="0.8"/>
+          <line x1="80"   y1="124"   x2="80"   y2="118.5"  stroke="#152244" stroke-width="0.8" opacity="0.5"/>
+          <line x1="85"   y1="127.5" x2="90.5" y2="124.5"  stroke="#152244" stroke-width="0.8" opacity="0.5"/>
+          <line x1="83.2" y1="133.5" x2="86.5" y2="138.5"  stroke="#152244" stroke-width="0.8" opacity="0.5"/>
+          <line x1="76.8" y1="133.5" x2="73.5" y2="138.5"  stroke="#152244" stroke-width="0.8" opacity="0.5"/>
+          <line x1="75"   y1="127.5" x2="69.5" y2="124.5"  stroke="#152244" stroke-width="0.8" opacity="0.5"/>
+          <ellipse cx="76.5" cy="127.5" rx="3.2" ry="2" fill="rgba(255,255,255,0.5)" transform="rotate(-25,76.5,127.5)"/>
         </svg>
       </div>
+
       <div>
         <div class="brand-name">Top Actu Foot 13</div>
         <div class="brand-sub">Analyse football quotidienne</div>
@@ -606,36 +434,37 @@
     <p class="subtitle">Analyse fondée sur les données, les statistiques avancées et les cotes du marché.</p>
   </div>
 
+  <!-- COUNTER -->
+  <div class="counter-bar" id="counter-bar" style="display:none">
+    <div class="counter-pill">
+      <span class="counter-dot"></span>
+      <span id="counter-num">0</span> pronostic<span id="counter-s"></span>
+    </div>
+    <div class="counter-sep"></div>
+    <span class="counter-label">ce week-end</span>
+  </div>
+
   <!-- GUIDE -->
   <div class="guide">
-    <div class="guide-label">
-      <span class="guide-label-dot"></span>
-      Gestion responsable
-    </div>
+    <div class="guide-label"><span class="guide-label-dot"></span>Gestion responsable</div>
     <div class="guide-title">Une méthode simple pour rester discipliné et viser un résultat positif sur le long terme.</div>
-
     <div class="guide-steps">
       <div class="step">
-        <span class="step-num">01</span>
-        <div class="step-title">Mise fixe</div>
-        <div class="step-desc">Exemple : 10 € par pronostic, toujours le même montant.</div>
+        <div class="step-num-badge">01</div>
+        <div><div class="step-title">Mise fixe</div><div class="step-desc">Exemple : 10 € par pronostic, toujours le même montant.</div></div>
       </div>
       <div class="step">
-        <span class="step-num">02</span>
-        <div class="step-title">Paris simples</div>
-        <div class="step-desc">1 match = 1 pari. Les gains sont plus faibles, mais le risque est mieux contrôlé.</div>
+        <div class="step-num-badge">02</div>
+        <div><div class="step-title">Paris simples</div><div class="step-desc">1 match = 1 pari. Les gains sont plus faibles, mais le risque est mieux contrôlé.</div></div>
       </div>
       <div class="step">
-        <span class="step-num">03</span>
-        <div class="step-title">Combiné léger</div>
-        <div class="step-desc">Optionnel, avec une petite mise. Un seul match peut faire perdre l'ensemble.</div>
+        <div class="step-num-badge">03</div>
+        <div><div class="step-title">Combiné léger</div><div class="step-desc">Optionnel, avec une petite mise. Un seul match peut faire perdre l'ensemble.</div></div>
       </div>
     </div>
-
     <div class="guide-note">
       Exemple indicatif : à 10 € par pronostic, 5 matchs représentent 50 € engagés. Avec une cote moyenne de 1.70, 4 pronostics gagnants sur 5 représentent environ 68 € de retour, soit +18 € sur la semaine. Ces chiffres restent théoriques et non garantis.
-      <br><br>
-      <strong>Des gains modestes mais réguliers valent mieux qu'un gros coup suivi de pertes.</strong>
+      <br><br><strong>Des gains modestes mais réguliers valent mieux qu'un gros coup suivi de pertes.</strong>
     </div>
   </div>
 
@@ -647,97 +476,92 @@
   <!-- LEGAL -->
   <div class="legal">
     <div class="legal-title">Avertissement légal</div>
-    Les pronostics présentés sur cette page sont fournis à titre informatif uniquement et ne constituent pas des conseils financiers. Les paris sportifs comportent des risques. Jouez de manière responsable. <a href="https://www.joueurs-info-service.fr" target="_blank" rel="noopener">Joueurs Info Service — 09 74 75 13 13</a>.
+    Les pronostics sont fournis à titre informatif uniquement et ne constituent pas des conseils financiers. Les paris sportifs comportent des risques. Jouez de manière responsable. <a href="https://www.joueurs-info-service.fr" target="_blank" rel="noopener">Joueurs Info Service — 09 74 75 13 13</a>.
   </div>
 
-</div><!-- /page -->
+</div>
 
 <script>
-  /* ── HELPERS ── */
   function esc(v) {
-    return String(v || "")
-      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
-      .replace(/"/g,"&quot;").replace(/'/g,"&#039;");
+    return String(v||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
   }
 
   function translatePick(pick) {
     if (!pick) return "—";
-    const p = String(pick).toLowerCase();
+    const p=String(pick).toLowerCase();
     if (p.includes("over 2.5"))  return "+ de 2,5 buts";
     if (p.includes("under 2.5")) return "- de 2,5 buts";
     if (p.includes("over 1.5"))  return "+ de 1,5 but";
     if (p.includes("under 1.5")) return "- de 1,5 but";
-    if (p.includes("both teams to score") || p.includes("btts")) return "Les deux équipes marquent";
-    if (p.includes("double chance"))   return "Double chance";
-    if (p.includes("draw no bet"))     return "Remboursé si match nul";
-    if (p.includes("victoire domicile"))           return "Victoire domicile";
-    if (p.includes("victoire extérieur") || p.includes("victoire exterieur")) return "Victoire extérieur";
+    if (p.includes("both teams to score")||p.includes("btts")) return "Les deux équipes marquent";
+    if (p.includes("double chance"))  return "Double chance";
+    if (p.includes("draw no bet"))    return "Remboursé si match nul";
+    if (p.includes("victoire domicile")) return "Victoire domicile";
+    if (p.includes("victoire extérieur")||p.includes("victoire exterieur")) return "Victoire extérieur";
     return pick;
   }
 
   function translateConfidence(c) {
-    const s = String(c || "").toLowerCase();
-    if (s.includes("élev") || s === "high")   return { label: "Confiance élevée",  cls: "badge-high" };
-    if (s.includes("moy")  || s === "medium") return { label: "Confiance moyenne", cls: "badge-medium" };
-    if (s.includes("faible") || s === "low")  return { label: "Confiance faible",  cls: "badge-low" };
-    return { label: "Confiance moyenne", cls: "badge-medium" };
+    const s=String(c||"").toLowerCase();
+    if (s.includes("élev")||s==="high")   return {label:"Confiance élevée",  cls:"badge-high"};
+    if (s.includes("moy") ||s==="medium") return {label:"Confiance moyenne", cls:"badge-medium"};
+    if (s.includes("faible")||s==="low")  return {label:"Confiance faible",  cls:"badge-low"};
+    return {label:"Confiance moyenne", cls:"badge-medium"};
   }
 
   function parseDate(v) {
     if (!v) return new Date(9999,0,1);
-    const parts = String(v).split(" à ");
-    if (parts.length !== 2) return new Date(9999,0,1);
-    const [d,m,y] = parts[0].split("/");
-    const [h,min] = parts[1].split(":");
-    return new Date(+("20"+y), +m-1, +d, +h, +min);
+    const parts=String(v).split(" à ");
+    if (parts.length!==2) return new Date(9999,0,1);
+    const [d,m,y]=parts[0].split("/");
+    const [h,min]=parts[1].split(":");
+    return new Date(+("20"+y),+m-1,+d,+h,+min);
   }
 
   function formatDate(v) {
     if (!v) return "";
-    const parts = String(v).split(" à ");
-    if (parts.length !== 2) return v;
-    const [datePart, timePart] = parts;
-    const [d,m,y] = datePart.split("/");
-    const date = new Date(`20${y}-${m}-${d}T${timePart}`);
+    const parts=String(v).split(" à ");
+    if (parts.length!==2) return v;
+    const [datePart,timePart]=parts;
+    const [d,m,y]=datePart.split("/");
+    const date=new Date(`20${y}-${m}-${d}T${timePart}`);
     if (isNaN(date)) return v;
-    const dayN = date.toLocaleDateString("fr-FR",{weekday:"long"});
-    const monN = date.toLocaleDateString("fr-FR",{month:"long"});
-    const hh = String(date.getHours()).padStart(2,"0");
-    const mm = String(date.getMinutes()).padStart(2,"0");
-    const day = dayN.charAt(0).toUpperCase() + dayN.slice(1);
-    return `${day} ${d} ${monN} · ${hh}h${mm}`;
+    const dayN=date.toLocaleDateString("fr-FR",{weekday:"long"});
+    const monN=date.toLocaleDateString("fr-FR",{month:"long"});
+    const hh=String(date.getHours()).padStart(2,"0");
+    const mm=String(date.getMinutes()).padStart(2,"0");
+    return `${dayN.charAt(0).toUpperCase()+dayN.slice(1)} ${d} ${monN} · ${hh}h${mm}`;
   }
 
-  function getFactors(factorsText) {
-    if (!factorsText) return [];
-    return String(factorsText).replace(/\n/g,"").split(" | ").map(f=>f.trim()).filter(Boolean).slice(0,4);
+  function getFactors(ft) {
+    if (!ft) return [];
+    return String(ft).replace(/\n/g,"").split(" | ").map(f=>f.trim()).filter(Boolean).slice(0,4);
   }
 
-  function getTeam(match, side) {
+  function getTeam(match,side) {
     if (!match) return "?";
-    const parts = String(match).split("/");
-    return (side === "home" ? parts[0] : parts[1])?.trim() || "?";
+    const p=String(match).split("/");
+    return (side==="home"?p[0]:p[1])?.trim()||"?";
   }
 
-  /* ── RENDER ── */
   function renderCard(p) {
-    const match      = p.match || p["2"] || "";
-    const competition= p.competition || p["1"] || "Football";
-    const home       = p.home_team  || getTeam(match,"home");
-    const away       = p.away_team  || getTeam(match,"away");
-    const pick       = p.pick       || p["3"];
-    const odd        = p.bookmaker_odds || p["4"] || "—";
-    const conf       = translateConfidence(p.confidence_level || p["6"]);
-    const analysis   = p.analysis   || p["10"] || "";
-    const factors    = Array.isArray(p.factors) ? p.factors : getFactors(p["11"]);
-    const date       = formatDate(p.match_date || p["0"]);
+    const match      =p.match||p["2"]||"";
+    const competition=p.competition||p["1"]||"Football";
+    const home       =p.home_team||getTeam(match,"home");
+    const away       =p.away_team||getTeam(match,"away");
+    const pick       =p.pick||p["3"];
+    const odd        =p.bookmaker_odds||p["4"]||"—";
+    const conf       =translateConfidence(p.confidence_level||p["6"]);
+    const analysis   =p.analysis||p["10"]||"";
+    const factors    =Array.isArray(p.factors)?p.factors:getFactors(p["11"]);
+    const date       =formatDate(p.match_date||p["0"]);
 
     return `
     <div class="card">
-      <div class="card-shimmer"></div>
+      <div class="card-top-line"></div>
       <div class="card-league">${esc(competition)}</div>
-      <div class="card-match">${esc(home)} <span style="color:var(--text-3);font-weight:400">vs</span> ${esc(away)}</div>
-      ${date ? `<div class="card-time">${esc(date)}</div>` : ""}
+      <div class="card-match">${esc(home)}<span class="vs">vs</span>${esc(away)}</div>
+      ${date?`<div class="card-time">${esc(date)}</div>`:""}
       <div class="badge ${conf.cls}"><span class="badge-dot"></span>${esc(conf.label)}</div>
       <div class="pick-box">
         <span class="pick-label">Pronostic</span>
@@ -747,48 +571,44 @@
         <span class="odds-label">Cote</span>
         <span class="odds-value">${esc(odd)}</span>
       </div>
-      ${analysis ? `<div class="analysis">${esc(analysis)}</div>` : ""}
-      ${factors.length ? `<div class="factors">${factors.map(f=>`<div class="factor">${esc(f)}</div>`).join("")}</div>` : ""}
+      ${analysis?`<div class="analysis">${esc(analysis)}</div>`:""}
+      ${factors.length?`<div class="factors">${factors.map(f=>`<div class="factor">${esc(f)}</div>`).join("")}</div>`:""}
     </div>`;
   }
 
-  /* ── LOAD ── */
   async function load() {
-    const app = document.getElementById("app");
+    const app=document.getElementById("app");
     try {
-      const res  = await fetch("./data/predictions.json?v=" + Date.now(), { cache: "no-store" });
-      const data = await res.json();
+      const res =await fetch("./data/predictions.json?v="+Date.now(),{cache:"no-store"});
+      const data=await res.json();
 
-      const ts = new Date(data.generated_at);
-      document.getElementById("date").textContent =
-        ts.toLocaleDateString("fr-FR",{day:"numeric",month:"short"}) + " · " +
+      const ts=new Date(data.generated_at);
+      document.getElementById("date").textContent=
+        ts.toLocaleDateString("fr-FR",{day:"numeric",month:"short"})+" · "+
         ts.toLocaleTimeString("fr-FR",{hour:"2-digit",minute:"2-digit"});
 
-      const preds = (Array.isArray(data.predictions) ? data.predictions : [])
-        .sort((a,b) => parseDate(a.match_date||a["0"]) - parseDate(b.match_date||b["0"]));
+      const preds=(Array.isArray(data.predictions)?data.predictions:[])
+        .sort((a,b)=>parseDate(a.match_date||a["0"])-parseDate(b.match_date||b["0"]));
 
-      if (!preds.length) {
-        app.innerHTML = `<div class="empty">
-          <div class="empty-icon">⚽</div>
-          <div class="empty-title">Aucun pronostic disponible</div>
-          <div class="empty-text">Les pronostics du prochain week-end seront publiés prochainement.</div>
-        </div>`;
-        return;
+      if (preds.length) {
+        const cb=document.getElementById("counter-bar");
+        cb.style.display="flex";
+        document.getElementById("counter-num").textContent=preds.length;
+        document.getElementById("counter-s").textContent=preds.length>1?"s":"";
       }
 
-      app.innerHTML = preds.map(renderCard).join("");
-    } catch (err) {
-      app.innerHTML = `<div class="empty">
-        <div class="empty-icon">📡</div>
-        <div class="empty-title">Impossible de charger les pronostics</div>
-        <div class="empty-text">Vérifiez que le fichier <code>data/predictions.json</code> est bien accessible.</div>
-      </div>`;
+      if (!preds.length) {
+        app.innerHTML=`<div class="empty"><div class="empty-icon">⚽</div><div class="empty-title">Aucun pronostic disponible</div><div class="empty-text">Les pronostics du prochain week-end seront publiés prochainement.</div></div>`;
+        return;
+      }
+      app.innerHTML=preds.map(renderCard).join("");
+    } catch(err) {
+      app.innerHTML=`<div class="empty"><div class="empty-icon">📡</div><div class="empty-title">Impossible de charger les pronostics</div><div class="empty-text">Vérifiez que le fichier <code>data/predictions.json</code> est accessible.</div></div>`;
     }
   }
 
-  /* ── DATE AFFICHÉE AU CHARGEMENT ── */
-  document.getElementById("date").textContent =
-    new Date().toLocaleDateString("fr-FR", { day:"numeric", month:"short", year:"numeric" });
+  document.getElementById("date").textContent=
+    new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"short",year:"numeric"});
 
   load();
 </script>
