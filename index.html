@@ -609,6 +609,25 @@ function formatMatchDateFR(value) {
   return `${capitalizeFirst(dayName)} ${day} ${monthName} • ${hours}h${minutes}`;
 }
 
+function parseMatchDate(value) {
+  if (!value) return new Date(9999, 0, 1);
+
+  const parts = String(value).split(" à ");
+  if (parts.length !== 2) return new Date(9999, 0, 1);
+
+  const [datePart, timePart] = parts;
+  const [day, month, year] = datePart.split("/");
+  const [hour, minute] = timePart.split(":");
+
+  return new Date(
+    Number("20" + year),
+    Number(month) - 1,
+    Number(day),
+    Number(hour),
+    Number(minute)
+  );
+}  
+
 function capitalizeFirst(text) {
   if (!text) return "";
   return text.charAt(0).toUpperCase() + text.slice(1);
@@ -647,6 +666,12 @@ async function load() {
       "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
 
     const predictions = Array.isArray(data.predictions) ? data.predictions : [];
+
+    predictions.sort((a, b) => {
+  const dateA = parseMatchDate(a.match_date || a["0"]);
+  const dateB = parseMatchDate(b.match_date || b["0"]);
+  return dateA - dateB;
+});
 
     if (!predictions.length) {
       document.getElementById("app").innerHTML = "Aucun pronostic disponible pour le moment.";
