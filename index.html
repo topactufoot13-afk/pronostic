@@ -1,704 +1,938 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top Actu Foot 13 - Pronostics</title>
-  <style>
-    * { box-sizing: border-box; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Actu Foot 13 - Pronostics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #09090f;
+      --surface:   rgba(255,255,255,0.04);
+      --border:    rgba(255,255,255,0.07);
+      --accent:    #4f7cff;
+      --accent2:   #00d4ff;
+      --text:      #f0f4ff;
+      --text-muted:#6b7a9e;
+      --text-dim:  #9aa5c4;
+      --green:     #00e090;
+      --orange:    #f5a623;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+    }
 
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(80, 115, 255, 0.22), transparent 30%),
-        radial-gradient(circle at top right, rgba(0, 220, 255, 0.12), transparent 28%),
-        linear-gradient(180deg, #070b18 0%, #0b1020 55%, #070b18 100%);
-      color: #f8fbff;
-    }
+```
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .page {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 34px 20px 70px;
-    }
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 40% at 20% -10%, rgba(79,124,255,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 80% 5%,  rgba(0,212,255,0.07)  0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(79,124,255,0.06) 0%, transparent 60%);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-    }
+/* ─── PAGE WRAPPER ─── */
+.page {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 48px 28px 100px;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+/* ─── TOPBAR ─── */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 72px;
+}
 
-    .logo-wrap {
-      width: 72px;
-      height: 72px;
-      flex-shrink: 0;
-      filter: drop-shadow(0 4px 16px rgba(30, 100, 255, 0.5));
-    }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 
-    .brand-name {
-      font-size: 15px;
-      font-weight: 850;
-      letter-spacing: -0.2px;
-      color: #f8fbff;
-    }
+.logo-wrap {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 18px rgba(79,124,255,0.45));
+}
 
-    .brand-sub {
-      font-size: 11px;
-      color: #8d9cc7;
-      margin-top: 2px;
-      letter-spacing: 0.3px;
-    }
+.brand-name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--text);
+}
 
-    .update {
-      font-size: 11px;
-      color: #7f8db7;
-    }
+.brand-sub {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  letter-spacing: 0.2px;
+  font-weight: 400;
+}
 
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(34px, 6vw, 48px);
-      letter-spacing: -1.4px;
-      line-height: 1.02;
-    }
+.update {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 7px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.1px;
+  backdrop-filter: blur(12px);
+}
 
-    .subtitle {
-      color: #aeb9d5;
-      margin-bottom: 20px;
-      line-height: 1.55;
-    }
+/* ─── HERO ─── */
+h1 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 400;
+  letter-spacing: -1.5px;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 20px;
+  max-width: 720px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 18px;
-    }
+h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, #4f7cff 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-    .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.16);
-    }
+.subtitle {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 64px;
+  line-height: 1.65;
+  max-width: 520px;
+  font-weight: 400;
+}
 
-    .card-league {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #5e7294;
-      margin-bottom: 4px;
-    }
+/* ─── GUIDE SECTION ─── */
+.guide {
+  margin: 0 0 64px;
+  padding: 40px 40px 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
 
-    .match {
-      font-size: 18px;
-      font-weight: 850;
-      letter-spacing: -0.3px;
-    }
-
-    .card-time {
-      font-size: 12px;
-      color: #5e7294;
-      margin-top: 4px;
-    }
-
-    .confidence {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 800;
-      margin-top: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-    }
-
-    .conf-high   { background: rgba(0,224,128,0.1);  color: #00e080; border: 1px solid rgba(0,224,128,0.22); }
-    .conf-medium { background: rgba(245,166,35,0.1); color: #f5a623; border: 1px solid rgba(245,166,35,0.22); }
-
-    .pick {
-      margin: 15px 0;
-      font-size: 21px;
-      font-weight: 900;
-      padding: 14px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(91,124,255,0.30), rgba(34,211,238,0.10));
-      border: 1px solid rgba(125,151,255,0.18);
-    }
-
-    .odds {
-      font-size: 14px;
-      margin-bottom: 10px;
-      color: #dce5ff;
-    }
-
-    .analysis {
-      font-size: 14px;
-      margin: 10px 0;
-      color: #d9e2f8;
-      line-height: 1.55;
-    }
-
-    .factors { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; }
-
-    .factor {
-      font-size: 12.5px;
-      color: #7a90b0;
-      padding: 7px 12px 7px 14px;
-      border-left: 2px solid rgba(91,124,255,0.35);
-      background: rgba(255,255,255,0.02);
-      border-radius: 0 8px 8px 0;
-      line-height: 1.5;
-    }
-
-    .empty-state {
-      grid-column: 1/-1;
-      text-align: center;
-      padding: 60px 24px;
-      color: #5e7294;
-    }
-
-    .empty-icon { font-size: 40px; margin-bottom: 16px; }
-
-    .empty-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #aeb9d5;
-      margin-bottom: 10px;
-    }
-
-    .empty-text {
-      font-size: 14px;
-      line-height: 1.65;
-      max-width: 420px;
-      margin: 0 auto;
-      color: #5e7294;
-    }
-
-    .guide {
-  margin: 20px 0 26px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,0.10);
+.guide::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79,124,255,0.5), transparent);
 }
 
 .guide-kicker {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: #5f78ff;
-  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.guide-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
 }
 
 .guide-title {
-  font-size: clamp(18px, 3vw, 24px);
-  max-width: 600px;
-  font-weight: 800;
-  letter-spacing: -0.4px;
-  line-height: 1.25;
-  margin-bottom: 18px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(20px, 3vw, 27px);
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  margin-bottom: 32px;
+  color: var(--text);
+  max-width: 560px;
 }
 
 .guide-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
 }
 
 .guide-grid div {
-  padding: 0 16px 0 0;
+  padding: 0 32px 0 0;
+  border-right: 1px solid var(--border);
+  margin-right: 32px;
+}
+
+.guide-grid div:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .guide-grid span {
-  display: block;
-  font-size: 10px;
-  font-weight: 700;
-  color: #53688f;
-  margin-bottom: 8px;
-  opacity: 0.5;
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  opacity: 1;
 }
 
 .guide-grid strong {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  color: #f8fbff;
-  margin-bottom: 6px;
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.2px;
 }
 
 .guide-grid p {
-  margin: 0;
-  font-size: 12.5px;
-  line-height: 1.45;
-  color: #9aa8c7;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .guide-note {
-  margin-top: 20px;
-  font-size: 12px;
-  line-height: 1.55;
-  color: #657597;
-  max-width: 760px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 680px;
 }
 
-.guide-grid {
-  gap: 14px;
+.guide-note strong {
+  color: var(--text-dim);
+  font-weight: 600;
 }
 
+/* ─── CARDS GRID ─── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+/* ─── CARD ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 32px 64px rgba(0,0,0,0.3);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(79,124,255,0.2);
+  border-color: rgba(79,124,255,0.2);
+}
+
+.card-league {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.match {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.card-time {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+/* confidence badges */
+.confidence {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 700;
+  margin-top: 14px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+
+.confidence::before {
+  content: '';
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+}
+
+.conf-high {
+  background: rgba(0,224,128,0.08);
+  color: var(--green);
+  border: 1px solid rgba(0,224,128,0.18);
+}
+
+.conf-high::before { background: var(--green); box-shadow: 0 0 6px var(--green); }
+
+.conf-medium {
+  background: rgba(245,166,35,0.08);
+  color: var(--orange);
+  border: 1px solid rgba(245,166,35,0.18);
+}
+
+.conf-medium::before { background: var(--orange); }
+
+/* pick box */
+.pick {
+  margin: 20px 0 16px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg,
+    rgba(79,124,255,0.18) 0%,
+    rgba(0,212,255,0.08) 100%);
+  border: 1px solid rgba(79,124,255,0.2);
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.pick::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79,124,255,0.5), transparent);
+}
+
+/* odds */
+.odds {
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+
+.odds::before {
+  content: 'COTE ';
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* analysis */
+.analysis {
+  font-size: 13.5px;
+  margin: 12px 0;
+  color: var(--text-dim);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* factors */
+.factors {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.factor {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-left: 2px solid rgba(79,124,255,0.3);
+  background: rgba(255,255,255,0.02);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.factor:hover {
+  border-color: rgba(79,124,255,0.6);
+  background: rgba(79,124,255,0.05);
+}
+
+/* ─── EMPTY STATE ─── */
+.empty-state {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 80px 24px;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: 44px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.empty-title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.empty-text {
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 400px;
+  margin: 0 auto;
+  color: var(--text-muted);
+}
+
+/* ─── LEGAL ─── */
+.legal {
+  margin-top: 72px;
+  padding: 32px 0 0;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.legal-title {
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 13px;
+  letter-spacing: -0.1px;
+}
+
+.legal a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.legal a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ─── RESPONSIVE ─── */
 @media (max-width: 700px) {
-  .guide {
-    margin: 26px 0 30px;
-    padding-top: 22px;
-  }
+  .page { padding: 28px 18px 64px; }
 
-  .guide-title {
-    font-size: 25px;
-    margin-bottom: 20px;
-  }
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 48px;
+  }
 
-  .guide-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  h1 { letter-spacing: -1px; }
 
-  .guide-grid div {
-    padding-right: 0;
-  }
+  .subtitle { margin-bottom: 40px; }
+
+  .guide {
+    padding: 28px 22px;
+    margin-bottom: 40px;
+  }
+
+  .guide-title { font-size: 22px; margin-bottom: 24px; }
+
+  .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .guide-grid div {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    margin-right: 0;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .guide-grid div:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .update { opacity: 0.9; }
 }
 
-    .legal {
-      margin-top: 48px;
-      padding: 22px 0 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 12px;
-      color: #8d99bd;
-      line-height: 1.7;
-    }
+/* ─── FADE-IN ANIMATION ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-    .legal-title {
-      color: #f8fbff;
-      font-weight: 900;
-      margin-bottom: 8px;
-      font-size: 13px;
-    }
+.topbar  { animation: fadeUp 0.5s ease both; }
+h1       { animation: fadeUp 0.5s 0.1s ease both; }
+.subtitle{ animation: fadeUp 0.5s 0.18s ease both; }
+.guide   { animation: fadeUp 0.5s 0.26s ease both; }
+.cards   { animation: fadeUp 0.5s 0.34s ease both; }
+```
 
-    .legal a { color: #9fb0ff; text-decoration: none; font-weight: 700; }
-    .legal a:hover { text-decoration: underline; }
-
-    @media (max-width: 700px) {
-      .page { padding: 24px 15px 54px; }
-      .topbar { align-items: flex-start; flex-direction: column; gap: 14px; }
-      .update { opacity: 0.8; }
-      .cards { grid-template-columns: 1fr; }
-    }
-  </style>
+  </style>
 </head>
 
 <body>
 <div class="page">
 
-  <div class="topbar">
-    <div class="brand">
+  <div class="topbar">
+    <div class="brand">
 
-      <!-- ══════════════════════════════
-           LOGO SVG — TAF SHIELD PRO
-           ══════════════════════════════ -->
-      <div class="logo-wrap">
-        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="79">
-          <defs>
-            <!-- Shield outer gradient -->
-            <linearGradient id="shieldOuter" x1="100" y1="0" x2="100" y2="220" gradientUnits="userSpaceOnUse">
-              <stop offset="0%"   stop-color="#2060ff"/>
-              <stop offset="100%" stop-color="#0a1a5c"/>
-            </linearGradient>
-            <!-- Shield inner gradient -->
-            <linearGradient id="shieldInner" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
-              <stop offset="0%"   stop-color="#0d1f4a"/>
-              <stop offset="100%" stop-color="#060d24"/>
-            </linearGradient>
-            <!-- TAF text gradient -->
-            <linearGradient id="tafGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%"   stop-color="#ffffff"/>
-              <stop offset="45%"  stop-color="#cce0ff"/>
-              <stop offset="100%" stop-color="#1a7fff"/>
-            </linearGradient>
-            <!-- Blue accent gradient -->
-            <linearGradient id="blueAccent" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stop-color="#38b6ff"/>
-              <stop offset="100%" stop-color="#1a4fff"/>
-            </linearGradient>
-            <!-- Shield shine -->
-            <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%"   stop-color="rgba(255,255,255,0.18)"/>
-              <stop offset="60%"  stop-color="rgba(255,255,255,0)"/>
-            </linearGradient>
-            <!-- Ball gradient -->
-            <radialGradient id="ballGrad" cx="42%" cy="35%" r="60%">
-              <stop offset="0%"   stop-color="#ffffff"/>
-              <stop offset="50%"  stop-color="#d0dff5"/>
-              <stop offset="100%" stop-color="#8aaad0"/>
-            </radialGradient>
-            <!-- Glow filter -->
-            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="3" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <!-- Text glow -->
-            <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
-              <feGaussianBlur stdDeviation="2.5" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <!-- Star glow -->
-            <filter id="starGlow">
-              <feGaussianBlur stdDeviation="1.5" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
+```
+  <!-- ══════════════════════════════
+       LOGO SVG — TAF SHIELD PRO
+       ══════════════════════════════ -->
+  <div class="logo-wrap">
+    <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="79">
+      <defs>
+        <!-- Shield outer gradient -->
+        <linearGradient id="shieldOuter" x1="100" y1="0" x2="100" y2="220" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#2060ff"/>
+          <stop offset="100%" stop-color="#0a1a5c"/>
+        </linearGradient>
+        <!-- Shield inner gradient -->
+        <linearGradient id="shieldInner" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#0d1f4a"/>
+          <stop offset="100%" stop-color="#060d24"/>
+        </linearGradient>
+        <!-- TAF text gradient -->
+        <linearGradient id="tafGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="45%"  stop-color="#cce0ff"/>
+          <stop offset="100%" stop-color="#1a7fff"/>
+        </linearGradient>
+        <!-- Blue accent gradient -->
+        <linearGradient id="blueAccent" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#38b6ff"/>
+          <stop offset="100%" stop-color="#1a4fff"/>
+        </linearGradient>
+        <!-- Shield shine -->
+        <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="rgba(255,255,255,0.18)"/>
+          <stop offset="60%"  stop-color="rgba(255,255,255,0)"/>
+        </linearGradient>
+        <!-- Ball gradient -->
+        <radialGradient id="ballGrad" cx="42%" cy="35%" r="60%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="50%"  stop-color="#d0dff5"/>
+          <stop offset="100%" stop-color="#8aaad0"/>
+        </radialGradient>
+        <!-- Glow filter -->
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- Text glow -->
+        <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
+          <feGaussianBlur stdDeviation="2.5" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- Star glow -->
+        <filter id="starGlow">
+          <feGaussianBlur stdDeviation="1.5" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
 
-          <!-- ── OUTER SHIELD ── -->
-          <path d="M100 4 L192 34 L188 130 Q100 215 12 130 L8 34 Z"
-                fill="url(#shieldOuter)"
-                stroke="#4488ff"
-                stroke-width="2"/>
+      <!-- ── OUTER SHIELD ── -->
+      <path d="M100 4 L192 34 L188 130 Q100 215 12 130 L8 34 Z"
+            fill="url(#shieldOuter)"
+            stroke="#4488ff"
+            stroke-width="2"/>
 
-          <!-- ── INNER SHIELD ── -->
-          <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
-                fill="url(#shieldInner)"
-                stroke="rgba(100,160,255,0.35)"
-                stroke-width="1.2"/>
+      <!-- ── INNER SHIELD ── -->
+      <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
+            fill="url(#shieldInner)"
+            stroke="rgba(100,160,255,0.35)"
+            stroke-width="1.2"/>
 
-          <!-- ── SHINE OVERLAY ── -->
-          <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
-                fill="url(#shine)"/>
+      <!-- ── SHINE OVERLAY ── -->
+      <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
+            fill="url(#shine)"/>
 
-          <!-- ── BLUE ACCENT STRIPE LEFT ── -->
-          <path d="M38 44 L42 44 L38 120 L34 120 Z"
-                fill="url(#blueAccent)" opacity="0.6"/>
+      <!-- ── BLUE ACCENT STRIPE LEFT ── -->
+      <path d="M38 44 L42 44 L38 120 L34 120 Z"
+            fill="url(#blueAccent)" opacity="0.6"/>
 
-          <!-- ── BLUE ACCENT STRIPE RIGHT ── -->
-          <path d="M162 44 L166 44 L162 120 L158 120 Z"
-                fill="url(#blueAccent)" opacity="0.6"/>
+      <!-- ── BLUE ACCENT STRIPE RIGHT ── -->
+      <path d="M162 44 L166 44 L162 120 L158 120 Z"
+            fill="url(#blueAccent)" opacity="0.6"/>
 
-          <!-- ── STARS ── -->
-          <!-- Star left -->
-          <polygon points="70,30 72.5,37.5 80,37.5 74,42 76.5,49.5 70,45 63.5,49.5 66,42 60,37.5 67.5,37.5"
-                   fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(27,5)"/>
-          <!-- Star center (bigger) -->
-          <polygon points="100,22 103.5,32.5 115,32.5 106,39 109.5,49.5 100,43 90.5,49.5 94,39 85,32.5 96.5,32.5"
-                   fill="#5aafff" filter="url(#starGlow)"/>
-          <!-- Star right -->
-          <polygon points="130,30 132.5,37.5 140,37.5 134,42 136.5,49.5 130,45 123.5,49.5 126,42 120,37.5 127.5,37.5"
-                   fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(68,5)"/>
+      <!-- ── STARS ── -->
+      <!-- Star left -->
+      <polygon points="70,30 72.5,37.5 80,37.5 74,42 76.5,49.5 70,45 63.5,49.5 66,42 60,37.5 67.5,37.5"
+               fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(27,5)"/>
+      <!-- Star center (bigger) -->
+      <polygon points="100,22 103.5,32.5 115,32.5 106,39 109.5,49.5 100,43 90.5,49.5 94,39 85,32.5 96.5,32.5"
+               fill="#5aafff" filter="url(#starGlow)"/>
+      <!-- Star right -->
+      <polygon points="130,30 132.5,37.5 140,37.5 134,42 136.5,49.5 130,45 123.5,49.5 126,42 120,37.5 127.5,37.5"
+               fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(68,5)"/>
 
-          <!-- ── TAF TEXT ── -->
-          <!-- T -->
-          <text x="28" y="130"
-                font-family="Arial Black, Arial, sans-serif"
-                font-size="82"
-                font-weight="900"
-                font-style="italic"
-                fill="url(#tafGrad)"
-                filter="url(#textGlow)"
-                letter-spacing="-4">T</text>
+      <!-- ── TAF TEXT ── -->
+      <!-- T -->
+      <text x="28" y="130"
+            font-family="Arial Black, Arial, sans-serif"
+            font-size="82"
+            font-weight="900"
+            font-style="italic"
+            fill="url(#tafGrad)"
+            filter="url(#textGlow)"
+            letter-spacing="-4">T</text>
 
-          <!-- A -->
-          <text x="82" y="130"
-                font-family="Arial Black, Arial, sans-serif"
-                font-size="82"
-                font-weight="900"
-                font-style="italic"
-                fill="url(#tafGrad)"
-                filter="url(#textGlow)"
-                letter-spacing="-4">A</text>
+      <!-- A -->
+      <text x="82" y="130"
+            font-family="Arial Black, Arial, sans-serif"
+            font-size="82"
+            font-weight="900"
+            font-style="italic"
+            fill="url(#tafGrad)"
+            filter="url(#textGlow)"
+            letter-spacing="-4">A</text>
 
-          <!-- F — blue accent -->
-          <text x="138" y="130"
-                font-family="Arial Black, Arial, sans-serif"
-                font-size="82"
-                font-weight="900"
-                font-style="italic"
-                fill="url(#blueAccent)"
-                filter="url(#textGlow)">F</text>
+      <!-- F — blue accent -->
+      <text x="138" y="130"
+            font-family="Arial Black, Arial, sans-serif"
+            font-size="82"
+            font-weight="900"
+            font-style="italic"
+            fill="url(#blueAccent)"
+            filter="url(#textGlow)">F</text>
 
-          <!-- ── SEPARATOR LINE ── -->
-          <line x1="40" y1="138" x2="160" y2="138" stroke="rgba(80,140,255,0.5)" stroke-width="1"/>
+      <!-- ── SEPARATOR LINE ── -->
+      <line x1="40" y1="138" x2="160" y2="138" stroke="rgba(80,140,255,0.5)" stroke-width="1"/>
 
-          <!-- ── TOP ACTU FOOT ── -->
-          <text x="100" y="153"
-                text-anchor="middle"
-                font-family="Arial, sans-serif"
-                font-size="12"
-                font-weight="800"
-                fill="white"
-                letter-spacing="2.5">TOP ACTU FOOT</text>
+      <!-- ── TOP ACTU FOOT ── -->
+      <text x="100" y="153"
+            text-anchor="middle"
+            font-family="Arial, sans-serif"
+            font-size="12"
+            font-weight="800"
+            fill="white"
+            letter-spacing="2.5">TOP ACTU FOOT</text>
 
-          <!-- ── 13 ── -->
-          <text x="100" y="169"
-                text-anchor="middle"
-                font-family="Arial Black, Arial, sans-serif"
-                font-size="14"
-                font-weight="900"
-                fill="#3a9fff"
-                letter-spacing="1"
-                filter="url(#starGlow)">13</text>
+      <!-- ── 13 ── -->
+      <text x="100" y="169"
+            text-anchor="middle"
+            font-family="Arial Black, Arial, sans-serif"
+            font-size="14"
+            font-weight="900"
+            fill="#3a9fff"
+            letter-spacing="1"
+            filter="url(#starGlow)">13</text>
 
-          <!-- ── SEPARATOR DASHES ── -->
-          <line x1="52" y1="169" x2="72" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
-          <line x1="128" y1="169" x2="148" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
+      <!-- ── SEPARATOR DASHES ── -->
+      <line x1="52" y1="169" x2="72" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
+      <line x1="128" y1="169" x2="148" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
 
-          <!-- ── FOOTBALL ── -->
-          <!-- Ball shadow -->
-          <ellipse cx="100" cy="207" rx="18" ry="5" fill="rgba(0,0,0,0.4)"/>
+      <!-- ── FOOTBALL ── -->
+      <!-- Ball shadow -->
+      <ellipse cx="100" cy="207" rx="18" ry="5" fill="rgba(0,0,0,0.4)"/>
 
-          <!-- Ball body -->
-          <circle cx="100" cy="195" r="18"
-                  fill="url(#ballGrad)"
-                  stroke="rgba(100,140,200,0.4)"
-                  stroke-width="0.8"/>
+      <!-- Ball body -->
+      <circle cx="100" cy="195" r="18"
+              fill="url(#ballGrad)"
+              stroke="rgba(100,140,200,0.4)"
+              stroke-width="0.8"/>
 
-          <!-- Ball pentagon center -->
-          <polygon points="100,185 106,189.5 103.8,196.5 96.2,196.5 94,189.5"
-                   fill="#1a2a4a" opacity="0.85"/>
+      <!-- Ball pentagon center -->
+      <polygon points="100,185 106,189.5 103.8,196.5 96.2,196.5 94,189.5"
+               fill="#1a2a4a" opacity="0.85"/>
 
-          <!-- Ball seams -->
-          <line x1="100" y1="185" x2="100"   y2="177.5" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-          <line x1="106" y1="189.5" x2="113" y2="186"   stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-          <line x1="103.8" y1="196.5" x2="108" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-          <line x1="96.2"  y1="196.5" x2="92"  y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-          <line x1="94"    y1="189.5" x2="87"  y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+      <!-- Ball seams -->
+      <line x1="100" y1="185" x2="100"   y2="177.5" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+      <line x1="106" y1="189.5" x2="113" y2="186"   stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+      <line x1="103.8" y1="196.5" x2="108" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+      <line x1="96.2"  y1="196.5" x2="92"  y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+      <line x1="94"    y1="189.5" x2="87"  y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
 
-          <!-- Ball shine -->
-          <ellipse cx="95" cy="189" rx="4" ry="2.5"
-                   fill="rgba(255,255,255,0.45)"
-                   transform="rotate(-30,95,189)"/>
-        </svg>
-      </div>
-      <!-- ══ END LOGO ══ -->
+      <!-- Ball shine -->
+      <ellipse cx="95" cy="189" rx="4" ry="2.5"
+               fill="rgba(255,255,255,0.45)"
+               transform="rotate(-30,95,189)"/>
+    </svg>
+  </div>
+  <!-- ══ END LOGO ══ -->
 
-      <div>
-        <div class="brand-name">Top Actu Foot 13</div>
-        <div class="brand-sub">Analyse football quotidienne</div>
-      </div>
-    </div>
+  <div>
+    <div class="brand-name">Top Actu Foot 13</div>
+    <div class="brand-sub">Analyse football quotidienne</div>
+  </div>
+</div>
 
-    <div class="update" id="date">--</div>
-  </div>
+<div class="update" id="date">--</div>
+```
 
-  <h1>Pronostics football du week-end</h1>
+  </div>
 
-  <div class="subtitle">
-    Analyse basée sur les données, les statistiques avancées et les cotes du marché.
-  </div>
+  <h1>Pronostics football<br><em>du week-end</em></h1>
+
+  <div class="subtitle">
+    Analyse basée sur les données, les statistiques avancées et les cotes du marché.
+  </div>
 
 <div class="guide">
-  <div class="guide-kicker">Gestion responsable</div>
-  <div class="guide-title">Une méthode simple pour rester discipliné et viser un résultat positif sur le long terme.</div>
+  <div class="guide-kicker">Gestion responsable</div>
+  <div class="guide-title">Une méthode simple pour rester discipliné et viser un résultat positif sur le long terme.</div>
 
-  <div class="guide-grid">
-    <div>
-      <span>01</span>
-      <strong>Mise fixe</strong>
-      <p>Exemple : 10€ par pronostic, toujours le même montant.</p>
-    </div>
+  <div class="guide-grid">
+    <div>
+      <span>01</span>
+      <strong>Mise fixe</strong>
+      <p>Exemple : 10€ par pronostic, toujours le même montant.</p>
+    </div>
 
-    <div>
-      <span>02</span>
-      <strong>Paris simples</strong>
-      <p>1 match = 1 pari. Les gains sont plus faibles, mais le risque est mieux contrôlé.</p>
-    </div>
+```
+<div>
+  <span>02</span>
+  <strong>Paris simples</strong>
+  <p>1 match = 1 pari. Les gains sont plus faibles, mais le risque est mieux contrôlé.</p>
+</div>
 
-    <div>
-      <span>03</span>
-      <strong>Combiné léger</strong>
-      <p>Optionnel, avec une petite mise. Un seul match peut faire perdre l’ensemble.</p>
-    </div>
-  </div>
+<div>
+  <span>03</span>
+  <strong>Combiné léger</strong>
+  <p>Optionnel, avec une petite mise. Un seul match peut faire perdre l'ensemble.</p>
+</div>
+```
 
-  <div class="guide-note">
-    Exemple indicatif : à 10€ par pronostic, 5 matchs représentent 50€ engagés. Avec une cote moyenne de 1.70, 4 pronostics gagnants sur 5 représentent environ 68€ de retour, soit +18€ sur la semaine.
-    <br><br>
-    Ces chiffres restent théoriques et non garantis.
-    <br><br>
-    <strong>Des gains modestes mais réguliers valent mieux qu’un gros coup suivi de pertes.</strong>
-  </div>
+  </div>
+
+  <div class="guide-note">
+    Exemple indicatif : à 10€ par pronostic, 5 matchs représentent 50€ engagés. Avec une cote moyenne de 1.70, 4 pronostics gagnants sur 5 représentent environ 68€ de retour, soit +18€ sur la semaine.
+    <br><br>
+    Ces chiffres restent théoriques et non garantis.
+    <br><br>
+    <strong>Des gains modestes mais réguliers valent mieux qu'un gros coup suivi de pertes.</strong>
+  </div>
 </div>
 
 <div class="cards" id="app">Chargement...</div>
 
 <script>
 function translatePick(pick) {
-  if (!pick) return "--";
-  pick = String(pick).toLowerCase();
+  if (!pick) return "--";
+  pick = String(pick).toLowerCase();
 
-  if (pick.includes("over 2.5")) return "+ de 2,5 buts";
-  if (pick.includes("under 2.5")) return "- de 2,5 buts";
-  if (pick.includes("over 1.5")) return "+ de 1,5 but";
-  if (pick.includes("under 1.5")) return "- de 1,5 but";
-  if (pick.includes("both teams to score") || pick.includes("btts")) return "Les deux équipes marquent";
-  if (pick.includes("double chance")) return "Double chance";
-  if (pick.includes("draw no bet")) return "Remboursé si match nul";
-  if (pick.includes("victoire domicile")) return "Victoire domicile";
-  if (pick.includes("victoire extérieur") || pick.includes("victoire exterieur")) return "Victoire extérieur";
+  if (pick.includes("over 2.5")) return "+ de 2,5 buts";
+  if (pick.includes("under 2.5")) return "- de 2,5 buts";
+  if (pick.includes("over 1.5")) return "+ de 1,5 but";
+  if (pick.includes("under 1.5")) return "- de 1,5 but";
+  if (pick.includes("both teams to score") || pick.includes("btts")) return "Les deux équipes marquent";
+  if (pick.includes("double chance")) return "Double chance";
+  if (pick.includes("draw no bet")) return "Remboursé si match nul";
+  if (pick.includes("victoire domicile")) return "Victoire domicile";
+  if (pick.includes("victoire extérieur") || pick.includes("victoire exterieur")) return "Victoire extérieur";
 
-  return pick;
+  return pick;
 }
 
 function translateConfidence(c) {
-  c = String(c || "").toLowerCase();
+  c = String(c || "").toLowerCase();
 
-  if (c.includes("élev") || c === "high") return "Confiance élevée";
-  if (c.includes("moy") || c === "medium") return "Confiance moyenne";
-  if (c.includes("faible") || c === "low") return "Confiance faible";
+  if (c.includes("élev") || c === "high") return "Confiance élevée";
+  if (c.includes("moy") || c === "medium") return "Confiance moyenne";
+  if (c.includes("faible") || c === "low") return "Confiance faible";
 
-  return "Confiance moyenne";
+  return "Confiance moyenne";
 }
 
 function escapeHtml(value) {
-  return String(value || "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 function formatMatchDateFR(value) {
-  if (!value) return "";
+  if (!value) return "";
 
-  const parts = String(value).split(" à ");
-  if (parts.length !== 2) return value;
+  const parts = String(value).split(" à ");
+  if (parts.length !== 2) return value;
 
-  const [datePart, timePart] = parts;
-  const [day, month, year] = datePart.split("/");
+  const [datePart, timePart] = parts;
+  const [day, month, year] = datePart.split("/");
 
-  const fullYear = "20" + year;
-  const date = new Date(`${fullYear}-${month}-${day}T${timePart}`);
+  const fullYear = "20" + year;
+  const date = new Date(`${fullYear}-${month}-${day}T${timePart}`);
 
-  if (isNaN(date.getTime())) return value;
+  if (isNaN(date.getTime())) return value;
 
-  const dayName = date.toLocaleDateString("fr-FR", { weekday: "long" });
-  const monthName = date.toLocaleDateString("fr-FR", { month: "long" });
+  const dayName = date.toLocaleDateString("fr-FR", { weekday: "long" });
+  const monthName = date.toLocaleDateString("fr-FR", { month: "long" });
 
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
 
-  return `${capitalizeFirst(dayName)} ${day} ${monthName} • ${hours}h${minutes}`;
+  return `${capitalizeFirst(dayName)} ${day} ${monthName} • ${hours}h${minutes}`;
 }
 
 function parseMatchDate(value) {
-  if (!value) return new Date(9999, 0, 1);
+  if (!value) return new Date(9999, 0, 1);
 
-  const parts = String(value).split(" à ");
-  if (parts.length !== 2) return new Date(9999, 0, 1);
+  const parts = String(value).split(" à ");
+  if (parts.length !== 2) return new Date(9999, 0, 1);
 
-  const [datePart, timePart] = parts;
-  const [day, month, year] = datePart.split("/");
-  const [hour, minute] = timePart.split(":");
+  const [datePart, timePart] = parts;
+  const [day, month, year] = datePart.split("/");
+  const [hour, minute] = timePart.split(":");
 
-  return new Date(
-    Number("20" + year),
-    Number(month) - 1,
-    Number(day),
-    Number(hour),
-    Number(minute)
-  );
-}  
+  return new Date(
+    Number("20" + year),
+    Number(month) - 1,
+    Number(day),
+    Number(hour),
+    Number(minute)
+  );
+}  
 
 function capitalizeFirst(text) {
-  if (!text) return "";
-  return text.charAt(0).toUpperCase() + text.slice(1);
-}  
+  if (!text) return "";
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}  
 
 function getHomeTeam(match) {
-  if (!match) return "?";
-  return String(match).split("/")[0]?.trim() || "?";
+  if (!match) return "?";
+  return String(match).split("/")[0]?.trim() || "?";
 }
 
 function getAwayTeam(match) {
-  if (!match) return "?";
-  return String(match).split("/")[1]?.trim() || "?";
+  if (!match) return "?";
+  return String(match).split("/")[1]?.trim() || "?";
 }
 
 function getFactors(factorsText) {
-  if (!factorsText) return [];
+  if (!factorsText) return [];
 
-  return String(factorsText)
-    .replaceAll("\n", "")
-    .split(" | ")
-    .map(f => f.trim())
-    .filter(Boolean)
-    .slice(0, 4);
+  return String(factorsText)
+    .replaceAll("\n", "")
+    .split(" | ")
+    .map(f => f.trim())
+    .filter(Boolean)
+    .slice(0, 4);
 }
 
 async function load() {
-  try {
-    const res = await fetch("./data/predictions.json?v=" + Date.now(), {
-      cache: "no-store"
-    });
+  try {
+    const res = await fetch("./data/predictions.json?v=" + Date.now(), {
+      cache: "no-store"
+    });
 
-    const data = await res.json();
+    const data = await res.json();
 
-    document.getElementById("date").innerText =
-      "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
+    document.getElementById("date").innerText =
+      "Mise à jour : " + new Date(data.generated_at).toLocaleString("fr-FR");
 
-    const predictions = Array.isArray(data.predictions) ? data.predictions : [];
+    const predictions = Array.isArray(data.predictions) ? data.predictions : [];
 
-    predictions.sort((a, b) => {
-  const dateA = parseMatchDate(a.match_date || a["0"]);
-  const dateB = parseMatchDate(b.match_date || b["0"]);
-  return dateA - dateB;
+    predictions.sort((a, b) => {
+  const dateA = parseMatchDate(a.match_date || a["0"]);
+  const dateB = parseMatchDate(b.match_date || b["0"]);
+  return dateA - dateB;
 });
 
-    if (!predictions.length) {
-      document.getElementById("app").innerHTML = "Aucun pronostic disponible pour le moment.";
-      return;
-    }
+    if (!predictions.length) {
+      document.getElementById("app").innerHTML = "Aucun pronostic disponible pour le moment.";
+      return;
+    }
 
-    const html = predictions.map(p => {
-      const match = p.match || p["2"];
-      const competition = p.competition || p["1"] || "Football";
-      const homeTeam = p.home_team || getHomeTeam(match);
-      const awayTeam = p.away_team || getAwayTeam(match);
-      const pick = p.pick || p["3"];
-      const odd = p.bookmaker_odds || p["4"] || "--";
-      const confidence = p.confidence_level || p["6"];
-      const analysis = p.analysis || p["10"] || "";
-      const factors = Array.isArray(p.factors) ? p.factors : getFactors(p["11"]);
-      const matchDate = formatMatchDateFR(p.match_date || p["0"]);
+    const html = predictions.map(p => {
+      const match = p.match || p["2"];
+      const competition = p.competition || p["1"] || "Football";
+      const homeTeam = p.home_team || getHomeTeam(match);
+      const awayTeam = p.away_team || getAwayTeam(match);
+      const pick = p.pick || p["3"];
+      const odd = p.bookmaker_odds || p["4"] || "--";
+      const confidence = p.confidence_level || p["6"];
+      const analysis = p.analysis || p["10"] || "";
+      const factors = Array.isArray(p.factors) ? p.factors : getFactors(p["11"]);
+      const matchDate = formatMatchDateFR(p.match_date || p["0"]);
 
-      return `
-        <div class="card">
-  <div class="card-league">${escapeHtml(competition)}</div>
-  <div class="match">${escapeHtml(homeTeam)} vs ${escapeHtml(awayTeam)}</div>
-  <div class="card-time">${escapeHtml(matchDate)}</div>
-  <div class="confidence">${escapeHtml(translateConfidence(confidence))}</div>
+      return `
+        <div class="card">
+  <div class="card-league">${escapeHtml(competition)}</div>
+  <div class="match">${escapeHtml(homeTeam)} vs ${escapeHtml(awayTeam)}</div>
+  <div class="card-time">${escapeHtml(matchDate)}</div>
+  <div class="confidence">${escapeHtml(translateConfidence(confidence))}</div>
 
-          <div class="pick">${escapeHtml(translatePick(pick))}</div>
+          <div class="pick">${escapeHtml(translatePick(pick))}</div>
 
-          <div class="odds">Cote : ${escapeHtml(odd)}</div>
+          <div class="odds">Cote : ${escapeHtml(odd)}</div>
 
-          <div class="analysis">${escapeHtml(analysis)}</div>
+          <div class="analysis">${escapeHtml(analysis)}</div>
 
-          <div>
-            ${factors.map(f => `<span class="factor">${escapeHtml(f)}</span>`).join("")}
-          </div>
-        </div>
-      `;
-    }).join("");
+          <div>
+            ${factors.map(f => `<span class="factor">${escapeHtml(f)}</span>`).join("")}
+          </div>
+        </div>
+      `;
+    }).join("");
 
-    document.getElementById("app").innerHTML = html;
-  } catch (error) {
-    document.getElementById("app").innerHTML = "Impossible de charger les pronostics.";
-  }
+    document.getElementById("app").innerHTML = html;
+  } catch (error) {
+    document.getElementById("app").innerHTML = "Impossible de charger les pronostics.";
+  }
 }
 
 load();
 </script>
+
 </body>
 </html>
