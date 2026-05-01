@@ -438,7 +438,7 @@
   <div class="counter-bar" id="counter-bar" style="display:none">
     <div class="counter-pill">
       <span class="counter-dot"></span>
-      <span id="counter-num">0</span> pronostic<span id="counter-s"></span>
+    <span id="counter-full">0 pronostic</span>
     </div>
     <div class="counter-sep"></div>
     <span class="counter-label">ce week-end</span>
@@ -593,8 +593,8 @@
       if (preds.length) {
         const cb=document.getElementById("counter-bar");
         cb.style.display="flex";
-        document.getElementById("counter-num").textContent=preds.length;
-        document.getElementById("counter-s").textContent=preds.length>1?"s":"";
+        document.getElementById("counter-full").textContent =
+  preds.length + " " + (preds.length > 1 ? "pronostics" : "pronostic");
       }
 
       if (!preds.length) {
