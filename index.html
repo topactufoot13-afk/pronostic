@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -25,505 +24,502 @@
       --radius-sm: 10px;
     }
 
-```
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--bg);
-  background-image:
-    radial-gradient(ellipse 80% 40% at 20% -10%, rgba(79,124,255,0.14) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 30% at 80% 5%,  rgba(0,212,255,0.07)  0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(79,124,255,0.06) 0%, transparent 60%);
-  color: var(--text);
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ─── PAGE WRAPPER ─── */
-.page {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 48px 28px 100px;
-}
-
-/* ─── TOPBAR ─── */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 72px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.logo-wrap {
-  width: 68px;
-  height: 68px;
-  flex-shrink: 0;
-  filter: drop-shadow(0 0 18px rgba(79,124,255,0.45));
-}
-
-.brand-name {
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-  color: var(--text);
-}
-
-.brand-sub {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  margin-top: 3px;
-  letter-spacing: 0.2px;
-  font-weight: 400;
-}
-
-.update {
-  font-size: 11.5px;
-  color: var(--text-muted);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 7px 14px;
-  border-radius: 999px;
-  letter-spacing: 0.1px;
-  backdrop-filter: blur(12px);
-}
-
-/* ─── HERO ─── */
-h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(42px, 7vw, 72px);
-  font-weight: 400;
-  letter-spacing: -1.5px;
-  line-height: 1.0;
-  color: var(--text);
-  margin-bottom: 20px;
-  max-width: 720px;
-}
-
-h1 em {
-  font-style: italic;
-  background: linear-gradient(135deg, #4f7cff 0%, #00d4ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.subtitle {
-  font-size: 16px;
-  color: var(--text-dim);
-  margin-bottom: 64px;
-  line-height: 1.65;
-  max-width: 520px;
-  font-weight: 400;
-}
-
-/* ─── GUIDE SECTION ─── */
-.guide {
-  margin: 0 0 64px;
-  padding: 40px 40px 40px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(20px);
-  position: relative;
-  overflow: hidden;
-}
-
-.guide::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(79,124,255,0.5), transparent);
-}
-
-.guide-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 14px;
-}
-
-.guide-kicker::before {
-  content: '';
-  display: inline-block;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent);
-}
-
-.guide-title {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(20px, 3vw, 27px);
-  font-weight: 400;
-  letter-spacing: -0.4px;
-  line-height: 1.25;
-  margin-bottom: 32px;
-  color: var(--text);
-  max-width: 560px;
-}
-
-.guide-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-}
-
-.guide-grid div {
-  padding: 0 32px 0 0;
-  border-right: 1px solid var(--border);
-  margin-right: 32px;
-}
-
-.guide-grid div:last-child {
-  border-right: none;
-  margin-right: 0;
-  padding-right: 0;
-}
-
-.guide-grid span {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  opacity: 1;
-}
-
-.guide-grid strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 8px;
-  letter-spacing: -0.2px;
-}
-
-.guide-grid p {
-  font-size: 13px;
-  line-height: 1.55;
-  color: var(--text-muted);
-  font-weight: 400;
-}
-
-.guide-note {
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  font-size: 12.5px;
-  line-height: 1.7;
-  color: var(--text-muted);
-  max-width: 680px;
-}
-
-.guide-note strong {
-  color: var(--text-dim);
-  font-weight: 600;
-}
-
-/* ─── CARDS GRID ─── */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 20px;
-}
-
-/* ─── CARD ─── */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.04) inset,
-    0 32px 64px rgba(0,0,0,0.3);
-  backdrop-filter: blur(20px);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-}
-
-.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(79,124,255,0.2);
-  border-color: rgba(79,124,255,0.2);
-}
-
-.card-league {
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.match {
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -0.4px;
-  color: var(--text);
-  line-height: 1.2;
-}
-
-.card-time {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 6px;
-  font-weight: 400;
-}
-
-/* confidence badges */
-.confidence {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 10.5px;
-  font-weight: 700;
-  margin-top: 14px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  letter-spacing: 0.3px;
-}
-
-.confidence::before {
-  content: '';
-  display: inline-block;
-  width: 5px; height: 5px;
-  border-radius: 50%;
-}
-
-.conf-high {
-  background: rgba(0,224,128,0.08);
-  color: var(--green);
-  border: 1px solid rgba(0,224,128,0.18);
-}
-
-.conf-high::before { background: var(--green); box-shadow: 0 0 6px var(--green); }
-
-.conf-medium {
-  background: rgba(245,166,35,0.08);
-  color: var(--orange);
-  border: 1px solid rgba(245,166,35,0.18);
-}
-
-.conf-medium::before { background: var(--orange); }
-
-/* pick box */
-.pick {
-  margin: 20px 0 16px;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-  padding: 18px 20px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg,
-    rgba(79,124,255,0.18) 0%,
-    rgba(0,212,255,0.08) 100%);
-  border: 1px solid rgba(79,124,255,0.2);
-  color: var(--text);
-  position: relative;
-  overflow: hidden;
-}
-
-.pick::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(79,124,255,0.5), transparent);
-}
-
-/* odds */
-.odds {
-  font-size: 13px;
-  margin-bottom: 12px;
-  color: var(--text-dim);
-  font-weight: 500;
-}
-
-.odds::before {
-  content: 'COTE ';
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: var(--text-muted);
-  margin-right: 4px;
-  vertical-align: middle;
-}
-
-/* analysis */
-.analysis {
-  font-size: 13.5px;
-  margin: 12px 0;
-  color: var(--text-dim);
-  line-height: 1.65;
-  font-weight: 400;
-}
-
-/* factors */
-.factors {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-top: 14px;
-}
-
-.factor {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  padding: 8px 14px;
-  border-left: 2px solid rgba(79,124,255,0.3);
-  background: rgba(255,255,255,0.02);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  line-height: 1.5;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.factor:hover {
-  border-color: rgba(79,124,255,0.6);
-  background: rgba(79,124,255,0.05);
-}
-
-/* ─── EMPTY STATE ─── */
-.empty-state {
-  grid-column: 1/-1;
-  text-align: center;
-  padding: 80px 24px;
-  color: var(--text-muted);
-}
-
-.empty-icon {
-  font-size: 44px;
-  margin-bottom: 20px;
-  opacity: 0.6;
-}
-
-.empty-title {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--text-dim);
-  margin-bottom: 12px;
-}
-
-.empty-text {
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 400px;
-  margin: 0 auto;
-  color: var(--text-muted);
-}
-
-/* ─── LEGAL ─── */
-.legal {
-  margin-top: 72px;
-  padding: 32px 0 0;
-  border-top: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--text-muted);
-  line-height: 1.75;
-}
-
-.legal-title {
-  color: var(--text-dim);
-  font-weight: 600;
-  margin-bottom: 10px;
-  font-size: 13px;
-  letter-spacing: -0.1px;
-}
-
-.legal a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-  opacity: 0.85;
-}
-
-.legal a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 700px) {
-  .page { padding: 28px 18px 64px; }
-
-  .topbar {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-    margin-bottom: 48px;
-  }
-
-  h1 { letter-spacing: -1px; }
-
-  .subtitle { margin-bottom: 40px; }
-
-  .guide {
-    padding: 28px 22px;
-    margin-bottom: 40px;
-  }
-
-  .guide-title { font-size: 22px; margin-bottom: 24px; }
-
-  .guide-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .guide-grid div {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-    margin-right: 0;
-    padding-right: 0;
-    padding-bottom: 20px;
-  }
-
-  .guide-grid div:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .cards { grid-template-columns: 1fr; }
-
-  .update { opacity: 0.9; }
-}
-
-/* ─── FADE-IN ANIMATION ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.topbar  { animation: fadeUp 0.5s ease both; }
-h1       { animation: fadeUp 0.5s 0.1s ease both; }
-.subtitle{ animation: fadeUp 0.5s 0.18s ease both; }
-.guide   { animation: fadeUp 0.5s 0.26s ease both; }
-.cards   { animation: fadeUp 0.5s 0.34s ease both; }
-```
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 40% at 20% -10%, rgba(79,124,255,0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 30% at 80% 5%,  rgba(0,212,255,0.07)  0%, transparent 50%),
+        radial-gradient(ellipse 50% 50% at 50% 100%, rgba(79,124,255,0.06) 0%, transparent 60%);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── PAGE WRAPPER ─── */
+    .page {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 28px 100px;
+    }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-wrap {
+      width: 68px;
+      height: 68px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 18px rgba(79,124,255,0.45));
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: var(--text);
+    }
+
+    .brand-sub {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+      letter-spacing: 0.2px;
+      font-weight: 400;
+    }
+
+    .update {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.1px;
+      backdrop-filter: blur(12px);
+    }
+
+    /* ─── HERO ─── */
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(42px, 7vw, 72px);
+      font-weight: 400;
+      letter-spacing: -1.5px;
+      line-height: 1.0;
+      color: var(--text);
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, #4f7cff 0%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 64px;
+      line-height: 1.65;
+      max-width: 520px;
+      font-weight: 400;
+    }
+
+    /* ─── GUIDE SECTION ─── */
+    .guide {
+      margin: 0 0 64px;
+      padding: 40px 40px 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guide::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(79,124,255,0.5), transparent);
+    }
+
+    .guide-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .guide-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    .guide-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(20px, 3vw, 27px);
+      font-weight: 400;
+      letter-spacing: -0.4px;
+      line-height: 1.25;
+      margin-bottom: 32px;
+      color: var(--text);
+      max-width: 560px;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .guide-grid div {
+      padding: 0 32px 0 0;
+      border-right: 1px solid var(--border);
+      margin-right: 32px;
+    }
+
+    .guide-grid div:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .guide-grid span {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      opacity: 1;
+    }
+
+    .guide-grid strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+
+    .guide-grid p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .guide-note {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 680px;
+    }
+
+    .guide-note strong {
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    /* ─── CARDS GRID ─── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    /* ─── CARD ─── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.04) inset,
+        0 32px 64px rgba(0,0,0,0.3);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(79,124,255,0.2);
+      border-color: rgba(79,124,255,0.2);
+    }
+
+    .card-league {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .match {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .card-time {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-weight: 400;
+    }
+
+    /* confidence badges */
+    .confidence {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10.5px;
+      font-weight: 700;
+      margin-top: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.3px;
+    }
+
+    .confidence::before {
+      content: '';
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+    }
+
+    .conf-high {
+      background: rgba(0,224,128,0.08);
+      color: var(--green);
+      border: 1px solid rgba(0,224,128,0.18);
+    }
+
+    .conf-high::before { background: var(--green); box-shadow: 0 0 6px var(--green); }
+
+    .conf-medium {
+      background: rgba(245,166,35,0.08);
+      color: var(--orange);
+      border: 1px solid rgba(245,166,35,0.18);
+    }
+
+    .conf-medium::before { background: var(--orange); }
+
+    /* pick box */
+    .pick {
+      margin: 20px 0 16px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg,
+        rgba(79,124,255,0.18) 0%,
+        rgba(0,212,255,0.08) 100%);
+      border: 1px solid rgba(79,124,255,0.2);
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pick::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(79,124,255,0.5), transparent);
+    }
+
+    /* odds */
+    .odds {
+      font-size: 13px;
+      margin-bottom: 12px;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .odds::before {
+      content: 'COTE ';
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    /* analysis */
+    .analysis {
+      font-size: 13.5px;
+      margin: 12px 0;
+      color: var(--text-dim);
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    /* factors */
+    .factors {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .factor {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-left: 2px solid rgba(79,124,255,0.3);
+      background: rgba(255,255,255,0.02);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      line-height: 1.5;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .factor:hover {
+      border-color: rgba(79,124,255,0.6);
+      background: rgba(79,124,255,0.05);
+    }
+
+    /* ─── EMPTY STATE ─── */
+    .empty-state {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--text-muted);
+    }
+
+    .empty-icon {
+      font-size: 44px;
+      margin-bottom: 20px;
+      opacity: 0.6;
+    }
+
+    .empty-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .empty-text {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 400px;
+      margin: 0 auto;
+      color: var(--text-muted);
+    }
+
+    /* ─── LEGAL ─── */
+    .legal {
+      margin-top: 72px;
+      padding: 32px 0 0;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .legal-title {
+      color: var(--text-dim);
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 13px;
+      letter-spacing: -0.1px;
+    }
+
+    .legal a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    .legal a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 700px) {
+      .page { padding: 28px 18px 64px; }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 48px;
+      }
+
+      h1 { letter-spacing: -1px; }
+
+      .subtitle { margin-bottom: 40px; }
+
+      .guide {
+        padding: 28px 22px;
+        margin-bottom: 40px;
+      }
+
+      .guide-title { font-size: 22px; margin-bottom: 24px; }
+
+      .guide-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .guide-grid div {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        margin-right: 0;
+        padding-right: 0;
+        padding-bottom: 20px;
+      }
+
+      .guide-grid div:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .cards { grid-template-columns: 1fr; }
+
+      .update { opacity: 0.9; }
+    }
+
+    /* ─── FADE-IN ANIMATION ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .topbar  { animation: fadeUp 0.5s ease both; }
+    h1       { animation: fadeUp 0.5s 0.1s ease both; }
+    .subtitle{ animation: fadeUp 0.5s 0.18s ease both; }
+    .guide   { animation: fadeUp 0.5s 0.26s ease both; }
+    .cards   { animation: fadeUp 0.5s 0.34s ease both; }
   </style>
 </head>
 
@@ -533,191 +529,188 @@ h1       { animation: fadeUp 0.5s 0.1s ease both; }
   <div class="topbar">
     <div class="brand">
 
-```
-  <!-- ══════════════════════════════
-       LOGO SVG — TAF SHIELD PRO
-       ══════════════════════════════ -->
-  <div class="logo-wrap">
-    <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="79">
-      <defs>
-        <!-- Shield outer gradient -->
-        <linearGradient id="shieldOuter" x1="100" y1="0" x2="100" y2="220" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"   stop-color="#2060ff"/>
-          <stop offset="100%" stop-color="#0a1a5c"/>
-        </linearGradient>
-        <!-- Shield inner gradient -->
-        <linearGradient id="shieldInner" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
-          <stop offset="0%"   stop-color="#0d1f4a"/>
-          <stop offset="100%" stop-color="#060d24"/>
-        </linearGradient>
-        <!-- TAF text gradient -->
-        <linearGradient id="tafGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%"   stop-color="#ffffff"/>
-          <stop offset="45%"  stop-color="#cce0ff"/>
-          <stop offset="100%" stop-color="#1a7fff"/>
-        </linearGradient>
-        <!-- Blue accent gradient -->
-        <linearGradient id="blueAccent" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#38b6ff"/>
-          <stop offset="100%" stop-color="#1a4fff"/>
-        </linearGradient>
-        <!-- Shield shine -->
-        <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="rgba(255,255,255,0.18)"/>
-          <stop offset="60%"  stop-color="rgba(255,255,255,0)"/>
-        </linearGradient>
-        <!-- Ball gradient -->
-        <radialGradient id="ballGrad" cx="42%" cy="35%" r="60%">
-          <stop offset="0%"   stop-color="#ffffff"/>
-          <stop offset="50%"  stop-color="#d0dff5"/>
-          <stop offset="100%" stop-color="#8aaad0"/>
-        </radialGradient>
-        <!-- Glow filter -->
-        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <!-- Text glow -->
-        <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
-          <feGaussianBlur stdDeviation="2.5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <!-- Star glow -->
-        <filter id="starGlow">
-          <feGaussianBlur stdDeviation="1.5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
+      <!-- ══════════════════════════════
+           LOGO SVG — TAF SHIELD PRO
+           ══════════════════════════════ -->
+      <div class="logo-wrap">
+        <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="72" height="79">
+          <defs>
+            <!-- Shield outer gradient -->
+            <linearGradient id="shieldOuter" x1="100" y1="0" x2="100" y2="220" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#2060ff"/>
+              <stop offset="100%" stop-color="#0a1a5c"/>
+            </linearGradient>
+            <!-- Shield inner gradient -->
+            <linearGradient id="shieldInner" x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
+              <stop offset="0%"   stop-color="#0d1f4a"/>
+              <stop offset="100%" stop-color="#060d24"/>
+            </linearGradient>
+            <!-- TAF text gradient -->
+            <linearGradient id="tafGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="#ffffff"/>
+              <stop offset="45%"  stop-color="#cce0ff"/>
+              <stop offset="100%" stop-color="#1a7fff"/>
+            </linearGradient>
+            <!-- Blue accent gradient -->
+            <linearGradient id="blueAccent" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#38b6ff"/>
+              <stop offset="100%" stop-color="#1a4fff"/>
+            </linearGradient>
+            <!-- Shield shine -->
+            <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="rgba(255,255,255,0.18)"/>
+              <stop offset="60%"  stop-color="rgba(255,255,255,0)"/>
+            </linearGradient>
+            <!-- Ball gradient -->
+            <radialGradient id="ballGrad" cx="42%" cy="35%" r="60%">
+              <stop offset="0%"   stop-color="#ffffff"/>
+              <stop offset="50%"  stop-color="#d0dff5"/>
+              <stop offset="100%" stop-color="#8aaad0"/>
+            </radialGradient>
+            <!-- Glow filter -->
+            <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Text glow -->
+            <filter id="textGlow" x="-10%" y="-10%" width="120%" height="120%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Star glow -->
+            <filter id="starGlow">
+              <feGaussianBlur stdDeviation="1.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
 
-      <!-- ── OUTER SHIELD ── -->
-      <path d="M100 4 L192 34 L188 130 Q100 215 12 130 L8 34 Z"
-            fill="url(#shieldOuter)"
-            stroke="#4488ff"
-            stroke-width="2"/>
+          <!-- ── OUTER SHIELD ── -->
+          <path d="M100 4 L192 34 L188 130 Q100 215 12 130 L8 34 Z"
+                fill="url(#shieldOuter)"
+                stroke="#4488ff"
+                stroke-width="2"/>
 
-      <!-- ── INNER SHIELD ── -->
-      <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
-            fill="url(#shieldInner)"
-            stroke="rgba(100,160,255,0.35)"
-            stroke-width="1.2"/>
+          <!-- ── INNER SHIELD ── -->
+          <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
+                fill="url(#shieldInner)"
+                stroke="rgba(100,160,255,0.35)"
+                stroke-width="1.2"/>
 
-      <!-- ── SHINE OVERLAY ── -->
-      <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
-            fill="url(#shine)"/>
+          <!-- ── SHINE OVERLAY ── -->
+          <path d="M100 14 L182 40 L178 128 Q100 204 22 128 L18 40 Z"
+                fill="url(#shine)"/>
 
-      <!-- ── BLUE ACCENT STRIPE LEFT ── -->
-      <path d="M38 44 L42 44 L38 120 L34 120 Z"
-            fill="url(#blueAccent)" opacity="0.6"/>
+          <!-- ── BLUE ACCENT STRIPE LEFT ── -->
+          <path d="M38 44 L42 44 L38 120 L34 120 Z"
+                fill="url(#blueAccent)" opacity="0.6"/>
 
-      <!-- ── BLUE ACCENT STRIPE RIGHT ── -->
-      <path d="M162 44 L166 44 L162 120 L158 120 Z"
-            fill="url(#blueAccent)" opacity="0.6"/>
+          <!-- ── BLUE ACCENT STRIPE RIGHT ── -->
+          <path d="M162 44 L166 44 L162 120 L158 120 Z"
+                fill="url(#blueAccent)" opacity="0.6"/>
 
-      <!-- ── STARS ── -->
-      <!-- Star left -->
-      <polygon points="70,30 72.5,37.5 80,37.5 74,42 76.5,49.5 70,45 63.5,49.5 66,42 60,37.5 67.5,37.5"
-               fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(27,5)"/>
-      <!-- Star center (bigger) -->
-      <polygon points="100,22 103.5,32.5 115,32.5 106,39 109.5,49.5 100,43 90.5,49.5 94,39 85,32.5 96.5,32.5"
-               fill="#5aafff" filter="url(#starGlow)"/>
-      <!-- Star right -->
-      <polygon points="130,30 132.5,37.5 140,37.5 134,42 136.5,49.5 130,45 123.5,49.5 126,42 120,37.5 127.5,37.5"
-               fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(68,5)"/>
+          <!-- ── STARS ── -->
+          <!-- Star left -->
+          <polygon points="70,30 72.5,37.5 80,37.5 74,42 76.5,49.5 70,45 63.5,49.5 66,42 60,37.5 67.5,37.5"
+                   fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(27,5)"/>
+          <!-- Star center (bigger) -->
+          <polygon points="100,22 103.5,32.5 115,32.5 106,39 109.5,49.5 100,43 90.5,49.5 94,39 85,32.5 96.5,32.5"
+                   fill="#5aafff" filter="url(#starGlow)"/>
+          <!-- Star right -->
+          <polygon points="130,30 132.5,37.5 140,37.5 134,42 136.5,49.5 130,45 123.5,49.5 126,42 120,37.5 127.5,37.5"
+                   fill="#3a8fff" filter="url(#starGlow)" transform="scale(0.72) translate(68,5)"/>
 
-      <!-- ── TAF TEXT ── -->
-      <!-- T -->
-      <text x="28" y="130"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="82"
-            font-weight="900"
-            font-style="italic"
-            fill="url(#tafGrad)"
-            filter="url(#textGlow)"
-            letter-spacing="-4">T</text>
+          <!-- ── TAF TEXT ── -->
+          <!-- T -->
+          <text x="28" y="130"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="82"
+                font-weight="900"
+                font-style="italic"
+                fill="url(#tafGrad)"
+                filter="url(#textGlow)"
+                letter-spacing="-4">T</text>
 
-      <!-- A -->
-      <text x="82" y="130"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="82"
-            font-weight="900"
-            font-style="italic"
-            fill="url(#tafGrad)"
-            filter="url(#textGlow)"
-            letter-spacing="-4">A</text>
+          <!-- A -->
+          <text x="82" y="130"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="82"
+                font-weight="900"
+                font-style="italic"
+                fill="url(#tafGrad)"
+                filter="url(#textGlow)"
+                letter-spacing="-4">A</text>
 
-      <!-- F — blue accent -->
-      <text x="138" y="130"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="82"
-            font-weight="900"
-            font-style="italic"
-            fill="url(#blueAccent)"
-            filter="url(#textGlow)">F</text>
+          <!-- F — blue accent -->
+          <text x="138" y="130"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="82"
+                font-weight="900"
+                font-style="italic"
+                fill="url(#blueAccent)"
+                filter="url(#textGlow)">F</text>
 
-      <!-- ── SEPARATOR LINE ── -->
-      <line x1="40" y1="138" x2="160" y2="138" stroke="rgba(80,140,255,0.5)" stroke-width="1"/>
+          <!-- ── SEPARATOR LINE ── -->
+          <line x1="40" y1="138" x2="160" y2="138" stroke="rgba(80,140,255,0.5)" stroke-width="1"/>
 
-      <!-- ── TOP ACTU FOOT ── -->
-      <text x="100" y="153"
-            text-anchor="middle"
-            font-family="Arial, sans-serif"
-            font-size="12"
-            font-weight="800"
-            fill="white"
-            letter-spacing="2.5">TOP ACTU FOOT</text>
+          <!-- ── TOP ACTU FOOT ── -->
+          <text x="100" y="153"
+                text-anchor="middle"
+                font-family="Arial, sans-serif"
+                font-size="12"
+                font-weight="800"
+                fill="white"
+                letter-spacing="2.5">TOP ACTU FOOT</text>
 
-      <!-- ── 13 ── -->
-      <text x="100" y="169"
-            text-anchor="middle"
-            font-family="Arial Black, Arial, sans-serif"
-            font-size="14"
-            font-weight="900"
-            fill="#3a9fff"
-            letter-spacing="1"
-            filter="url(#starGlow)">13</text>
+          <!-- ── 13 ── -->
+          <text x="100" y="169"
+                text-anchor="middle"
+                font-family="Arial Black, Arial, sans-serif"
+                font-size="14"
+                font-weight="900"
+                fill="#3a9fff"
+                letter-spacing="1"
+                filter="url(#starGlow)">13</text>
 
-      <!-- ── SEPARATOR DASHES ── -->
-      <line x1="52" y1="169" x2="72" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
-      <line x1="128" y1="169" x2="148" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
+          <!-- ── SEPARATOR DASHES ── -->
+          <line x1="52" y1="169" x2="72" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
+          <line x1="128" y1="169" x2="148" y2="169" stroke="rgba(80,140,255,0.45)" stroke-width="1"/>
 
-      <!-- ── FOOTBALL ── -->
-      <!-- Ball shadow -->
-      <ellipse cx="100" cy="207" rx="18" ry="5" fill="rgba(0,0,0,0.4)"/>
+          <!-- ── FOOTBALL ── -->
+          <!-- Ball shadow -->
+          <ellipse cx="100" cy="207" rx="18" ry="5" fill="rgba(0,0,0,0.4)"/>
 
-      <!-- Ball body -->
-      <circle cx="100" cy="195" r="18"
-              fill="url(#ballGrad)"
-              stroke="rgba(100,140,200,0.4)"
-              stroke-width="0.8"/>
+          <!-- Ball body -->
+          <circle cx="100" cy="195" r="18"
+                  fill="url(#ballGrad)"
+                  stroke="rgba(100,140,200,0.4)"
+                  stroke-width="0.8"/>
 
-      <!-- Ball pentagon center -->
-      <polygon points="100,185 106,189.5 103.8,196.5 96.2,196.5 94,189.5"
-               fill="#1a2a4a" opacity="0.85"/>
+          <!-- Ball pentagon center -->
+          <polygon points="100,185 106,189.5 103.8,196.5 96.2,196.5 94,189.5"
+                   fill="#1a2a4a" opacity="0.85"/>
 
-      <!-- Ball seams -->
-      <line x1="100" y1="185" x2="100"   y2="177.5" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="106" y1="189.5" x2="113" y2="186"   stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="103.8" y1="196.5" x2="108" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="96.2"  y1="196.5" x2="92"  y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
-      <line x1="94"    y1="189.5" x2="87"  y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <!-- Ball seams -->
+          <line x1="100" y1="185" x2="100"   y2="177.5" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="106" y1="189.5" x2="113" y2="186"   stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="103.8" y1="196.5" x2="108" y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="96.2"  y1="196.5" x2="92"  y2="202" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
+          <line x1="94"    y1="189.5" x2="87"  y2="186" stroke="#1a2a4a" stroke-width="1" opacity="0.6"/>
 
-      <!-- Ball shine -->
-      <ellipse cx="95" cy="189" rx="4" ry="2.5"
-               fill="rgba(255,255,255,0.45)"
-               transform="rotate(-30,95,189)"/>
-    </svg>
-  </div>
-  <!-- ══ END LOGO ══ -->
+          <!-- Ball shine -->
+          <ellipse cx="95" cy="189" rx="4" ry="2.5"
+                   fill="rgba(255,255,255,0.45)"
+                   transform="rotate(-30,95,189)"/>
+        </svg>
+      </div>
+      <!-- ══ END LOGO ══ -->
 
-  <div>
-    <div class="brand-name">Top Actu Foot 13</div>
-    <div class="brand-sub">Analyse football quotidienne</div>
-  </div>
-</div>
+      <div>
+        <div class="brand-name">Top Actu Foot 13</div>
+        <div class="brand-sub">Analyse football quotidienne</div>
+      </div>
+    </div>
 
-<div class="update" id="date">--</div>
-```
-
+    <div class="update" id="date">--</div>
   </div>
 
   <h1>Pronostics football<br><em>du week-end</em></h1>
@@ -737,20 +730,17 @@ h1       { animation: fadeUp 0.5s 0.1s ease both; }
       <p>Exemple : 10€ par pronostic, toujours le même montant.</p>
     </div>
 
-```
-<div>
-  <span>02</span>
-  <strong>Paris simples</strong>
-  <p>1 match = 1 pari. Les gains sont plus faibles, mais le risque est mieux contrôlé.</p>
-</div>
+    <div>
+      <span>02</span>
+      <strong>Paris simples</strong>
+      <p>1 match = 1 pari. Les gains sont plus faibles, mais le risque est mieux contrôlé.</p>
+    </div>
 
-<div>
-  <span>03</span>
-  <strong>Combiné léger</strong>
-  <p>Optionnel, avec une petite mise. Un seul match peut faire perdre l'ensemble.</p>
-</div>
-```
-
+    <div>
+      <span>03</span>
+      <strong>Combiné léger</strong>
+      <p>Optionnel, avec une petite mise. Un seul match peut faire perdre l'ensemble.</p>
+    </div>
   </div>
 
   <div class="guide-note">
@@ -933,6 +923,5 @@ async function load() {
 
 load();
 </script>
-
 </body>
 </html>
